@@ -1,0 +1,56 @@
+<?php
+/**
+ * Implements hook_menu().
+ * Define menu items and page callbacks.
+ */
+function glue_menu() {
+  $items = array();
+  $items['admin/content/mh-install-list'] = array(
+    'title' => t('MH install list'),
+    'description' => t('Admin MH install list'),
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin-install-list'),
+    'access callback'=> TRUE,   
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function glue_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['short'] = array(
+    'label' => t('Short'),
+    'custom settings' => TRUE,
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function glue_form_mh_seller_node_form_alter(&$form, &$form_state, $form_id) {
+  $mh_unit_title = $form['field_mh_seller_mh_unit']['und']['#title'];
+  $contact_title = $form['field_mh_seller_contact_info']['und']['#title'];
+  
+  $form['field_mh_seller_mh_unit']['und']['actions']['ief_add']['#value'] = 
+       t("Create new @title", array('@title' => $mh_unit_title));
+   
+  $form['field_mh_seller_mh_unit']['und']['actions']['ief_add_existing']['#value'] = 
+       t("Add existing @title", array('@title' => $mh_unit_title));
+  
+  $form['field_mh_seller_contact_info']['und']['actions']['ief_add']['#value'] = 
+       t("Create new @title", array('@title' => $contact_title));
+  
+  $form['field_mh_seller_contact_info']['und']['actions']['ief_add_existing']['#value'] = 
+        t("Add existing @title", array('@title' => $contact_title));  
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function glue_form_alter(&$form, &$form_state, $form_id) {
+  $form['field_mh_unit_shed']['#collapsible'] = TRUE;
+}
+
+

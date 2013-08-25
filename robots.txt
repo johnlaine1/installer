@@ -1,0 +1,10 @@
+#To prevent a site from being indexed by search engines, like a development
+#site, locate the robots.txt file in the root folder (usualy drupal) erase the
+#contents and enter the following.
+
+# go away
+User-agent: *
+Disallow: /
+
+
+
