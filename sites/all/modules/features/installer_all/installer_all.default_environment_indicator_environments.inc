@@ -31,7 +31,7 @@ function installer_all_default_environment_indicator_environment() {
   $environment->name = 'Live';
   $environment->regexurl = 'installer.clearviewproperties.net';
   $environment->settings = array(
-    'color' => '#22eb15',
+    'color' => '#eb1a15',
     'weight' => '',
     'position' => 'top',
     'fixed' => 0,
