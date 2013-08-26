@@ -726,25 +726,6 @@ function installer_all_menu_default_menu_links() {
     'weight' => 0,
     'parent_path' => 'admin/config/development',
   );
-  // Exported menu link: management:admin/config/group
-  $menu_links['management:admin/config/group'] = array(
-    'menu_name' => 'management',
-    'link_path' => 'admin/config/group',
-    'router_path' => 'admin/config/group',
-    'link_title' => 'Organic groups',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'Administer the suite of Organic groups modules.',
-      ),
-    ),
-    'module' => 'system',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 1,
-    'expanded' => 0,
-    'weight' => -5,
-    'parent_path' => 'admin/config',
-  );
   // Exported menu link: management:admin/config/group/context
   $menu_links['management:admin/config/group/context'] = array(
     'menu_name' => 'management',
@@ -2225,7 +2206,6 @@ function installer_all_menu_default_menu_links() {
   t('OG permissions overview');
   t('OG roles overview');
   t('OG settings');
-  t('Organic groups');
   t('PHPinfo()');
   t('Pages');
   t('Panels');
