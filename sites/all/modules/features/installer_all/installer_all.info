@@ -258,7 +258,6 @@ features[field_instance][] = node-mh_unit-field_mh_unit_vin
 features[field_instance][] = node-mh_unit-field_mh_unit_width
 features[field_instance][] = node-mh_unit-field_mh_unit_width_actual
 features[field_instance][] = node-mh_unit-field_mh_unit_year
-features[field_instance][] = og_membership-og_membership_type_default-og_membership_request
 features[field_instance][] = user-user-field_user_nickname
 features[field_instance][] = user-user-field_user_real_name
 features[filter][] = filtered_html

@@ -3587,39 +3587,6 @@ function installer_all_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'og_membership-og_membership_type_default-og_membership_request'
-  $field_instances['og_membership-og_membership_type_default-og_membership_request'] = array(
-    'bundle' => 'og_membership_type_default',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'This is the text a user may send to the group administrators.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'og_membership',
-    'field_name' => 'og_membership_request',
-    'label' => 'Request message',
-    'required' => FALSE,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_user_nickname'
   $field_instances['user-user-field_user_nickname'] = array(
     'bundle' => 'user',
@@ -3792,7 +3759,6 @@ function installer_all_field_default_field_instances() {
   t('Press and hold the ctrl key to select multiple items.');
   t('Real name');
   t('Related contacts');
-  t('Request message');
   t('Roof condition');
   t('Roof type');
   t('Round up to the nearest foot.');
@@ -3804,7 +3770,6 @@ function installer_all_field_default_field_instances() {
   t('The date that the home passed \'Final\' inspection, as listed on inspection report.');
   t('These are public documents. Although a username and password are needed to enter this site, the URL to a file of this type will be viewable by all. For example, if you right click on a file of this type and select \'copy link address\' and then you email that link to a friend, they will be able to view it.');
   t('These files are private. They are only viewable by registered users of this site.');
-  t('This is the text a user may send to the group administrators.');
   t('Transportable');
   t('Type');
   t('VIN');
