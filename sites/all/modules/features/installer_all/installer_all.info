@@ -618,6 +618,7 @@ features[variable][] = date_api_version
 features[variable][] = date_default_timezone
 features[variable][] = date_first_day
 features[variable][] = date_format_short_date_only
+features[variable][] = default_environment_indicator_environment
 features[variable][] = default_field_group
 features[variable][] = default_nodes_main
 features[variable][] = default_page_manager_handlers
