@@ -218,6 +218,15 @@ function installer_all_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'administer group'.
+  $permissions['administer group'] = array(
+    'name' => 'administer group',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'og',
+  );
+
   // Exported permission: 'administer image styles'.
   $permissions['administer image styles'] = array(
     'name' => 'administer image styles',

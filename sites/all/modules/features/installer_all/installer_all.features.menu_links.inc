@@ -422,6 +422,25 @@ function installer_all_menu_default_menu_links() {
     'weight' => -15,
     'parent_path' => 'admin/config',
   );
+  // Exported menu link: management:admin/config/content/diff
+  $menu_links['management:admin/config/content/diff'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/content/diff',
+    'router_path' => 'admin/config/content/diff',
+    'link_title' => 'Diff',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Diff settings.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/content',
+  );
   // Exported menu link: management:admin/config/content/formats
   $menu_links['management:admin/config/content/formats'] = array(
     'menu_name' => 'management',
@@ -507,6 +526,25 @@ function installer_all_menu_default_menu_links() {
     'options' => array(
       'attributes' => array(
         'title' => 'Helper functions, pages, and blocks to assist Drupal developers. The devel blocks can be managed via the <a href="/admin/structure/block">block administration</a> page.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/development',
+  );
+  // Exported menu link: management:admin/config/development/environment-indicator
+  $menu_links['management:admin/config/development/environment-indicator'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/development/environment-indicator',
+    'router_path' => 'admin/config/development/environment-indicator',
+    'link_title' => 'Environment indicators',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Administer environment indicators.',
       ),
     ),
     'module' => 'system',
@@ -687,6 +725,139 @@ function installer_all_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
     'parent_path' => 'admin/config/development',
+  );
+  // Exported menu link: management:admin/config/group
+  $menu_links['management:admin/config/group'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group',
+    'router_path' => 'admin/config/group',
+    'link_title' => 'Organic groups',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Administer the suite of Organic groups modules.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -5,
+    'parent_path' => 'admin/config',
+  );
+  // Exported menu link: management:admin/config/group/context
+  $menu_links['management:admin/config/group/context'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group/context',
+    'router_path' => 'admin/config/group/context',
+    'link_title' => 'OG context',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'OG context detection and selection',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/group',
+  );
+  // Exported menu link: management:admin/config/group/fields
+  $menu_links['management:admin/config/group/fields'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group/fields',
+    'router_path' => 'admin/config/group/fields',
+    'link_title' => 'OG field settings',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Configure Organic groups fields in bundles.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/group',
+  );
+  // Exported menu link: management:admin/config/group/group-membership
+  $menu_links['management:admin/config/group/group-membership'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group/group-membership',
+    'router_path' => 'admin/config/group/group-membership',
+    'link_title' => 'OG membership types',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Manage group memberships type, including fields.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config',
+  );
+  // Exported menu link: management:admin/config/group/permissions
+  $menu_links['management:admin/config/group/permissions'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group/permissions',
+    'router_path' => 'admin/config/group/permissions',
+    'link_title' => 'OG permissions overview',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Overview of Organic groups permissions.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/group',
+  );
+  // Exported menu link: management:admin/config/group/roles
+  $menu_links['management:admin/config/group/roles'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group/roles',
+    'router_path' => 'admin/config/group/roles',
+    'link_title' => 'OG roles overview',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Overview of organic groups roles.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/group',
+  );
+  // Exported menu link: management:admin/config/group/settings
+  $menu_links['management:admin/config/group/settings'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/config/group/settings',
+    'router_path' => 'admin/config/group/settings',
+    'link_title' => 'OG settings',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Administer OG settings.',
+      ),
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'parent_path' => 'admin/config/group',
   );
   // Exported menu link: management:admin/config/media
   $menu_links['management:admin/config/media'] = array(
@@ -2006,8 +2177,10 @@ function installer_all_menu_default_menu_links() {
   t('Date and time');
   t('Devel settings');
   t('Development');
+  t('Diff');
   t('Empty cache');
   t('Entity info');
+  t('Environment indicators');
   t('Execute PHP Code');
   t('Features');
   t('Field collections');
@@ -2046,6 +2219,13 @@ function installer_all_menu_default_menu_links() {
   t('Modules');
   t('Names');
   t('Navigation');
+  t('OG context');
+  t('OG field settings');
+  t('OG membership types');
+  t('OG permissions overview');
+  t('OG roles overview');
+  t('OG settings');
+  t('Organic groups');
   t('PHPinfo()');
   t('Pages');
   t('Panels');
