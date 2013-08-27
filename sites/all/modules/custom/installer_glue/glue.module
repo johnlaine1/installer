@@ -16,6 +16,14 @@ function glue_menu() {
 }
 
 /**
+ * Implements hook_menu_alter().
+ * Alter the data being saved to the {menu_router} table after hook_menu is invoked.
+ */
+function glue_menu_alter(&$items) {
+
+}
+
+/**
  * Implements hook_entity_info_alter().
  */
 function glue_entity_info_alter(&$entity_info) {

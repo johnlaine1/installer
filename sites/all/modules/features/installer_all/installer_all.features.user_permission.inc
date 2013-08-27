@@ -92,15 +92,6 @@ function installer_all_user_default_permissions() {
     'module' => 'dashboard',
   );
 
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'access rules debug'.
   $permissions['access rules debug'] = array(
     'name' => 'access rules debug',
@@ -848,15 +839,6 @@ function installer_all_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'flush caches'.

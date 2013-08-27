@@ -849,13 +849,6 @@ function installer_all_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'devel_xhprof_enabled';
-  $strongarm->value = FALSE;
-  $export['devel_xhprof_enabled'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'devel_xhprof_url';
   $strongarm->value = '';
   $export['devel_xhprof_url'] = $strongarm;
