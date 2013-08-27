@@ -1938,7 +1938,7 @@ function installer_all_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -43,
+    'weight' => 0,
   );
   // Exported menu link: navigation:masquerade/switch/6
   $menu_links['navigation:masquerade/switch/6'] = array(
@@ -2084,7 +2084,7 @@ function installer_all_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -42,
+    'weight' => 0,
   );
   // Exported menu link: user-menu:user
   $menu_links['user-menu:user'] = array(
