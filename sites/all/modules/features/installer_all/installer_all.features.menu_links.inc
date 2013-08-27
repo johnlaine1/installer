@@ -1962,17 +1962,13 @@ function installer_all_menu_default_menu_links() {
     'link_path' => 'node/add',
     'router_path' => 'node/add',
     'link_title' => 'Add content',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
+    'options' => array(),
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 1,
-    'expanded' => 1,
-    'weight' => -50,
+    'expanded' => 0,
+    'weight' => 0,
   );
   // Exported menu link: navigation:node/add/contact
   $menu_links['navigation:node/add/contact'] = array(
@@ -1980,17 +1976,13 @@ function installer_all_menu_default_menu_links() {
     'link_path' => 'node/add/contact',
     'router_path' => 'node/add/contact',
     'link_title' => 'Contact',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
+    'options' => array(),
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => 0,
     'parent_path' => 'node/add',
   );
   // Exported menu link: navigation:node/add/mh-community
@@ -1998,7 +1990,7 @@ function installer_all_menu_default_menu_links() {
     'menu_name' => 'navigation',
     'link_path' => 'node/add/mh-community',
     'router_path' => 'node/add/mh-community',
-    'link_title' => 'Community',
+    'link_title' => 'MH Community',
     'options' => array(
       'attributes' => array(
         'title' => 'Information related to a Manufactured Home community.',
@@ -2009,7 +2001,7 @@ function installer_all_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => 0,
     'parent_path' => 'node/add',
   );
   // Exported menu link: navigation:node/add/mh-install-invoice
@@ -2017,18 +2009,14 @@ function installer_all_menu_default_menu_links() {
     'menu_name' => 'navigation',
     'link_path' => 'node/add/mh-install-invoice',
     'router_path' => 'node/add/mh-install-invoice',
-    'link_title' => 'Install Invoice',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
+    'link_title' => 'MH Install Invoice',
+    'options' => array(),
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => 0,
     'parent_path' => 'node/add',
   );
   // Exported menu link: navigation:node/add/mh-install-line-item
@@ -2036,18 +2024,14 @@ function installer_all_menu_default_menu_links() {
     'menu_name' => 'navigation',
     'link_path' => 'node/add/mh-install-line-item',
     'router_path' => 'node/add/mh-install-line-item',
-    'link_title' => 'Install Line Item',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
+    'link_title' => 'Mh Install Line Item',
+    'options' => array(),
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => 0,
     'parent_path' => 'node/add',
   );
   // Exported menu link: navigation:node/add/mh-installation
@@ -2055,7 +2039,7 @@ function installer_all_menu_default_menu_links() {
     'menu_name' => 'navigation',
     'link_path' => 'node/add/mh-installation',
     'router_path' => 'node/add/mh-installation',
-    'link_title' => 'Installation',
+    'link_title' => 'MH Installation',
     'options' => array(
       'attributes' => array(
         'title' => 'Information related to a Manufactured Home installation.',
@@ -2066,7 +2050,7 @@ function installer_all_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => 0,
     'parent_path' => 'node/add',
   );
   // Exported menu link: navigation:node/add/mh-unit
@@ -2085,7 +2069,7 @@ function installer_all_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => 0,
     'parent_path' => 'node/add',
   );
   // Exported menu link: navigation:search
@@ -2144,7 +2128,6 @@ function installer_all_menu_default_menu_links() {
   t('Backup and Migrate');
   t('Blocks');
   t('Clean URLs');
-  t('Community');
   t('Compose tips');
   t('Configuration');
   t('Contact');
@@ -2180,12 +2163,12 @@ function installer_all_menu_default_menu_links() {
   t('IP address blocking');
   t('Image styles');
   t('Image toolkit');
-  t('Install Invoice');
-  t('Install Line Item');
   t('Install List');
-  t('Installation');
   t('Log out');
   t('Logging and errors');
+  t('MH Community');
+  t('MH Install Invoice');
+  t('MH Installation');
   t('MH Unit');
   t('MH install list');
   t('Main menu');
@@ -2196,6 +2179,7 @@ function installer_all_menu_default_menu_links() {
   t('Media');
   t('Menu item');
   t('Menus');
+  t('Mh Install Line Item');
   t('Module filter');
   t('Modules');
   t('Names');
