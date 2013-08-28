@@ -652,34 +652,6 @@ function installer_test_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'cron_key';
-  $strongarm->value = 'rExXROhTXW5oLsBLWgOnAQaWCpKo_2pM6v1cysTs3zg';
-  $export['cron_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'cron_last';
-  $strongarm->value = 1377714430;
-  $export['cron_last'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'css_js_query_string';
-  $strongarm->value = 'ms953b';
-  $export['css_js_query_string'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ctools_last_cron';
-  $strongarm->value = 1377653294;
-  $export['ctools_last_cron'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'date_api_use_iso8601';
   $strongarm->value = 0;
   $export['date_api_use_iso8601'] = $strongarm;
@@ -919,52 +891,9 @@ function installer_test_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'drupal_css_cache_files';
-  $strongarm->value = array(
-    '823ba1006db72809515d2221cd02ec1075d7b49b0c07f49307b3a7930bfdd9e4' => 'public://css/css_pbm0lsQQJ7A7WCCIMgxLho6mI_kBNgznNUWmTWcnfoE.css',
-    '592db66916e1dd3416cbe95bcb34a5a68775eb0b7cf95e4c858671de35290cc9' => 'public://css/css_LS9OUalDR9-d_lCAvF3yUWjNU6yF8ZBm84jEPRvoyuQ.css',
-    'e6b8cacf90ebd9f1de465c4e80936ed94c14128e08c257e85147205357fde742' => 'public://css/css_h8bjh9c8lDMZnppNomHoEo009oiXoua2LFM5vHFnoPc.css',
-    'd267fd779e2ccb24d5c33844b784851bac3c3375b6c235866ae9f4eea2b44c9d' => 'public://css/css_uxq1Mfai-i7jZXUFFIf-XblFPOtImVIzVGx2RevWxfo.css',
-    'ebb3f433ad4107b1ac31e9d7de0f9a5d399040e9f82b6364211dcfaadea158c0' => 'public://css/css_ABmXGW3jlpNaBRmWVTJUFNYGbVFnilqYg_EngwXFiNc.css',
-    '7ec53d22f394f7340ea6d50b106350cccf6c4a592f7623faa0c03605032faf54' => 'public://css/css_g_UneL04I_By-JV5ryZJJWsDW1p5XeBj7jW6RhipZ48.css',
-    '18ff0bb5981d633fe5015d695c2df5b4ee52fe3786f0b588bc88a74eeae36981' => 'public://css/css_kRWECSfLYV73rB4oSGeChCGr0VA1MjpmKX3KHfKY52I.css',
-    '032d72e2b3124645b11e59c23005327dc2b450af6aaa6bf3cad34a6a65a9d774' => 'public://css/css_ZDWl28hdmeinIcKg-HMrN6uKD0nTMld5NlXLmm5MH2U.css',
-    'c6f99ca89c72e56a63df692c0c8413505122cabc5e0a06c362b13f273570bb50' => 'public://css/css_DfwQsr5kCfqncRdKGorTIO8ImSxF8BvIw3xRpBeAcZc.css',
-    'f05494fc83c9c8e2c74180252d01c9ea50f347143d606c3ea4a216ea0f24ce6e' => 'public://css/css_BR3eb_ceEn8jEAv9rAj8_gjpfC6A1BpCm8JGn5sUfnY.css',
-  );
-  $export['drupal_css_cache_files'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'drupal_http_request_fails';
   $strongarm->value = FALSE;
   $export['drupal_http_request_fails'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'drupal_js_cache_files';
-  $strongarm->value = array(
-    'a571bc4156d0556568d7f04bc93f81c658b2e21fef9bb8229528c077ce9a0ccf' => 'public://js/js_xAPl0qIk9eowy_iS9tNkCWXLUVoat94SQT48UBCFkyQ.js',
-    'a72b54bfeeed62645cc9cab6d6e008325ab7125608a029fe59325b0d6d657072' => 'public://js/js_n7Lw7PPN-xdTJcPryjHWWwcX-NVLfdUvNwg6eFAlc8I.js',
-    'ed6a1f179c402da4261db4db825c412ffaa1877de281c25b27449cd56370d5bb' => 'public://js/js_v3nh3Frvv8HCGmTUsps5jBQUshmMKDSVAKJhTIuRwG4.js',
-    '40c1fc95867150dbe50ce0195f1dd8422aa8a4b395178d27aac6bed9a4ad44e6' => 'public://js/js_1CQOsESnugQ90bcku2xXqz010FZUaLgVZ08JdPuTTl4.js',
-    'b0315f434688f750bdea6efea081530d0d06ea9b9875e56cd7b611e475f08cb1' => 'public://js/js_F00f9l-S43k4VULdF3DSVD29ZKiHw9rEtakmXsFoMDE.js',
-    '01b94b20398575d767eb5239ed68e307e2aaa1cb1e8dadb9743c72bad0df68df' => 'public://js/js_1OyL1pVbbYzCloiEdNkyjdeCO8F5qVT19oQ7vyYvUmY.js',
-    'dc589b931794ec265c5d55262b3866518c4b47f9ba802d69485397c7b7b7a77e' => 'public://js/js_lxVydVr4Yzd4ey6ghjlUuQZ0YBJxQbCaNG_6jShbc58.js',
-    '57ad948eb6ff9017cbc645bbe0af731a862124cab1172ccd947aa5690c8f63f9' => 'public://js/js_GPVgWt18W_RE6HpxIw-17ZAgahrN7E5BDAsDT2fzNKc.js',
-    '572d229946cfc94573d1b41240c9ee70531334413097fadfaa34b93467e6c7d6' => 'public://js/js_up_1V1Sb9wyuhUnfheAEl6xSyeO3O69hS0tAA9azCGI.js',
-    'd6c96e449ecbb2ffc5949c87b397d730aa2961dcbe4353aac8b25fd618c2bd5e' => 'public://js/js_bI-degwu6SS1Ws7lmp6SXSgTMJYC5cIw9-TyzvE7MgY.js',
-  );
-  $export['drupal_js_cache_files'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'drupal_private_key';
-  $strongarm->value = 'yxTed_961IwX3hSEO1_GVWq8N1OpsEvVtMbzOb2ChdY';
-  $export['drupal_private_key'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1023,48 +952,6 @@ function installer_test_strongarm() {
     ),
   );
   $export['entityreference:base-tables'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'features_codecache';
-  $strongarm->value = array(
-    'installer_all' => array(
-      'field_base' => '6bf4d77cdc8b486b38abc35b00527f76',
-      'field_instance' => 'b37db237fd3fbc295474eae20b1c7e72',
-      'filter' => 'e1ba718b9bb5189bfb3604dcce922498',
-      'menu_custom' => FALSE,
-      'menu_links' => FALSE,
-      'taxonomy' => '4c55f61591f6e0f32df061da6842eb55',
-      'user_role' => 'c11768055968d2b042d117163dffa673',
-      'user_permission' => '9a9ab27939d71b942ac461d869c52be0',
-      'dependencies' => 'da9c8167e14176138d03997b6737c5b8',
-      'variable' => '0c1c515d44da45342636a7da51d3e8d5',
-      'rules_config' => 'eea1373770abf6c58cab6efe7e307cce',
-      'node' => '4a7bd63caf3aca379e10dbd75df6469b',
-      'stylizer' => '1aa6b7484e459e522abcc252e3e69545',
-      'field_group' => 'c66e5d20b50e43e9ed52497870d2468e',
-      'views_view' => '309ea054d6d0ef7b5fdfbb15e0cbc6e1',
-      'page_manager_handlers' => '6631aa114f8f405f99ff948e07e53f52',
-      'page_manager_pages' => 'ea9a98cc8768e3ff38ee0b3bf8d76980',
-      'environment_indicator_environment' => '4537dededdd206e1b3b43bc12622b82f',
-    ),
-    'installer_test' => array(
-      'taxonomy' => '9576a7dd4a04f97de6a81ff2b15d2410',
-      'dependencies' => '4ee77974aa3d04aec73e71e5d96e64a8',
-      'variable' => '203edea075c8cf7882c5ea39ad3ef66c',
-      'field_base' => '62fe8d1266082ba7110daf54b8230ddf',
-      'field_instance' => 'e4ba008f9fc9090465812bea8bfa3e20',
-      'node' => '4a7bd63caf3aca379e10dbd75df6469b',
-      'filter' => 'e1ba718b9bb5189bfb3604dcce922498',
-      'stylizer' => '1aa6b7484e459e522abcc252e3e69545',
-      'user_permission' => '582c8d7c53b895794854d1b7beb610b7',
-      'page_manager_handlers' => '6631aa114f8f405f99ff948e07e53f52',
-      'page_manager_pages' => 'ea9a98cc8768e3ff38ee0b3bf8d76980',
-      'views_view' => '309ea054d6d0ef7b5fdfbb15e0cbc6e1',
-    ),
-  );
-  $export['features_codecache'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1323,13 +1210,6 @@ function installer_test_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'install_time';
-  $strongarm->value = 1366465422;
-  $export['install_time'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'maintenance_mode';
   $strongarm->value = 0;
   $export['maintenance_mode'] = $strongarm;
@@ -1361,75 +1241,6 @@ function installer_test_strongarm() {
   $strongarm->name = 'masquerade_test_user';
   $strongarm->value = 'test';
   $export['masquerade_test_user'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_expanded';
-  $strongarm->value = array(
-    0 => 'navigation',
-  );
-  $export['menu_expanded'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_masks';
-  $strongarm->value = array(
-    0 => 507,
-    1 => 506,
-    2 => 501,
-    3 => 253,
-    4 => 252,
-    5 => 251,
-    6 => 250,
-    7 => 245,
-    8 => 241,
-    9 => 127,
-    10 => 126,
-    11 => 125,
-    12 => 124,
-    13 => 123,
-    14 => 122,
-    15 => 121,
-    16 => 117,
-    17 => 112,
-    18 => 78,
-    19 => 77,
-    20 => 63,
-    21 => 62,
-    22 => 61,
-    23 => 60,
-    24 => 59,
-    25 => 58,
-    26 => 56,
-    27 => 44,
-    28 => 39,
-    29 => 31,
-    30 => 30,
-    31 => 29,
-    32 => 28,
-    33 => 27,
-    34 => 26,
-    35 => 24,
-    36 => 23,
-    37 => 21,
-    38 => 19,
-    39 => 15,
-    40 => 14,
-    41 => 13,
-    42 => 12,
-    43 => 11,
-    44 => 9,
-    45 => 8,
-    46 => 7,
-    47 => 6,
-    48 => 5,
-    49 => 3,
-    50 => 2,
-    51 => 1,
-  );
-  $export['menu_masks'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2346,13 +2157,6 @@ function installer_test_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'site_mail';
-  $strongarm->value = 'admin@installer.clearviewproperties.net';
-  $export['site_mail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
   $strongarm->value = 'Clear View Properties';
   $export['site_name'] = $strongarm;
@@ -2676,20 +2480,6 @@ function installer_test_strongarm() {
     ),
   );
   $export['theme_mhinstaller_settings'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'update_last_check';
-  $strongarm->value = 1377714442;
-  $export['update_last_check'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'update_last_email_notification';
-  $strongarm->value = 1377703180;
-  $export['update_last_email_notification'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
