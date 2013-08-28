@@ -45,6 +45,14 @@ function installer_all_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'management_company' => array(
+      'name' => t('Management Company'),
+      'base' => 'node_content',
+      'description' => t('The management company or owner of a manufactured home community.'),
+      'has_title' => '1',
+      'title_label' => t('Company Name'),
+      'help' => '',
+    ),
     'mh_community' => array(
       'name' => t('MH Community'),
       'base' => 'node_content',
@@ -83,6 +91,14 @@ function installer_all_node_info() {
       'description' => t('Information related to a Manufactured Home unit.'),
       'has_title' => '1',
       'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'mhc' => array(
+      'name' => t('MHC'),
+      'base' => 'node_content',
+      'description' => t('A Manufactured Home Community group.'),
+      'has_title' => '1',
+      'title_label' => t('Community Name'),
       'help' => '',
     ),
   );

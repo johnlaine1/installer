@@ -1038,6 +1038,23 @@ function installer_all_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__management_company';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__management_company'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__mh_community';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -1371,6 +1388,20 @@ function installer_all_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_management_company';
+  $strongarm->value = array();
+  $export['menu_options_management_company'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_mhc';
+  $strongarm->value = array();
+  $export['menu_options_mhc'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_mh_buyer';
   $strongarm->value = array();
   $export['menu_options_mh_buyer'] = $strongarm;
@@ -1469,6 +1500,20 @@ function installer_all_strongarm() {
   $strongarm->name = 'menu_parent_installation';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_installation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_management_company';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_management_company'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_mhc';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_mhc'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1585,6 +1630,24 @@ function installer_all_strongarm() {
     0 => 'status',
   );
   $export['node_options_installation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_management_company';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_management_company'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_mhc';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_mhc'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1715,6 +1778,20 @@ function installer_all_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_management_company';
+  $strongarm->value = '1';
+  $export['node_preview_management_company'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_mhc';
+  $strongarm->value = '1';
+  $export['node_preview_mhc'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_mh_community';
   $strongarm->value = '1';
   $export['node_preview_mh_community'] = $strongarm;
@@ -1760,6 +1837,20 @@ function installer_all_strongarm() {
   $strongarm->name = 'node_submitted_installation';
   $strongarm->value = 0;
   $export['node_submitted_installation'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_management_company';
+  $strongarm->value = 0;
+  $export['node_submitted_management_company'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_mhc';
+  $strongarm->value = 0;
+  $export['node_submitted_mhc'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
