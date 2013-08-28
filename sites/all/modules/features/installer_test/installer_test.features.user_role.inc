@@ -16,17 +16,5 @@ function installer_test_user_default_roles() {
     'weight' => 2,
   );
 
-  // Exported role: kingsley.
-  $roles['kingsley'] = array(
-    'name' => 'kingsley',
-    'weight' => 4,
-  );
-
-  // Exported role: western ventures.
-  $roles['western ventures'] = array(
-    'name' => 'western ventures',
-    'weight' => 3,
-  );
-
   return $roles;
 }

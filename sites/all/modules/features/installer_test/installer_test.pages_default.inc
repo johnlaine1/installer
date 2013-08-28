@@ -481,7 +481,10 @@ function installer_test_default_page_manager_pages() {
   $page->admin_title = 'group test';
   $page->admin_description = 'Want to limit the view to home installed in respective parks, eg rich can see his installs, kingsley can see thiers, etc';
   $page->path = 'group-test';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -681,6 +684,8 @@ function installer_test_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
@@ -1263,7 +1268,10 @@ function installer_test_default_page_manager_pages() {
   $page->admin_title = 'Install Info Edit';
   $page->admin_description = 'Edit install info';
   $page->path = 'install-info/%node/edit';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'node' => array(
@@ -1396,7 +1404,10 @@ function installer_test_default_page_manager_pages() {
   $page->admin_title = 'MH Install document list';
   $page->admin_description = '';
   $page->path = 'install-docs/%node';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'node' => array(
