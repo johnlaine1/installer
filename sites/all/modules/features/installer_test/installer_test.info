@@ -585,6 +585,7 @@ features[variable][] = page_manager_node_view_disabled
 features[variable][] = path_alias_whitelist
 features[variable][] = preprocess_css
 features[variable][] = preprocess_js
+features[variable][] = rules_empty_sets
 features[variable][] = save_continue_contact
 features[variable][] = save_continue_installation
 features[variable][] = save_continue_mh_buyer
