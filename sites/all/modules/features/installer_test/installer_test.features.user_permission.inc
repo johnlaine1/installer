@@ -707,34 +707,6 @@ function installer_test_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in mh_invoice_item'.
-  $permissions['delete terms in mh_invoice_item'] = array(
-    'name' => 'delete terms in mh_invoice_item',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in mh_lead_source'.
-  $permissions['delete terms in mh_lead_source'] = array(
-    'name' => 'delete terms in mh_lead_source',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in mh_seller_status'.
-  $permissions['delete terms in mh_seller_status'] = array(
-    'name' => 'delete terms in mh_seller_status',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'delete terms in organization'.
-  $permissions['delete terms in organization'] = array(
-    'name' => 'delete terms in organization',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in tags'.
   $permissions['delete terms in tags'] = array(
     'name' => 'delete terms in tags',
@@ -854,34 +826,6 @@ function installer_test_user_default_permissions() {
   // Exported permission: 'edit terms in mh_install_status'.
   $permissions['edit terms in mh_install_status'] = array(
     'name' => 'edit terms in mh_install_status',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in mh_invoice_item'.
-  $permissions['edit terms in mh_invoice_item'] = array(
-    'name' => 'edit terms in mh_invoice_item',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in mh_lead_source'.
-  $permissions['edit terms in mh_lead_source'] = array(
-    'name' => 'edit terms in mh_lead_source',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in mh_seller_status'.
-  $permissions['edit terms in mh_seller_status'] = array(
-    'name' => 'edit terms in mh_seller_status',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in organization'.
-  $permissions['edit terms in organization'] = array(
-    'name' => 'edit terms in organization',
     'roles' => array(),
     'module' => 'taxonomy',
   );

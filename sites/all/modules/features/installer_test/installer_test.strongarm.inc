@@ -288,13 +288,6 @@ function installer_test_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_pattern_taxonomy_term_mh_seller_status';
-  $strongarm->value = '';
-  $export['auto_entitylabel_pattern_taxonomy_term_mh_seller_status'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_php_node_contact';
   $strongarm->value = 1;
   $export['auto_entitylabel_php_node_contact'] = $strongarm;
@@ -319,20 +312,6 @@ function installer_test_strongarm() {
   $strongarm->name = 'auto_entitylabel_php_node_mh_unit';
   $strongarm->value = 0;
   $export['auto_entitylabel_php_node_mh_unit'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_php_taxonomy_term_mh_seller_status';
-  $strongarm->value = '';
-  $export['auto_entitylabel_php_taxonomy_term_mh_seller_status'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_taxonomy_term_mh_seller_status';
-  $strongarm->value = '';
-  $export['auto_entitylabel_taxonomy_term_mh_seller_status'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1127,13 +1106,6 @@ function installer_test_strongarm() {
     ),
   );
   $export['field_bundle_settings_taxonomy_term__mh_install_status'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_taxonomy_term__mh_seller_status';
-  $strongarm->value = array();
-  $export['field_bundle_settings_taxonomy_term__mh_seller_status'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
