@@ -905,120 +905,6 @@ function installer_all_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-management_company-body'
-  $field_instances['node-management_company-body'] = array(
-    'bundle' => 'management_company',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-management_company-group_group'
-  $field_instances['node-management_company-group_group'] = array(
-    'bundle' => 'management_company',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Determine if this is an OG group.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(
-          'field_name' => FALSE,
-        ),
-        'type' => 'og_group_subscribe',
-        'weight' => 0,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'display_label' => 1,
-    'entity_type' => 'node',
-    'field_name' => 'group_group',
-    'label' => 'Group',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_group_subscribe',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_group_subscribe',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-        'og_hide' => TRUE,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'node-mh_community-field_community_address'
   $field_instances['node-mh_community-field_community_address'] = array(
     'bundle' => 'mh_community',
@@ -3701,120 +3587,6 @@ function installer_all_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mhc-body'
-  $field_instances['node-mhc-body'] = array(
-    'bundle' => 'mhc',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-mhc-group_group'
-  $field_instances['node-mhc-group_group'] = array(
-    'bundle' => 'mhc',
-    'default_value' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Determine if this is an OG group.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(
-          'field_name' => FALSE,
-        ),
-        'type' => 'og_group_subscribe',
-        'weight' => 0,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'display_label' => 1,
-    'entity_type' => 'node',
-    'field_name' => 'group_group',
-    'label' => 'Group',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_group_subscribe',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_group_subscribe',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-        'og_hide' => TRUE,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 0,
-    ),
-  );
-
   // Exported field_instance: 'user-user-field_user_nickname'
   $field_instances['user-user-field_user_nickname'] = array(
     'bundle' => 'user',
@@ -3942,7 +3714,6 @@ function installer_all_field_default_field_instances() {
   t('Axles required');
   t('Bathrooms');
   t('Bedrooms');
-  t('Body');
   t('Business name');
   t('City permit');
   t('Community name');
@@ -3950,7 +3721,6 @@ function installer_all_field_default_field_instances() {
   t('Customer');
   t('Defects');
   t('Description');
-  t('Determine if this is an OG group.');
   t('Distance from front');
   t('Distance from the front of the home to the center of the door, in feet, can use decimals.(round to the nearest .5)');
   t('Documents');
@@ -3959,7 +3729,6 @@ function installer_all_field_default_field_instances() {
   t('Email');
   t('Evap cooler');
   t('Gas appliances');
-  t('Group');
   t('Heat type');
   t('Hitch status');
   t('If a Community name has been selected above, it is not necessary to fill out this section.');
