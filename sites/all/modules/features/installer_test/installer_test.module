@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Installer_test feature.
- */
-
-include_once 'installer_test.features.inc';
