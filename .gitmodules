@@ -1,3 +1,0 @@
-[submodule "sites/all/modules/features/mh_unit_content_type"]
-	path = sites/all/modules/features/mh_unit_content_type
-	url = git@github.com:johnlaine1/mh_unit_content_type.git
