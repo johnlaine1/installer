@@ -1,0 +1,20 @@
+diff --git field_group/field_group.module field_group/field_group.module
+index 18792a6..bc82fa1 100755
+--- field_group/field_group.module
++++ field_group/field_group.module
+@@ -1663,6 +1663,15 @@ function field_group_build_entity_groups(&$vars, $type) {
+     return $element;
+   }
+ 
++  // Skip the nesting and field_group functions if no fieldgroups.
++  // This could be because you don't see them in the UI or programmatically.
++  if (empty($element['#fieldgroups'])) {
++    return $element;
++  }
++
++  // Merge our #fieldgroups with #groups to avoid conflicts on fieldset types.
++  $element['#groups'] = array_merge($element['#groups'], $element['#fieldgroups']);
++
+   // Nest the fields in the corresponding field groups.
+   field_group_fields_nest($element, $nest_vars);
+ 
