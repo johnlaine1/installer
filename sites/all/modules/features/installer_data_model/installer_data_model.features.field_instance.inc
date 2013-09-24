@@ -10,6 +10,610 @@
 function installer_data_model_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_address-field__address_address'
+  $field_instances['field_collection_item-field_address-field__address_address'] = array(
+    'bundle' => 'field_address',
+    'default_value' => array(
+      0 => array(
+        'element_key' => 'field_collection_item|field_address|field__address_address|und|0',
+        'thoroughfare' => '',
+        'premise' => '',
+        'locality' => '',
+        'administrative_area' => '',
+        'postal_code' => '',
+        'country' => 'US',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field__address_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'US' => 'US',
+        ),
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_address-field_address_address_type'
+  $field_instances['field_collection_item-field_address-field_address_address_type'] = array(
+    'bundle' => 'field_address',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_address_address_type',
+    'label' => 'Address type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_line_item_test-field_item'
+  $field_instances['field_collection_item-field_line_item_test-field_item'] = array(
+    'bundle' => 'field_line_item_test',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_item',
+    'label' => 'Item',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_awning-field_awning_condition'
+  $field_instances['field_collection_item-field_mh_unit_awning-field_awning_condition'] = array(
+    'bundle' => 'field_mh_unit_awning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_awning_condition',
+    'label' => 'Condition',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_awning-field_awning_length'
+  $field_instances['field_collection_item-field_mh_unit_awning-field_awning_length'] = array(
+    'bundle' => 'field_mh_unit_awning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Round up to the nearest foot.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_awning_length',
+    'label' => 'Length',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_awning-field_awning_location'
+  $field_instances['field_collection_item-field_mh_unit_awning-field_awning_location'] = array(
+    'bundle' => 'field_mh_unit_awning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'As viewed standing in front of the home, looking at the home.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_awning_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_awning-field_awning_width'
+  $field_instances['field_collection_item-field_mh_unit_awning-field_awning_width'] = array(
+    'bundle' => 'field_mh_unit_awning',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Round up to the nearest foot.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_awning_width',
+    'label' => 'Width',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_door_location-field_door_loc_distance'
+  $field_instances['field_collection_item-field_mh_unit_door_location-field_door_loc_distance'] = array(
+    'bundle' => 'field_mh_unit_door_location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Distance from the front of the home to the center of the door, in feet, can use decimals.(round to the nearest .5)',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_door_loc_distance',
+    'label' => 'Distance from front',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_door_location-field_door_loc_which_side'
+  $field_instances['field_collection_item-field_mh_unit_door_location-field_door_loc_which_side'] = array(
+    'bundle' => 'field_mh_unit_door_location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'As viewed from the front of the home, looking at the home.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_door_loc_which_side',
+    'label' => 'Which side of home',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_door_location-field_door_loc_width_of_door'
+  $field_instances['field_collection_item-field_mh_unit_door_location-field_door_loc_width_of_door'] = array(
+    'bundle' => 'field_mh_unit_door_location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Width of the door in feet, can use decimals. (round to nearest .5)',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_door_loc_width_of_door',
+    'label' => 'Width of door',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_shed-field_mh_shed_condition'
+  $field_instances['field_collection_item-field_mh_unit_shed-field_mh_shed_condition'] = array(
+    'bundle' => 'field_mh_unit_shed',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mh_shed_condition',
+    'label' => 'Condition',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_shed-field_mh_shed_length'
+  $field_instances['field_collection_item-field_mh_unit_shed-field_mh_shed_length'] = array(
+    'bundle' => 'field_mh_unit_shed',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mh_shed_length',
+    'label' => 'Length',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_shed-field_mh_shed_trans'
+  $field_instances['field_collection_item-field_mh_unit_shed-field_mh_shed_trans'] = array(
+    'bundle' => 'field_mh_unit_shed',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mh_shed_trans',
+    'label' => 'Transportable',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_mh_unit_shed-field_mh_shed_width'
+  $field_instances['field_collection_item-field_mh_unit_shed-field_mh_shed_width'] = array(
+    'bundle' => 'field_mh_unit_shed',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_mh_shed_width',
+    'label' => 'Width',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_phone-field_phone_number'
+  $field_instances['field_collection_item-field_phone-field_phone_number'] = array(
+    'bundle' => 'field_phone',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'phone',
+        'settings' => array(),
+        'type' => 'phone',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_phone_number',
+    'label' => 'Phone number',
+    'required' => 0,
+    'settings' => array(
+      'ca_phone_parentheses' => 1,
+      'ca_phone_separator' => '-',
+      'phone_country_code' => 0,
+      'phone_default_country_code' => 1,
+      'phone_int_max_length' => 15,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'phone',
+      'settings' => array(),
+      'type' => 'phone_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_phone-field_phone_type'
+  $field_instances['field_collection_item-field_phone-field_phone_type'] = array(
+    'bundle' => 'field_phone',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_phone_type',
+    'label' => 'Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance: 'node-activity-field_activity_contact'
   $field_instances['node-activity-field_activity_contact'] = array(
     'bundle' => 'activity',
@@ -4406,11 +5010,216 @@ function installer_data_model_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'og_membership-og_membership_type_default-og_membership_request'
+  $field_instances['og_membership-og_membership_type_default-og_membership_request'] = array(
+    'bundle' => 'og_membership_type_default',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This is the text a user may send to the group administrators.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'og_membership_request',
+    'label' => 'Request message',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_nickname'
+  $field_instances['user-user-field_user_nickname'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the name you prefer for yourself.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_nickname',
+    'label' => 'Nickname',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_real_name'
+  $field_instances['user-user-field_user_real_name'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'name',
+        'settings' => array(
+          'format' => 'default',
+          'markup' => 0,
+          'multiple' => 'default',
+          'multiple_and' => 'text',
+          'multiple_delimiter' => ', ',
+          'multiple_delimiter_precedes_last' => 'never',
+          'multiple_el_al_first' => 1,
+          'multiple_el_al_min' => 3,
+          'output' => 'default',
+        ),
+        'type' => 'name_formatter',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_real_name',
+    'label' => 'Real name',
+    'required' => 1,
+    'settings' => array(
+      'component_css' => '',
+      'component_layout' => 'default',
+      'credentials_inline' => 0,
+      'field_type' => array(
+        'credentials' => 'text',
+        'family' => 'text',
+        'generational' => 'select',
+        'given' => 'text',
+        'middle' => 'text',
+        'title' => 'select',
+      ),
+      'generational_field' => 'select',
+      'inline_css' => array(
+        'credentials' => '',
+        'family' => '',
+        'generational' => '',
+        'given' => '',
+        'middle' => '',
+        'title' => '',
+      ),
+      'name_user_preferred' => 0,
+      'override_format' => 'default',
+      'show_component_required_marker' => 0,
+      'size' => array(
+        'credentials' => 35,
+        'family' => 20,
+        'generational' => 5,
+        'given' => 20,
+        'middle' => 20,
+        'title' => 6,
+      ),
+      'title_display' => array(
+        'credentials' => 'description',
+        'family' => 'description',
+        'generational' => 'description',
+        'given' => 'description',
+        'middle' => 'description',
+        'title' => 'description',
+      ),
+      'title_field' => 'select',
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'name',
+      'settings' => array(),
+      'type' => 'name_widget',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-og_user_node'
+  $field_instances['user-user-og_user_node'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'og_user_node',
+    'label' => 'Group membership',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'options_buttons',
+          ),
+          'default' => array(
+            'widget_type' => 'options_buttons',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => 0,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 9,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('A/C type');
   t('Address');
+  t('Address type');
   t('Appliances included');
+  t('As viewed from the front of the home, looking at the home.');
+  t('As viewed standing in front of the home, looking at the home.');
   t('Awning');
   t('Axle status');
   t('Axles required');
@@ -4420,6 +5229,7 @@ function installer_data_model_field_default_field_instances() {
   t('Business name');
   t('City permit');
   t('Community name');
+  t('Condition');
   t('Contact');
   t('Date');
   t('Date to view');
@@ -4428,6 +5238,8 @@ function installer_data_model_field_default_field_instances() {
   t('Description');
   t('Destination');
   t('Determine if this is an OG group.');
+  t('Distance from front');
+  t('Distance from the front of the home to the center of the door, in feet, can use decimals.(round to the nearest .5)');
   t('Documents');
   t('Documents (private)');
   t('Door location');
@@ -4436,6 +5248,7 @@ function installer_data_model_field_default_field_instances() {
   t('Gas appliances');
   t('Group');
   t('Group content visibility');
+  t('Group membership');
   t('Group roles and permissions');
   t('Group visibility');
   t('Groups audience');
@@ -4452,27 +5265,35 @@ function installer_data_model_field_default_field_instances() {
   t('Invoice date');
   t('Invoice number');
   t('Is seller negotiable?');
+  t('Item');
   t('Length');
   t('Length - actual');
   t('Line item');
   t('Line item test');
+  t('Location');
   t('Lot number');
   t('MH Unit');
   t('Make');
   t('Manufacturer');
   t('Name');
+  t('Nickname');
   t('Notes');
   t('Origin');
   t('Parcel number');
   t('Phone');
+  t('Phone number');
   t('Pictures');
   t('Pictures of the home after transport and install.');
   t('Pictures of the home in it\'s original location, before transport.');
+  t('Please enter the name you prefer for yourself.');
   t('Press and hold the ctrl key to select multiple items.');
   t('Price');
+  t('Real name');
   t('Related contacts');
+  t('Request message');
   t('Roof condition');
   t('Roof type');
+  t('Round up to the nearest foot.');
   t('Shed');
   t('Source');
   t('State permit');
@@ -4486,11 +5307,16 @@ function installer_data_model_field_default_field_instances() {
   t('The name of the community where the home is currently located.');
   t('These are public documents. Although a username and password are needed to enter this site, the URL to a file of this type will be viewable by all. For example, if you right click on a file of this type and select \'copy link address\' and then you email that link to a friend, they will be able to view it.');
   t('These files are private. They are only viewable by registered users of this site.');
+  t('This is the text a user may send to the group administrators.');
+  t('Transportable');
   t('Type');
   t('Unit');
   t('VIN');
+  t('Which side of home');
   t('Width');
   t('Width - actual');
+  t('Width of door');
+  t('Width of the door in feet, can use decimals. (round to nearest .5)');
   t('Year');
 
   return $field_instances;

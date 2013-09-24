@@ -39,6 +39,22 @@ function installer_data_model_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field__address_address'
+  $field_bases['field__address_address'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field__address_address',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'addressfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'addressfield',
+  );
+
   // Exported field_base: 'field_activity_contact'
   $field_bases['field_activity_contact'] = array(
     'active' => 1,
@@ -233,6 +249,127 @@ function installer_data_model_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_address_address_type'
+  $field_bases['field_address_address_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_address_address_type',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'address_type',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_awning_condition'
+  $field_bases['field_awning_condition'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_awning_condition',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_awning_length'
+  $field_bases['field_awning_length'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_awning_length',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_awning_location'
+  $field_bases['field_awning_location'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_awning_location',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'front' => 'Front',
+        'back' => 'Back',
+        'left' => 'Left',
+        'right' => 'Right',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_awning_width'
+  $field_bases['field_awning_width'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_awning_width',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_community_address'
@@ -530,6 +667,111 @@ Prof.',
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_door_loc_distance'
+  $field_bases['field_door_loc_distance'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_door_loc_distance',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_door_loc_which_side'
+  $field_bases['field_door_loc_which_side'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_door_loc_which_side',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'left' => 'Left',
+        'right' => 'Right',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_door_loc_width_of_door'
+  $field_bases['field_door_loc_width_of_door'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_door_loc_width_of_door',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+    ),
+    'translatable' => 0,
+    'type' => 'number_float',
+  );
+
+  // Exported field_base: 'field_item'
+  $field_bases['field_item'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_item',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'mh_install_line_item' => 'mh_install_line_item',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_line_item_test'
@@ -1442,6 +1684,90 @@ Prof.',
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_mh_shed_condition'
+  $field_bases['field_mh_shed_condition'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mh_shed_condition',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'good' => 'Good',
+        'bad' => 'Bad',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_mh_shed_length'
+  $field_bases['field_mh_shed_length'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mh_shed_length',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_mh_shed_trans'
+  $field_bases['field_mh_shed_trans'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mh_shed_trans',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'No',
+        1 => 'Yes',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'field_mh_shed_width'
+  $field_bases['field_mh_shed_width'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_mh_shed_width',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_mh_unit_ac_type'
   $field_bases['field_mh_unit_ac_type'] = array(
     'active' => 1,
@@ -2312,6 +2638,188 @@ Prof.',
     'type' => 'field_collection',
   );
 
+  // Exported field_base: 'field_phone_number'
+  $field_bases['field_phone_number'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_phone_number',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'phone',
+    'settings' => array(
+      'country' => 'ca',
+    ),
+    'translatable' => 0,
+    'type' => 'phone',
+  );
+
+  // Exported field_base: 'field_phone_type'
+  $field_bases['field_phone_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_phone_type',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'phone_number_type',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_user_nickname'
+  $field_bases['field_user_nickname'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_user_nickname',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_user_real_name'
+  $field_bases['field_user_real_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_user_real_name',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'family' => array(
+        0 => 'family',
+      ),
+      'given' => array(
+        0 => 'given',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'name',
+    'settings' => array(
+      'allow_family_or_given' => 0,
+      'autocomplete_separator' => array(
+        'credentials' => ', ',
+        'family' => ' -',
+        'generational' => ' ',
+        'given' => ' -',
+        'middle' => ' -',
+        'title' => ' ',
+      ),
+      'autocomplete_source' => array(
+        'credentials' => array(),
+        'family' => array(),
+        'generational' => array(
+          'generational' => 0,
+        ),
+        'given' => array(),
+        'middle' => array(),
+        'title' => array(
+          'title' => 'title',
+        ),
+      ),
+      'components' => array(
+        'credentials' => 0,
+        'family' => 'family',
+        'generational' => 0,
+        'given' => 'given',
+        'middle' => 0,
+        'title' => 0,
+      ),
+      'generational_options' => '-- --
+Jr.
+Sr.
+I
+II
+III
+IV
+V
+VI
+VII
+VIII
+IX
+X',
+      'labels' => array(
+        'credentials' => 'Credentials',
+        'family' => 'Last',
+        'generational' => 'Generational',
+        'given' => 'First',
+        'middle' => 'Middle',
+        'title' => 'Title',
+      ),
+      'max_length' => array(
+        'credentials' => 255,
+        'family' => 63,
+        'generational' => 15,
+        'given' => 63,
+        'middle' => 127,
+        'title' => 31,
+      ),
+      'minimum_components' => array(
+        'credentials' => 0,
+        'family' => 'family',
+        'generational' => 0,
+        'given' => 'given',
+        'middle' => 0,
+        'title' => 0,
+      ),
+      'sort_options' => array(
+        'generational' => 0,
+        'title' => 'title',
+      ),
+      'title_options' => '-- --
+Mr.
+Mrs.
+Miss
+Ms.
+Dr.
+Prof.',
+    ),
+    'translatable' => 0,
+    'type' => 'name',
+  );
+
   // Exported field_base: 'group_access'
   $field_bases['group_access'] = array(
     'active' => 1,
@@ -2439,6 +2947,35 @@ Prof.',
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'og_membership_request'
+  $field_bases['og_membership_request'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'og_membership',
+    ),
+    'field_name' => 'og_membership_request',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'og_roles_permissions'
   $field_bases['og_roles_permissions'] = array(
     'active' => 1,
@@ -2463,6 +3000,52 @@ Prof.',
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'og_user_node'
+  $field_bases['og_user_node'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'og_user_node',
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'og',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'og_behavior' => array(
+            'status' => TRUE,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'membership_type' => 'og_membership_type_default',
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(),
+      ),
+      'handler_submit' => 'Change handler',
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   return $field_bases;
