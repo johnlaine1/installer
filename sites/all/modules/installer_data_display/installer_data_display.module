@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Installer data display feature.
+ */
+
+include_once 'installer_data_display.features.inc';
