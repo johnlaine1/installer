@@ -1776,7 +1776,7 @@ function mh_unit_content_type_field_default_field_instances() {
     'bundle' => 'mh_unit',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The Vehicle Identification Number(s) of the home. There will be one for each half on a double wide home.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -2031,6 +2031,7 @@ function mh_unit_content_type_field_default_field_instances() {
   t('Round up to the nearest foot.');
   t('Shed');
   t('System amperage');
+  t('The Vehicle Identification Number(s) of the home. There will be one for each half on a double wide home.');
   t('The lot number of the home.');
   t('The name of the community where the home is currently located.');
   t('Transportable');
