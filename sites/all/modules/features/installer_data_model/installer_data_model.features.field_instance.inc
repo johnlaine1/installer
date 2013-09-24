@@ -2794,7 +2794,7 @@ function installer_data_model_field_default_field_instances() {
     'bundle' => 'mh_listing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Purchase price of the unit, including delivery and installation.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -5288,6 +5288,7 @@ function installer_data_model_field_default_field_instances() {
   t('Please enter the name you prefer for yourself.');
   t('Press and hold the ctrl key to select multiple items.');
   t('Price');
+  t('Purchase price of the unit, including delivery and installation.');
   t('Real name');
   t('Related contacts');
   t('Request message');
