@@ -18,10 +18,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Features',
-    'weight' => '8',
+    'weight' => '5',
     'children' => array(
       0 => 'field_mh_unit_ac_type',
       1 => 'field_mh_unit_heat_type',
@@ -49,10 +49,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Original Location',
-    'weight' => '5',
+    'weight' => '2',
     'children' => array(
       0 => 'field_mh_unit_address_orig',
       1 => 'field_mh_unit_mhc_name',
@@ -79,17 +79,13 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Pictures',
-    'weight' => '15',
+    'weight' => '12',
     'children' => array(
-      0 => 'field_mh_unit_pic_front',
-      1 => 'field_mh_unit_pic_other',
-      2 => 'field_mh_unit_pic_right',
-      3 => 'field_mh_unit_pic_left',
-      4 => 'field_mh_unit_pic_kitchen',
-      5 => 'field_mh_unit_pic_lr',
+      0 => 'field_mh_unit_pics_origin',
+      1 => 'field_mh_unit_pics_dest',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -111,10 +107,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Running gear',
-    'weight' => '12',
+    'weight' => '9',
     'children' => array(
       0 => 'field_mh_unit_hitch',
       1 => 'field_mh_unit_axles_required',
@@ -140,10 +136,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Specifications',
-    'weight' => '7',
+    'weight' => '4',
     'children' => array(
       0 => 'field_mh_unit_beds',
       1 => 'field_mh_unit_baths',
@@ -173,10 +169,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Awning',
-    'weight' => '10',
+    'weight' => '7',
     'children' => array(
       0 => 'field_mh_unit_awning',
     ),
@@ -200,10 +196,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Documents',
-    'weight' => '14',
+    'weight' => '11',
     'children' => array(
       0 => 'field_mh_unit_docs',
     ),
@@ -227,10 +223,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Notes',
-    'weight' => '13',
+    'weight' => '10',
     'children' => array(
       0 => 'field_mh_unit_defects',
       1 => 'field_mh_unit_notes',
@@ -255,10 +251,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Roof',
-    'weight' => '9',
+    'weight' => '6',
     'children' => array(
       0 => 'field_mh_unit_roof_type',
       1 => 'field_mh_unit_roof_cond',
@@ -283,10 +279,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Shed',
-    'weight' => '11',
+    'weight' => '8',
     'children' => array(
       0 => 'field_mh_unit_shed',
     ),
@@ -310,10 +306,10 @@ function mh_unit_content_type_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'mh_unit';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_test';
+  $field_group->parent_name = 'group_mh_unit';
   $field_group->data = array(
     'label' => 'Title Information',
-    'weight' => '6',
+    'weight' => '3',
     'children' => array(
       0 => 'field_mh_unit_year',
       1 => 'field_mh_unit_vin',
@@ -334,6 +330,41 @@ function mh_unit_content_type_field_group_info() {
     ),
   );
   $export['group_mh_unit_title|node|mh_unit|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_mh_unit|node|mh_unit|form';
+  $field_group->group_name = 'group_mh_unit';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'mh_unit';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'MH Unit',
+    'weight' => '1',
+    'children' => array(
+      0 => 'group_mh_location',
+      1 => 'group_mh_unit_roof',
+      2 => 'group_mh_title_info',
+      3 => 'group_mh_features',
+      4 => 'group_mh_run_gear',
+      5 => 'group_mh_pics',
+      6 => 'group_mh_unit_notes',
+      7 => 'group_mh_unit_shed',
+      8 => 'group_mh_unit_awning',
+      9 => 'group_mh_unit_title',
+      10 => 'group_mh_unit_docs',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-mh-unit field-group-tabs',
+      ),
+    ),
+  );
+  $export['group_mh_unit|node|mh_unit|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

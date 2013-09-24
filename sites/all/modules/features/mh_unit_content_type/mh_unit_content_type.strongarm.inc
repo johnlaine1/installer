@@ -58,6 +58,9 @@ function mh_unit_content_type_strongarm() {
       'short' => array(
         'custom_settings' => TRUE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

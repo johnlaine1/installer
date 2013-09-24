@@ -865,133 +865,13 @@ function mh_unit_content_type_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_mh_unit_pic_front'
-  $field_bases['field_mh_unit_pic_front'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_mh_unit_pic_front',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
-  // Exported field_base: 'field_mh_unit_pic_kitchen'
-  $field_bases['field_mh_unit_pic_kitchen'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_mh_unit_pic_kitchen',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
-  // Exported field_base: 'field_mh_unit_pic_left'
-  $field_bases['field_mh_unit_pic_left'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_mh_unit_pic_left',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
-  // Exported field_base: 'field_mh_unit_pic_lr'
-  $field_bases['field_mh_unit_pic_lr'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_mh_unit_pic_lr',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
-    'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'image',
-    'settings' => array(
-      'default_image' => 0,
-      'uri_scheme' => 'public',
-    ),
-    'translatable' => 0,
-    'type' => 'image',
-  );
-
-  // Exported field_base: 'field_mh_unit_pic_other'
-  $field_bases['field_mh_unit_pic_other'] = array(
+  // Exported field_base: 'field_mh_unit_pics_dest'
+  $field_bases['field_mh_unit_pics_dest'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_mh_unit_pic_other',
+    'field_name' => 'field_mh_unit_pics_dest',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -1015,13 +895,13 @@ function mh_unit_content_type_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_mh_unit_pic_right'
-  $field_bases['field_mh_unit_pic_right'] = array(
+  // Exported field_base: 'field_mh_unit_pics_origin'
+  $field_bases['field_mh_unit_pics_origin'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_mh_unit_pic_right',
+    'field_name' => 'field_mh_unit_pics_origin',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(

@@ -109,7 +109,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 0,
     ),
@@ -220,7 +222,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 0,
     ),
@@ -291,7 +295,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 4,
     ),
@@ -425,7 +431,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 15,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -450,7 +456,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 18,
     ),
@@ -477,7 +485,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 20,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -530,7 +538,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 31,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -576,7 +584,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 27,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -601,7 +609,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 14,
     ),
@@ -618,7 +628,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 23,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -660,7 +670,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 33,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -685,7 +695,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 17,
     ),
@@ -702,7 +714,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 30,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -727,7 +739,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 18,
     ),
@@ -771,7 +785,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 13,
     ),
@@ -815,7 +831,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 12,
     ),
@@ -832,7 +850,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 25,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -876,7 +894,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 34,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -922,16 +940,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 31,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'short' => array(
         'label' => 'above',
@@ -973,7 +984,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 17,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -998,7 +1009,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 15,
     ),
@@ -1015,7 +1028,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 18,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1040,7 +1053,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 17,
     ),
@@ -1057,7 +1072,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 16,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1082,7 +1097,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 16,
     ),
@@ -1099,7 +1116,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 29,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1124,7 +1141,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 16,
     ),
@@ -1184,7 +1203,7 @@ function mh_unit_content_type_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => 6,
     ),
   );
 
@@ -1199,7 +1218,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 22,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1245,7 +1264,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 36,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1291,7 +1310,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 32,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1321,7 +1340,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 3,
     ),
   );
 
@@ -1368,7 +1387,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 4,
     ),
   );
 
@@ -1383,7 +1402,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 35,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1429,7 +1448,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 26,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1474,7 +1493,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 14,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1504,25 +1523,21 @@ function mh_unit_content_type_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-mh_unit-field_mh_unit_pic_front'
-  $field_instances['node-mh_unit-field_mh_unit_pic_front'] = array(
+  // Exported field_instance: 'node-mh_unit-field_mh_unit_pics_dest'
+  $field_instances['node-mh_unit-field_mh_unit_pics_dest'] = array(
     'bundle' => 'mh_unit',
     'deleted' => 0,
-    'description' => 'Picture of the front of the home.',
+    'description' => 'Pictures of the home after transport and install.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 32,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'short' => array(
         'label' => 'above',
@@ -1538,8 +1553,8 @@ function mh_unit_content_type_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_mh_unit_pic_front',
-    'label' => 'Front',
+    'field_name' => 'field_mh_unit_pics_dest',
+    'label' => 'Destination',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -1554,142 +1569,35 @@ function mh_unit_content_type_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'multiupload_imagefield_widget',
       'settings' => array(
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'image_image',
-      'weight' => 27,
+      'type' => 'image_miw',
+      'weight' => 33,
     ),
   );
 
-  // Exported field_instance: 'node-mh_unit-field_mh_unit_pic_kitchen'
-  $field_instances['node-mh_unit-field_mh_unit_pic_kitchen'] = array(
+  // Exported field_instance: 'node-mh_unit-field_mh_unit_pics_origin'
+  $field_instances['node-mh_unit-field_mh_unit_pics_origin'] = array(
     'bundle' => 'mh_unit',
     'deleted' => 0,
-    'description' => 'Picture of the kitchen area.',
+    'description' => 'Pictures of the home in it\'s original location, before transport.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
+        'module' => 'galleryformatter',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'link_to_full' => 1,
+          'link_to_full_style' => 0,
+          'linking_method' => 'show_full_link',
+          'modal' => 'colorbox',
+          'slide_style' => 'galleryformatter_slide',
+          'style' => 'Greenarrows',
+          'thumb_style' => 'thumbnail',
         ),
-        'type' => 'image',
-        'weight' => 36,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mh_unit_pic_kitchen',
-    'label' => 'Kitchen',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'mh_unit_pics',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '640x480',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 30,
-    ),
-  );
-
-  // Exported field_instance: 'node-mh_unit-field_mh_unit_pic_left'
-  $field_instances['node-mh_unit-field_mh_unit_pic_left'] = array(
-    'bundle' => 'mh_unit',
-    'deleted' => 0,
-    'description' => 'Picture taken from the front of the home and to the left.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 35,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mh_unit_pic_left',
-    'label' => 'Left side',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'mh_unit_pics',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '640x480',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 29,
-    ),
-  );
-
-  // Exported field_instance: 'node-mh_unit-field_mh_unit_pic_lr'
-  $field_instances['node-mh_unit-field_mh_unit_pic_lr'] = array(
-    'bundle' => 'mh_unit',
-    'deleted' => 0,
-    'description' => 'Picture of the living room area.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'type' => 'galleryformatter_default',
         'weight' => 37,
       ),
       'short' => array(
@@ -1706,64 +1614,8 @@ function mh_unit_content_type_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_mh_unit_pic_lr',
-    'label' => 'Living room',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'mh_unit_pics',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '640x480',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-mh_unit-field_mh_unit_pic_other'
-  $field_instances['node-mh_unit-field_mh_unit_pic_other'] = array(
-    'bundle' => 'mh_unit',
-    'deleted' => 0,
-    'description' => 'All other pictures.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 33,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mh_unit_pic_other',
-    'label' => 'Other',
+    'field_name' => 'field_mh_unit_pics_origin',
+    'label' => 'Origin',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -1788,62 +1640,6 @@ function mh_unit_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mh_unit-field_mh_unit_pic_right'
-  $field_instances['node-mh_unit-field_mh_unit_pic_right'] = array(
-    'bundle' => 'mh_unit',
-    'deleted' => 0,
-    'description' => 'Picture taken from the front of the home and to the right.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 34,
-      ),
-      'short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_mh_unit_pic_right',
-    'label' => 'Right side',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => 'mh_unit_pics',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '640x480',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 28,
-    ),
-  );
-
   // Exported field_instance: 'node-mh_unit-field_mh_unit_roof_cond'
   $field_instances['node-mh_unit-field_mh_unit_roof_cond'] = array(
     'bundle' => 'mh_unit',
@@ -1855,7 +1651,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 28,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1900,7 +1696,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 24,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -1925,7 +1721,9 @@ function mh_unit_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 18,
     ),
@@ -1942,7 +1740,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 19,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -2016,7 +1814,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'size' => 25,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 1,
     ),
   );
 
@@ -2074,7 +1872,7 @@ function mh_unit_content_type_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 11,
+      'weight' => 5,
     ),
   );
 
@@ -2089,7 +1887,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 21,
       ),
       'short' => array(
         'label' => 'hidden',
@@ -2178,6 +1976,7 @@ function mh_unit_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'apply_chosen' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -2186,7 +1985,7 @@ function mh_unit_content_type_field_default_field_instances() {
         'year_range' => '1960:+0',
       ),
       'type' => 'date_select',
-      'weight' => 8,
+      'weight' => 2,
     ),
   );
 
@@ -2194,7 +1993,6 @@ function mh_unit_content_type_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A/C type');
   t('Address');
-  t('All other pictures.');
   t('Appliances included');
   t('As viewed from the front of the home, looking at the home.');
   t('As viewed standing in front of the home, looking at the home.');
@@ -2206,35 +2004,28 @@ function mh_unit_content_type_field_default_field_instances() {
   t('Community name');
   t('Condition');
   t('Defects');
+  t('Destination');
   t('Distance from front');
   t('Distance from the front of the home to the center of the door, in feet, can use decimals.(round to the nearest .5)');
   t('Documents');
   t('Door location');
   t('Evap cooler');
-  t('Front');
   t('Gas appliances');
   t('Heat type');
   t('Hitch status');
   t('If a Community name has been selected above, it is not necessary to fill out this section.');
-  t('Kitchen');
-  t('Left side');
   t('Length');
   t('Length - actual');
-  t('Living room');
   t('Location');
   t('Lot number');
   t('Make');
   t('Manufacturer');
   t('Notes');
-  t('Other');
+  t('Origin');
   t('Parcel number');
-  t('Picture of the front of the home.');
-  t('Picture of the kitchen area.');
-  t('Picture of the living room area.');
-  t('Picture taken from the front of the home and to the left.');
-  t('Picture taken from the front of the home and to the right.');
+  t('Pictures of the home after transport and install.');
+  t('Pictures of the home in it\'s original location, before transport.');
   t('Press and hold the ctrl key to select multiple items.');
-  t('Right side');
   t('Roof condition');
   t('Roof type');
   t('Round up to the nearest foot.');
