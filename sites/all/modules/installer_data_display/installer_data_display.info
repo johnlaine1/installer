@@ -29,6 +29,7 @@ features[stylizer][] = first_try
 features[views_view][] = homes_installed
 features[views_view][] = mh_listings_list
 features[views_view][] = mh_sellers
+features[views_view][] = og_all_user_group_content_clone
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][og] = og
 project path = sites/all/modules
