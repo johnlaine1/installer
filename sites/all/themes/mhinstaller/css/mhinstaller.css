@@ -2,3 +2,9 @@
 .mh-install-list table caption {
   font-size: 1.5em;
 }
+
+/* Remove all panel separators */
+.node-mhc-lot .panel-separator {
+  height: 0px;
+}
+
