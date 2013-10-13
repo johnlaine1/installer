@@ -1331,7 +1331,7 @@ function installer_data_model_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'group_group',
     'label' => 'Group',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1348,10 +1348,11 @@ function installer_data_model_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'display_label' => 0,
-        'og_hide' => TRUE,
+        'og_hide' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 2,
@@ -2767,7 +2768,7 @@ function installer_data_model_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -2816,8 +2817,14 @@ function installer_data_model_field_default_field_instances() {
       ),
       'teaser' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
         'weight' => 0,
       ),
     ),
@@ -2867,7 +2874,7 @@ function installer_data_model_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -2895,7 +2902,7 @@ function installer_data_model_field_default_field_instances() {
     'bundle' => 'mh_listing',
     'default_value' => array(
       0 => array(
-        'value' => 0,
+        'value' => 2,
       ),
     ),
     'deleted' => 0,
@@ -2918,13 +2925,13 @@ function installer_data_model_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
     'field_name' => 'group_content_access',
     'label' => 'Group content visibility',
-    'required' => TRUE,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2939,6 +2946,7 @@ function installer_data_model_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 0,
@@ -2973,7 +2981,7 @@ function installer_data_model_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',

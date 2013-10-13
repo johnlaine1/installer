@@ -32,6 +32,7 @@ function installer_data_display_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -44,7 +45,6 @@ function installer_data_display_views_default_views() {
   );
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
-    'nid_1' => 'nid_1',
     'field_mh_install_id' => 'field_mh_install_id',
     'field_community_name' => 'field_community_name',
     'field_mh_install_lot_num' => 'field_mh_install_lot_num',
@@ -54,23 +54,15 @@ function installer_data_display_views_default_views() {
     'field_mh_unit_length' => 'field_mh_unit_width',
     'field_mh_unit_beds' => 'field_mh_unit_beds',
     'field_mh_unit_baths' => 'field_mh_unit_baths',
-    'field_mh_install_invoice_amount' => 'field_mh_install_invoice_amount',
-    'field_mh_install_status' => 'field_mh_install_status',
     'field_mh_install_date' => 'field_mh_install_date',
+    'field_mh_install_status' => 'field_mh_install_status',
+    'field_mh_install_invoice_amount' => 'field_mh_install_invoice_amount',
+    'field_mh_install_invoice_status' => 'field_mh_install_invoice_status',
     'nothing' => 'nothing',
-    'nothing_1' => 'nothing_1',
-    'nothing_2' => 'nothing_1',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid_1' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -116,7 +108,7 @@ function installer_data_display_views_default_views() {
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
-      'separator' => '  X  ',
+      'separator' => 'X',
       'empty_column' => 0,
     ),
     'field_mh_unit_length' => array(
@@ -140,20 +132,6 @@ function installer_data_display_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_mh_install_invoice_amount' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_mh_install_status' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'desc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'field_mh_install_date' => array(
       'sortable' => 1,
       'default_sort_order' => 'desc',
@@ -161,17 +139,26 @@ function installer_data_display_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'nothing' => array(
+    'field_mh_install_status' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'nothing_1' => array(
+    'field_mh_install_invoice_amount' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
-      'separator' => '     /     ',
+      'separator' => '',
       'empty_column' => 0,
     ),
-    'nothing_2' => array(
+    'field_mh_install_invoice_status' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -190,6 +177,14 @@ function installer_data_display_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = 'Click on an ID number for more information about an installation. 
 Click on Documents for documents related to an installation.';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No Matches';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Sorry, there are no matches to your search criteria.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Relationship: MH Unit */
   $handler->display->display_options['relationships']['field_mh_install_unit_target_id']['id'] = 'field_mh_install_unit_target_id';
   $handler->display->display_options['relationships']['field_mh_install_unit_target_id']['table'] = 'field_data_field_mh_install_unit';
@@ -376,6 +371,7 @@ Click on Documents for documents related to an installation.';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
@@ -562,7 +558,7 @@ Click on Documents for documents related to an installation.';
   $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['vocabulary'] = 'mh_invoice_status';
   $handler->display->display_options['path'] = 'home-install-list';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Install List';
+  $handler->display->display_options['menu']['title'] = 'Installations';
   $handler->display->display_options['menu']['description'] = 'A list of Manufactured Homes that have been installed';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -754,6 +750,60 @@ Click on Documents for documents related to an installation.';
   $handler->display->display_options['filters']['type']['value'] = array(
     'mh_installation' => 'mh_installation',
   );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mh_installation' => 'mh_installation',
+  );
+  /* Filter criterion: Content: Installation Status (field_mh_install_status) */
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['id'] = 'field_mh_install_status_tid';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['table'] = 'field_data_field_mh_install_status';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['field'] = 'field_mh_install_status_tid';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['expose']['operator_id'] = 'field_mh_install_status_tid_op';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['expose']['label'] = 'Installation Status';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['expose']['operator'] = 'field_mh_install_status_tid_op';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['expose']['identifier'] = 'field_mh_install_status_tid';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    14 => 0,
+  );
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_mh_install_status_tid']['vocabulary'] = 'mh_install_status';
+  /* Filter criterion: Content: Invoice Status (field_mh_install_invoice_status) */
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['id'] = 'field_mh_install_invoice_status_tid';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['table'] = 'field_data_field_mh_install_invoice_status';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['field'] = 'field_mh_install_invoice_status_tid';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['expose']['operator_id'] = 'field_mh_install_invoice_status_tid_op';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['expose']['label'] = 'Invoice Status ';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['expose']['operator'] = 'field_mh_install_invoice_status_tid_op';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['expose']['identifier'] = 'field_mh_install_invoice_status_tid';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    14 => 0,
+  );
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_mh_install_invoice_status_tid']['vocabulary'] = 'mh_invoice_status';
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['homes_installed'] = $view;
 
   $view = new view();
@@ -778,7 +828,7 @@ Click on Documents for documents related to an installation.';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -803,6 +853,16 @@ Click on Documents for documents related to an installation.';
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Price */
+  $handler->display->display_options['fields']['field_mh_listing_price']['id'] = 'field_mh_listing_price';
+  $handler->display->display_options['fields']['field_mh_listing_price']['table'] = 'field_data_field_mh_listing_price';
+  $handler->display->display_options['fields']['field_mh_listing_price']['field'] = 'field_mh_listing_price';
+  $handler->display->display_options['fields']['field_mh_listing_price']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -822,6 +882,9 @@ Click on Documents for documents related to an installation.';
   $handler->display->display_options['filters']['type']['value'] = array(
     'mh_listing' => 'mh_listing',
   );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $export['mh_listings_list'] = $view;
 
   $view = new view();
