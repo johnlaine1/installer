@@ -28,4 +28,10 @@ function glue_form_alter(&$form, &$form_state, $form_id) {
   $form['field_mh_unit_shed']['#collapsible'] = TRUE;
 }
 
-
+/**
+ * Implements hook_views_pre_render().
+ */
+function glue_views_pre_render(&$view) {
+  rules_invoke_event('glue_event_view_render', $view->name);
+  
+}

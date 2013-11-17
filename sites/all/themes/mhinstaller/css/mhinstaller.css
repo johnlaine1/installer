@@ -4,7 +4,18 @@
 }
 
 /* Remove all panel separators */
-.node-mhc-lot .panel-separator {
+.node-mhc-lot .panel-separator,
+.node-title-service .panel-separator {
   height: 0px;
+}
+
+.pane-mhc-lot-configuration {
+  padding-bottom: 10px;
+}
+
+.pane-mhc-lot-configuration .pane-title {
+  margin-top: 0px;
+  padding-bottom: 5px;
+  text-align: center;
 }
 
