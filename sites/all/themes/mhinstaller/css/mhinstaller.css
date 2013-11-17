@@ -1,3 +1,8 @@
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 /* ----------------- "MH Install List" view -----------------------*/
 .mh-install-list table caption {
   font-size: 1.5em;
