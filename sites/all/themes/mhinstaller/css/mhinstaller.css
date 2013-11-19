@@ -4,7 +4,7 @@ body {
 }
 
 /* ----------------- "MH Install List" view -----------------------*/
-.mh-install-list table caption {
+.view-mh-installations table caption {
   font-size: 1.5em;
 }
 
