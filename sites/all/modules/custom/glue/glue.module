@@ -18,14 +18,14 @@ function glue_entity_info_alter(&$entity_info) {
   );
 }
 
-
-
-
 /**
  * Implements hook_form_alter().
  */
 function glue_form_alter(&$form, &$form_state, $form_id) {
   $form['field_mh_unit_shed']['#collapsible'] = TRUE;
+  //dsm($form);
+  //dsm($form_state);
+  //dsm($form_id);
 }
 
 /**
@@ -33,5 +33,35 @@ function glue_form_alter(&$form, &$form_state, $form_id) {
  */
 function glue_views_pre_render(&$view) {
   rules_invoke_event('glue_event_view_render', $view->name);
+  //dsm($view);
+  
   
 }
+
+/**
+ * Impements template_preprocess_views_view_table
+ */
+function glue_preprocess_views_view_table(&$vars) {
+  $view = $vars['view'];  
+  
+  if ($view->name == 'vacant_lots') {
+    drupal_add_css(drupal_get_path('module', 'glue') . '/css/glue.css');
+    $num_results = count($vars['result']);
+    // Adds a class of 'warning-length' if the restricted buildable length of 
+    // the lot is shorter than the total buildable length of the lot.
+      for ($i=0; $i<$num_results; $i++) {
+        $length = $view->result[$i]->field_field_mhc_lot_build_length_2[0]['raw']['value'];
+        $length_restricted = $view->result[$i]->field_field_mhc_lot_build_length[0]['raw']['value'];
+          if ($length_restricted < $length) {
+          $vars['field_classes']['field_mhc_lot_build_length_2'][$i] .= ' warning-length';
+        }
+      }
+  }
+  //dsm($vars);
+  //dsm($num_results);
+}
+
+
+
+
+
