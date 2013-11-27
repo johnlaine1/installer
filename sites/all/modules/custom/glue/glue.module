@@ -66,10 +66,29 @@ function glue_preprocess_views_view_table(&$vars) {
  */
 function glue_views_api() {
   return array(
-    'api' => 3,
-    'path' => drupal_get_path('module', 'glue') . '/includes/views',
+    'api' => 3,   
   );
 }
 
-
+/**
+ * Implements hook_views_default_views().
+ * @return array a list of views
+ */
+function glue_views_default_views() {
+  // Get exported view files
+  $module_path = drupal_get_path('module', 'glue');
+  $files = file_scan_directory($module_path . '/views', '/.inc/');
+ 
+  $views = array();
+ 
+  foreach ($files as $file_path => $file) {
+    require $file_path;
+ 
+    if (isset($view)) {
+      $views[$view->name] = $view;
+    }
+  }
+ 
+  return $views;
+}
 
