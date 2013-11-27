@@ -1279,14 +1279,14 @@ $handler->display->display_options['fields']['field_mhc_lot_plot_width']['settin
   'scale' => '2',
   'prefix_suffix' => 1,
 );
-/* Field: Content: Plot map length */
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['id'] = 'field_mhc_lot_plot_length';
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['table'] = 'field_data_field_mhc_lot_plot_length';
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['field'] = 'field_mhc_lot_plot_length';
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['label'] = 'Map length';
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['element_type'] = 'span';
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['element_label_type'] = 'strong';
-$handler->display->display_options['fields']['field_mhc_lot_plot_length']['settings'] = array(
+/* Field: Content: Buildable width fixed */
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['id'] = 'field_mhc_lot_build_width_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['table'] = 'field_data_field_mhc_lot_build_width_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['field'] = 'field_mhc_lot_build_width_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['label'] = 'Buildable width ';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['settings'] = array(
   'thousand_separator' => ' ',
   'decimal_separator' => '.',
   'scale' => '2',
@@ -1304,13 +1304,14 @@ $handler->display->display_options['fields']['field_mhc_lot_build_width']['setti
   'scale' => '2',
   'prefix_suffix' => 1,
 );
-/* Field: Content: Buildable length restricted */
-$handler->display->display_options['fields']['field_mhc_lot_build_length']['id'] = 'field_mhc_lot_build_length';
-$handler->display->display_options['fields']['field_mhc_lot_build_length']['table'] = 'field_data_field_mhc_lot_build_length';
-$handler->display->display_options['fields']['field_mhc_lot_build_length']['field'] = 'field_mhc_lot_build_length';
-$handler->display->display_options['fields']['field_mhc_lot_build_length']['element_type'] = 'span';
-$handler->display->display_options['fields']['field_mhc_lot_build_length']['element_label_type'] = 'strong';
-$handler->display->display_options['fields']['field_mhc_lot_build_length']['settings'] = array(
+/* Field: Content: Plot map length */
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['id'] = 'field_mhc_lot_plot_length';
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['table'] = 'field_data_field_mhc_lot_plot_length';
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['field'] = 'field_mhc_lot_plot_length';
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['label'] = 'Map length';
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_plot_length']['settings'] = array(
   'thousand_separator' => ' ',
   'decimal_separator' => '.',
   'scale' => '2',
@@ -1328,14 +1329,13 @@ $handler->display->display_options['fields']['field_mhc_lot_build_length_2']['se
   'scale' => '2',
   'prefix_suffix' => 1,
 );
-/* Field: Content: Buildable width fixed */
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['id'] = 'field_mhc_lot_build_width_2';
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['table'] = 'field_data_field_mhc_lot_build_width_2';
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['field'] = 'field_mhc_lot_build_width_2';
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['label'] = 'Buildable width ';
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_type'] = 'span';
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_label_type'] = 'strong';
-$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['settings'] = array(
+/* Field: Content: Buildable length restricted */
+$handler->display->display_options['fields']['field_mhc_lot_build_length']['id'] = 'field_mhc_lot_build_length';
+$handler->display->display_options['fields']['field_mhc_lot_build_length']['table'] = 'field_data_field_mhc_lot_build_length';
+$handler->display->display_options['fields']['field_mhc_lot_build_length']['field'] = 'field_mhc_lot_build_length';
+$handler->display->display_options['fields']['field_mhc_lot_build_length']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_build_length']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_build_length']['settings'] = array(
   'thousand_separator' => ' ',
   'decimal_separator' => '.',
   'scale' => '2',
@@ -1497,6 +1497,89 @@ $handler->display->display_options['filters']['field_mhc_lot_status_tid']['field
 $handler->display->display_options['filters']['field_mhc_lot_status_tid']['value'] = array(
   49 => '49',
 );
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['type'] = 'select';
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['vocabulary'] = 'mhc_lot_status';
+$handler->display->display_options['allow']['use_pager'] = 0;
+$handler->display->display_options['allow']['items_per_page'] = 0;
+$handler->display->display_options['allow']['offset'] = 0;
+$handler->display->display_options['allow']['link_to_view'] = 0;
+$handler->display->display_options['allow']['more_link'] = 0;
+$handler->display->display_options['allow']['path_override'] = 0;
+$handler->display->display_options['allow']['title_override'] = 'title_override';
+$handler->display->display_options['allow']['exposed_form'] = 0;
+$handler->display->display_options['allow']['fields_override'] = 0;
+$handler->display->display_options['argument_input'] = array(
+  'nid' => array(
+    'type' => 'context',
+    'context' => 'entity:node.nid',
+    'context_optional' => 0,
+    'panel' => '0',
+    'fixed' => '',
+    'label' => 'Content: Nid',
+  ),
+);
+
+/* Display: Other info */
+$handler = $view->new_display('panel_pane', 'Other info', 'panel_pane_other_info');
+$handler->display->display_options['defaults']['style_plugin'] = FALSE;
+$handler->display->display_options['style_plugin'] = 'default';
+$handler->display->display_options['defaults']['style_options'] = FALSE;
+$handler->display->display_options['defaults']['row_plugin'] = FALSE;
+$handler->display->display_options['row_plugin'] = 'fields';
+$handler->display->display_options['defaults']['row_options'] = FALSE;
+$handler->display->display_options['defaults']['header'] = FALSE;
+$handler->display->display_options['defaults']['fields'] = FALSE;
+/* Field: Content: Nid */
+$handler->display->display_options['fields']['nid']['id'] = 'nid';
+$handler->display->display_options['fields']['nid']['table'] = 'node';
+$handler->display->display_options['fields']['nid']['field'] = 'nid';
+$handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Content: Status */
+$handler->display->display_options['fields']['field_mhc_lot_status']['id'] = 'field_mhc_lot_status';
+$handler->display->display_options['fields']['field_mhc_lot_status']['table'] = 'field_data_field_mhc_lot_status';
+$handler->display->display_options['fields']['field_mhc_lot_status']['field'] = 'field_mhc_lot_status';
+$handler->display->display_options['fields']['field_mhc_lot_status']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_status']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_status']['type'] = 'taxonomy_term_reference_plain';
+/* Field: Content: Gas */
+$handler->display->display_options['fields']['field_mhc_lot_gas']['id'] = 'field_mhc_lot_gas';
+$handler->display->display_options['fields']['field_mhc_lot_gas']['table'] = 'field_data_field_mhc_lot_gas';
+$handler->display->display_options['fields']['field_mhc_lot_gas']['field'] = 'field_mhc_lot_gas';
+$handler->display->display_options['fields']['field_mhc_lot_gas']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_gas']['element_label_type'] = 'strong';
+/* Field: Content: Configuration */
+$handler->display->display_options['fields']['field_mhc_lot_config']['id'] = 'field_mhc_lot_config';
+$handler->display->display_options['fields']['field_mhc_lot_config']['table'] = 'field_data_field_mhc_lot_config';
+$handler->display->display_options['fields']['field_mhc_lot_config']['field'] = 'field_mhc_lot_config';
+$handler->display->display_options['fields']['field_mhc_lot_config']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_config']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_config']['type'] = 'taxonomy_term_reference_plain';
+$handler->display->display_options['fields']['field_mhc_lot_config']['delta_offset'] = '0';
+$handler->display->display_options['defaults']['filter_groups'] = FALSE;
+$handler->display->display_options['defaults']['filters'] = FALSE;
+/* Filter criterion: Content: Published */
+$handler->display->display_options['filters']['status']['id'] = 'status';
+$handler->display->display_options['filters']['status']['table'] = 'node';
+$handler->display->display_options['filters']['status']['field'] = 'status';
+$handler->display->display_options['filters']['status']['value'] = 1;
+$handler->display->display_options['filters']['status']['group'] = 1;
+$handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+/* Filter criterion: Content: Type */
+$handler->display->display_options['filters']['type']['id'] = 'type';
+$handler->display->display_options['filters']['type']['table'] = 'node';
+$handler->display->display_options['filters']['type']['field'] = 'type';
+$handler->display->display_options['filters']['type']['value'] = array(
+  'mhc_lot' => 'mhc_lot',
+);
+$handler->display->display_options['filters']['type']['group'] = 1;
+/* Filter criterion: Content: Status (field_mhc_lot_status) */
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['id'] = 'field_mhc_lot_status_tid';
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['table'] = 'field_data_field_mhc_lot_status';
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['field'] = 'field_mhc_lot_status_tid';
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['value'] = array(
+  49 => '49',
+);
+$handler->display->display_options['filters']['field_mhc_lot_status_tid']['group'] = 1;
 $handler->display->display_options['filters']['field_mhc_lot_status_tid']['type'] = 'select';
 $handler->display->display_options['filters']['field_mhc_lot_status_tid']['vocabulary'] = 'mhc_lot_status';
 $handler->display->display_options['allow']['use_pager'] = 0;
