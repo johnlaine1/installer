@@ -44,7 +44,7 @@ function glue_views_pre_render(&$view) {
 function glue_preprocess_views_view_table(&$vars) {
   $view = $vars['view'];  
   
-  if ($view->name == 'vacant_lots') {
+  if ($view->name == 'vacant_lots' && $view->current_display == 'panel_pane_table_list') {
     drupal_add_css(drupal_get_path('module', 'glue') . '/css/glue.css');
     $num_results = count($vars['result']);
     // Adds a class of 'warning-length' if the restricted buildable length of 
@@ -61,7 +61,15 @@ function glue_preprocess_views_view_table(&$vars) {
   //dsm($num_results);
 }
 
-
+/**
+ * Implements hook_views_api().
+ */
+function glue_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'glue') . '/includes/views',
+  );
+}
 
 
 
