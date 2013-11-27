@@ -381,6 +381,7 @@ $handler->display->display_options['header']['area']['id'] = 'area';
 $handler->display->display_options['header']['area']['table'] = 'views';
 $handler->display->display_options['header']['area']['field'] = 'area';
 $handler->display->display_options['header']['area']['content'] = '<ul>
+<li>If a field is highlighted in red, there is important information about that measurement, click on it to see more information.</li>
 <li>Narrow down the search results by selecting one or more choices below and clicking apply.</li>
 <li>Click on a column label to sort by that column.</li>
 <li>Click on a picture to enlarge it.</li>
@@ -454,6 +455,8 @@ $handler->display->display_options['fields']['field_mhc_lot_pics']['separator'] 
 $handler->display->display_options['fields']['field_mhc_lot_build_length_2']['id'] = 'field_mhc_lot_build_length_2';
 $handler->display->display_options['fields']['field_mhc_lot_build_length_2']['table'] = 'field_data_field_mhc_lot_build_length_2';
 $handler->display->display_options['fields']['field_mhc_lot_build_length_2']['field'] = 'field_mhc_lot_build_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['alter']['make_link'] = TRUE;
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['alter']['path'] = 'node/[nid]';
 $handler->display->display_options['fields']['field_mhc_lot_build_length_2']['settings'] = array(
   'thousand_separator' => ' ',
   'decimal_separator' => '.',
