@@ -22,7 +22,7 @@ function glue_entity_info_alter(&$entity_info) {
  * Implements hook_form_alter().
  */
 function glue_form_alter(&$form, &$form_state, $form_id) {
-  $form['field_mh_unit_shed']['#collapsible'] = TRUE;
+  //$form_state['input']['field_mhc_lot_width_3_value'] -= '5';
   //dsm($form);
   //dsm($form_state);
   //dsm($form_id);
@@ -91,4 +91,21 @@ function glue_views_default_views() {
  
   return $views;
 }
+/*
+function glue_views_query_alter(&$view, &$query) {
+  if ($view->name == 'vacant_lots') {
+    $conditions = $query->where[1]['conditions'];
+    foreach ($conditions as $condition) {
+      dsm($condition, 'condition');
+      if ($condition['field'] == 'field_data_field_mhc_lot_width_3.field_mhc_lot_width_3_value') {
+        $condition['value'] -= .5;
+      }
+    }
+    $query->where[1]['conditions'][3]['value'] -= .5;
+    //dsm($view);
+    dsm($query);
+    //dsm($condition, 'condition');
+  }
+}
+*/
 

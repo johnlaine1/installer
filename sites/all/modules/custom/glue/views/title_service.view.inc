@@ -437,6 +437,7 @@ $handler->display->display_options['fields']['field_title_service_poa_']['elemen
 $handler->display->display_options['fields']['field_title_service_taxes_owed']['id'] = 'field_title_service_taxes_owed';
 $handler->display->display_options['fields']['field_title_service_taxes_owed']['table'] = 'field_data_field_title_service_taxes_owed';
 $handler->display->display_options['fields']['field_title_service_taxes_owed']['field'] = 'field_title_service_taxes_owed';
+$handler->display->display_options['fields']['field_title_service_taxes_owed']['label'] = 'Taxes';
 $handler->display->display_options['fields']['field_title_service_taxes_owed']['settings'] = array(
   'thousand_separator' => ',',
   'decimal_separator' => '.',
@@ -447,8 +448,19 @@ $handler->display->display_options['fields']['field_title_service_taxes_owed']['
 $handler->display->display_options['fields']['field_title_service_bond_cost']['id'] = 'field_title_service_bond_cost';
 $handler->display->display_options['fields']['field_title_service_bond_cost']['table'] = 'field_data_field_title_service_bond_cost';
 $handler->display->display_options['fields']['field_title_service_bond_cost']['field'] = 'field_title_service_bond_cost';
+$handler->display->display_options['fields']['field_title_service_bond_cost']['label'] = 'Bond';
 $handler->display->display_options['fields']['field_title_service_bond_cost']['settings'] = array(
   'thousand_separator' => ',',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
+/* Field: Content: Service fee */
+$handler->display->display_options['fields']['field_title_service_service_fee']['id'] = 'field_title_service_service_fee';
+$handler->display->display_options['fields']['field_title_service_service_fee']['table'] = 'field_data_field_title_service_service_fee';
+$handler->display->display_options['fields']['field_title_service_service_fee']['field'] = 'field_title_service_service_fee';
+$handler->display->display_options['fields']['field_title_service_service_fee']['settings'] = array(
+  'thousand_separator' => ' ',
   'decimal_separator' => '.',
   'scale' => '2',
   'prefix_suffix' => 1,
