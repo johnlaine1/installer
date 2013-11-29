@@ -684,6 +684,19 @@ $handler->display->display_options['fields']['field_title_service_bond_cost']['s
   'scale' => '2',
   'prefix_suffix' => 1,
 );
+/* Field: Content: Service fee */
+$handler->display->display_options['fields']['field_title_service_service_fee']['id'] = 'field_title_service_service_fee';
+$handler->display->display_options['fields']['field_title_service_service_fee']['table'] = 'field_data_field_title_service_service_fee';
+$handler->display->display_options['fields']['field_title_service_service_fee']['field'] = 'field_title_service_service_fee';
+$handler->display->display_options['fields']['field_title_service_service_fee']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_title_service_service_fee']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_title_service_service_fee']['element_wrapper_type'] = 'span';
+$handler->display->display_options['fields']['field_title_service_service_fee']['settings'] = array(
+  'thousand_separator' => ' ',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
 /* Field: Content: Invoice amount */
 $handler->display->display_options['fields']['field_title_service_invoice_amt']['id'] = 'field_title_service_invoice_amt';
 $handler->display->display_options['fields']['field_title_service_invoice_amt']['table'] = 'field_data_field_title_service_invoice_amt';
