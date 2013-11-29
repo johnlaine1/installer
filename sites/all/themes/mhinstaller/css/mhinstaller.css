@@ -27,7 +27,8 @@ body {
 
 /*----------------------- MHC lot panel page ----------------------*/
 .panel-mhc-lot-pane-setbacks h2.pane-title,
-.panel-mhc-lot-pane-dimensions h2.pane-title {
+.panel-mhc-lot-pane-dimensions h2.pane-title,
+.panel-mhc-lot-pane-overview h2.pane-title {  
   margin-top: 0px;
   padding-bottom: 15px;  
 }

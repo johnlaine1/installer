@@ -1279,6 +1279,19 @@ $handler->display->display_options['fields']['field_mhc_lot_plot_width']['settin
   'scale' => '2',
   'prefix_suffix' => 1,
 );
+/* Field: Content: Actual width fixed */
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['id'] = 'field_mhc_lot_width_tot_2';
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['table'] = 'field_data_field_mhc_lot_width_tot_2';
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['field'] = 'field_mhc_lot_width_tot_2';
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['label'] = 'Actual width';
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_width_tot_2']['settings'] = array(
+  'thousand_separator' => ' ',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
 /* Field: Content: Buildable width fixed */
 $handler->display->display_options['fields']['field_mhc_lot_build_width_2']['id'] = 'field_mhc_lot_build_width_2';
 $handler->display->display_options['fields']['field_mhc_lot_build_width_2']['table'] = 'field_data_field_mhc_lot_build_width_2';
@@ -1312,6 +1325,19 @@ $handler->display->display_options['fields']['field_mhc_lot_plot_length']['label
 $handler->display->display_options['fields']['field_mhc_lot_plot_length']['element_type'] = 'span';
 $handler->display->display_options['fields']['field_mhc_lot_plot_length']['element_label_type'] = 'strong';
 $handler->display->display_options['fields']['field_mhc_lot_plot_length']['settings'] = array(
+  'thousand_separator' => ' ',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
+/* Field: Content: Actual length fixed */
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['id'] = 'field_mhc_lot_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['table'] = 'field_data_field_mhc_lot_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['field'] = 'field_mhc_lot_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['label'] = 'Actual length';
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_length_2']['settings'] = array(
   'thousand_separator' => ' ',
   'decimal_separator' => '.',
   'scale' => '2',
@@ -1519,8 +1545,8 @@ $handler->display->display_options['argument_input'] = array(
   ),
 );
 
-/* Display: Other info */
-$handler = $view->new_display('panel_pane', 'Other info', 'panel_pane_other_info');
+/* Display: Overview */
+$handler = $view->new_display('panel_pane', 'Overview', 'panel_pane_other_info');
 $handler->display->display_options['defaults']['style_plugin'] = FALSE;
 $handler->display->display_options['style_plugin'] = 'default';
 $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1534,25 +1560,56 @@ $handler->display->display_options['fields']['nid']['id'] = 'nid';
 $handler->display->display_options['fields']['nid']['table'] = 'node';
 $handler->display->display_options['fields']['nid']['field'] = 'nid';
 $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+/* Field: Content: Buildable width fixed */
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['id'] = 'field_mhc_lot_build_width_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['table'] = 'field_data_field_mhc_lot_build_width_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['field'] = 'field_mhc_lot_build_width_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['label'] = 'Buildable Width';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['element_wrapper_type'] = 'h3';
+$handler->display->display_options['fields']['field_mhc_lot_build_width_2']['settings'] = array(
+  'thousand_separator' => ' ',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
+/* Field: Content: Buildable length */
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['id'] = 'field_mhc_lot_build_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['table'] = 'field_data_field_mhc_lot_build_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['field'] = 'field_mhc_lot_build_length_2';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['label'] = 'Buildable Length';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['element_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['element_wrapper_type'] = 'h3';
+$handler->display->display_options['fields']['field_mhc_lot_build_length_2']['settings'] = array(
+  'thousand_separator' => ' ',
+  'decimal_separator' => '.',
+  'scale' => '2',
+  'prefix_suffix' => 1,
+);
 /* Field: Content: Status */
 $handler->display->display_options['fields']['field_mhc_lot_status']['id'] = 'field_mhc_lot_status';
 $handler->display->display_options['fields']['field_mhc_lot_status']['table'] = 'field_data_field_mhc_lot_status';
 $handler->display->display_options['fields']['field_mhc_lot_status']['field'] = 'field_mhc_lot_status';
-$handler->display->display_options['fields']['field_mhc_lot_status']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_status']['element_type'] = '0';
 $handler->display->display_options['fields']['field_mhc_lot_status']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_status']['element_wrapper_type'] = 'div';
 $handler->display->display_options['fields']['field_mhc_lot_status']['type'] = 'taxonomy_term_reference_plain';
 /* Field: Content: Gas */
 $handler->display->display_options['fields']['field_mhc_lot_gas']['id'] = 'field_mhc_lot_gas';
 $handler->display->display_options['fields']['field_mhc_lot_gas']['table'] = 'field_data_field_mhc_lot_gas';
 $handler->display->display_options['fields']['field_mhc_lot_gas']['field'] = 'field_mhc_lot_gas';
-$handler->display->display_options['fields']['field_mhc_lot_gas']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_gas']['element_type'] = '0';
 $handler->display->display_options['fields']['field_mhc_lot_gas']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_gas']['element_wrapper_type'] = 'div';
 /* Field: Content: Configuration */
 $handler->display->display_options['fields']['field_mhc_lot_config']['id'] = 'field_mhc_lot_config';
 $handler->display->display_options['fields']['field_mhc_lot_config']['table'] = 'field_data_field_mhc_lot_config';
 $handler->display->display_options['fields']['field_mhc_lot_config']['field'] = 'field_mhc_lot_config';
-$handler->display->display_options['fields']['field_mhc_lot_config']['element_type'] = 'span';
+$handler->display->display_options['fields']['field_mhc_lot_config']['element_type'] = '0';
 $handler->display->display_options['fields']['field_mhc_lot_config']['element_label_type'] = 'strong';
+$handler->display->display_options['fields']['field_mhc_lot_config']['element_wrapper_type'] = 'div';
 $handler->display->display_options['fields']['field_mhc_lot_config']['type'] = 'taxonomy_term_reference_plain';
 $handler->display->display_options['fields']['field_mhc_lot_config']['delta_offset'] = '0';
 $handler->display->display_options['defaults']['filter_groups'] = FALSE;
