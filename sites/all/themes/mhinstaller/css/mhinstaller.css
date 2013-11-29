@@ -3,34 +3,6 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/*---------- "MH Install List" view ----------*/
-.view-mh-installations table caption {
-  font-size: 1.5em;
-}
 
-
-/* Remove all panel separators */
-.node-mhc-lot .panel-separator,
-.node-title-service .panel-separator {
-  height: 0px;
-}
-
-.pane-mhc-lot-configuration {
-  padding-bottom: 10px;
-}
-
-.pane-mhc-lot-configuration .pane-title {
-  margin-top: 0px;
-  padding-bottom: 5px;
-  text-align: center;
-}
-
-/*----------------------- MHC lot panel page ----------------------*/
-.panel-mhc-lot-pane-setbacks h2.pane-title,
-.panel-mhc-lot-pane-dimensions h2.pane-title,
-.panel-mhc-lot-pane-overview h2.pane-title {  
-  margin-top: 0px;
-  padding-bottom: 15px;  
-}
 
 

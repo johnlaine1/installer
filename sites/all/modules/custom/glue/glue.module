@@ -75,7 +75,10 @@ function glue_views_api() {
  * @return array a list of views
  */
 function glue_views_default_views() {
-  // Get exported view files
+  // Get exported view files.
+  // Do not place view code here, instead create a file in /views and name
+  // it as such: [viewname].view.inc and the code it contains will automatically
+  // be added to the $views array below.
   $module_path = drupal_get_path('module', 'glue');
   $files = file_scan_directory($module_path . '/views', '/.inc/');
  
@@ -109,5 +112,12 @@ function glue_views_query_alter(&$view, &$query) {
 }
 */
 
-
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function glue_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'panels' && $plugin == 'layouts') {
+    return 'panels/plugins/layouts';
+  }
+}
 
