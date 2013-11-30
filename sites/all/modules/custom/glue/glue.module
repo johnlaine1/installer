@@ -112,8 +112,6 @@ function glue_views_query_alter(&$view, &$query) {
 }
 */
 
-
-
 /**
 * Implementation of hook_ctools_plugin_directory().
 */
