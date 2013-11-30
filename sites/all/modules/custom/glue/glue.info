@@ -2,4 +2,6 @@ name = Glue code
 description = Glue code for this site.
 core = 7.x
 
+dependencies[] = page_manager
+dependencies[] = views
 stylesheets[all][] = css/glue.css
