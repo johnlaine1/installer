@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * installer_data_model.features.inc
+ * data_model.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function installer_data_model_ctools_plugin_api($module = NULL, $api = NULL) {
+function data_model_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -19,7 +19,7 @@ function installer_data_model_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function installer_data_model_node_info() {
+function data_model_node_info() {
   $items = array(
     'activity' => array(
       'name' => t('Activity'),
@@ -27,6 +27,14 @@ function installer_data_model_node_info() {
       'description' => '',
       'has_title' => '1',
       'title_label' => t('Description'),
+      'help' => '',
+    ),
+    'book' => array(
+      'name' => t('Book page'),
+      'base' => 'node_content',
+      'description' => t('<em>Books</em> have a built-in hierarchical navigation. Use for handbooks or tutorials.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'contact' => array(
@@ -97,6 +105,22 @@ function installer_data_model_node_info() {
       'name' => t('MH Unit'),
       'base' => 'node_content',
       'description' => t('Information related to a Manufactured Home unit.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'mhc_lot' => array(
+      'name' => t('MHC Lot'),
+      'base' => 'node_content',
+      'description' => t('Information related to Manufactured Home Community Lots.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'title_service' => array(
+      'name' => t('Title Service'),
+      'base' => 'node_content',
+      'description' => t('Information related to the service of obtaining a title to a mobile home.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

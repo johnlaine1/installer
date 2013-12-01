@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the data_model feature.
+ */
+
+include_once 'data_model.features.inc';

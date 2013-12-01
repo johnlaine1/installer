@@ -94,6 +94,7 @@ function glue_views_default_views() {
  
   return $views;
 }
+
 /*
 function glue_views_query_alter(&$view, &$query) {
   if ($view->name == 'vacant_lots') {

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * installer_data_model.field_group.inc
+ * data_model.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function installer_data_model_field_group_info() {
+function data_model_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
@@ -788,6 +788,63 @@ function installer_data_model_field_group_info() {
     ),
   );
   $export['group_organic_groups|node|mh_installation|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_title_service_groups|node|title_service|form';
+  $field_group->group_name = 'group_title_service_groups';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'title_service';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Groups',
+    'weight' => '5',
+    'children' => array(
+      0 => 'og_group_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_title_service_groups|node|title_service|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_title_service_invoice|node|title_service|form';
+  $field_group->group_name = 'group_title_service_invoice';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'title_service';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Invoice',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_title_service_invoice_num',
+      1 => 'field_title_service_invoice_amt',
+      2 => 'field_title_service_invoice_date',
+      3 => 'field_title_service_inv_status',
+      4 => 'field_title_service_invoice',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-title-service-invoice field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_title_service_invoice|node|title_service|form'] = $field_group;
 
   return $export;
 }
