@@ -2271,6 +2271,8 @@ If you would like to start over, click rest.';
   $handler->display->display_options['fields']['field_mhc_lot_build_length']['id'] = 'field_mhc_lot_build_length';
   $handler->display->display_options['fields']['field_mhc_lot_build_length']['table'] = 'field_data_field_mhc_lot_build_length';
   $handler->display->display_options['fields']['field_mhc_lot_build_length']['field'] = 'field_mhc_lot_build_length';
+  $handler->display->display_options['fields']['field_mhc_lot_build_length']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_mhc_lot_build_length']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['field_mhc_lot_build_length']['settings'] = array(
     'thousand_separator' => ' ',
     'decimal_separator' => '.',
