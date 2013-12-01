@@ -74,6 +74,7 @@ function glue_views_api() {
  * Implements hook_views_default_views().
  * @return array a list of views
  */
+/*
 function glue_views_default_views() {
   // Get exported view files.
   // Do not place view code here, instead create a file in /views and name
@@ -94,7 +95,7 @@ function glue_views_default_views() {
  
   return $views;
 }
-
+*/
 /*
 function glue_views_query_alter(&$view, &$query) {
   if ($view->name == 'vacant_lots') {
