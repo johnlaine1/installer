@@ -10,3 +10,9 @@ All done.
 
 When you make changes and want those changes in code as well, delete the code
 that is currently in the respective file and copy paste the new code in.
+
+NOTE****************
+I disabled the views in the views folder by commenting out this line:
+function glue_views_default_views()
+in the glue.module file
+Experimenting with using features instead.
