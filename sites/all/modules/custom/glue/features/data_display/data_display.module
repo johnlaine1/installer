@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Data display feature.
+ */
+
+include_once 'data_display.features.inc';
