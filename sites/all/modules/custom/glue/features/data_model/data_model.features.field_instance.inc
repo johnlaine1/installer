@@ -709,6 +709,7 @@ function data_model_field_default_field_instances() {
   $field_instances['node-activity-field_activity_reference'] = array(
     'bundle' => 'activity',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -739,6 +740,16 @@ function data_model_field_default_field_instances() {
     'label' => 'Reference',
     'required' => 1,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => 0,
+          'status' => 1,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
