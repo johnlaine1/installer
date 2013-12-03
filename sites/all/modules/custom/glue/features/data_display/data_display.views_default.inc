@@ -2083,6 +2083,8 @@ If you would like to start over, click rest.';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'field_mhc_lot_need_grading' => 'field_mhc_lot_need_grading',
+    'field_mhc_lot_length_flag' => 'field_mhc_lot_length_flag',
     'field_mhc_lot_community_name' => 'field_mhc_lot_community_name',
     'nid' => 'nid',
     'field_mhc_lot_lot_num' => 'field_mhc_lot_lot_num',
@@ -2094,10 +2096,23 @@ If you would like to start over, click rest.';
     'field_mhc_lot_gas' => 'field_mhc_lot_gas',
     'field_mhc_lot_config' => 'field_mhc_lot_config',
     'edit_node' => 'edit_node',
-    'nothing' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = 'field_mhc_lot_lot_num';
   $handler->display->display_options['style_options']['info'] = array(
+    'field_mhc_lot_need_grading' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_mhc_lot_length_flag' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_mhc_lot_community_name' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
@@ -2167,12 +2182,7 @@ If you would like to start over, click rest.';
     'edit_node' => array(
       'align' => 'views-align-center',
       'separator' => '     ',
-      'empty_column' => 0,
-    ),
-    'nothing' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
@@ -2316,14 +2326,10 @@ If you would like to start over, click rest.';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'View';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Lot number (field_mhc_lot_lot_num) */
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['id'] = 'field_mhc_lot_lot_num_value';
