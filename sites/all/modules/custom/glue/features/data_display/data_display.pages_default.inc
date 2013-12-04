@@ -583,7 +583,7 @@ function data_display_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Default implementation of mh-listing page';
+  $display->title = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -605,7 +605,7 @@ function data_display_default_page_manager_handlers() {
         'style' => 'Greenarrows',
         'linking_method' => 'show_full_link',
         'link_to_full' => 1,
-        'link_to_full_style' => '0',
+        'link_to_full_style' => 'big',
         'modal' => 'colorbox',
         'image_style' => '',
         'caption_source' => 'alt',
@@ -1578,28 +1578,6 @@ function data_display_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-42';
     $pane->panel = 'bottom';
-    $pane->type = 'form';
-    $pane->subtype = 'form';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'context_node_add_form_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-42'] = $pane;
-    $display->panels['bottom'][0] = 'new-42';
-    $pane = new stdClass();
-    $pane->pid = 'new-43';
-    $pane->panel = 'bottom';
     $pane->type = 'views_panes';
     $pane->subtype = 'test_activity_list-panel_pane_1';
     $pane->shown = TRUE;
@@ -1617,12 +1595,12 @@ function data_display_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-43'] = $pane;
-    $display->panels['bottom'][1] = 'new-43';
+    $display->content['new-42'] = $pane;
+    $display->panels['bottom'][0] = 'new-42';
     $pane = new stdClass();
-    $pane->pid = 'new-44';
+    $pane->pid = 'new-43';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
     $pane->subtype = 'title_service-panel_pane_2';
@@ -1643,10 +1621,10 @@ function data_display_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-44'] = $pane;
-    $display->panels['left'][0] = 'new-44';
+    $display->content['new-43'] = $pane;
+    $display->panels['left'][0] = 'new-43';
     $pane = new stdClass();
-    $pane->pid = 'new-45';
+    $pane->pid = 'new-44';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'title_service-panel_pane_1';
@@ -1667,10 +1645,10 @@ function data_display_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-45'] = $pane;
-    $display->panels['middle'][0] = 'new-45';
+    $display->content['new-44'] = $pane;
+    $display->panels['middle'][0] = 'new-44';
     $pane = new stdClass();
-    $pane->pid = 'new-46';
+    $pane->pid = 'new-45';
     $pane->panel = 'right';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_title_service_docs';
@@ -1695,10 +1673,10 @@ function data_display_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-46'] = $pane;
-    $display->panels['right'][0] = 'new-46';
+    $display->content['new-45'] = $pane;
+    $display->panels['right'][0] = 'new-45';
     $pane = new stdClass();
-    $pane->pid = 'new-47';
+    $pane->pid = 'new-46';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_title_service_title_status';
@@ -1723,8 +1701,8 @@ function data_display_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-47'] = $pane;
-    $display->panels['top'][0] = 'new-47';
+    $display->content['new-46'] = $pane;
+    $display->panels['top'][0] = 'new-46';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3012,6 +2990,7 @@ function data_display_default_page_manager_pages() {
         'settings' => array(
           'rids' => array(
             0 => 3,
+            1 => 14,
           ),
         ),
         'context' => 'logged-in-user',

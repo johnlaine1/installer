@@ -35,6 +35,13 @@ function data_display_views_api($module = NULL, $api = NULL) {
 function data_display_image_default_styles() {
   $styles = array();
 
+  // Exported image style: big.
+  $styles['big'] = array(
+    'name' => 'big',
+    'label' => 'Big',
+    'effects' => array(),
+  );
+
   // Exported image style: mini_thumbnail.
   $styles['mini_thumbnail'] = array(
     'name' => 'mini_thumbnail',

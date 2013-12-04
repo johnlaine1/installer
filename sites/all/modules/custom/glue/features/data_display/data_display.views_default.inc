@@ -529,6 +529,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
+    3 => '3',
     14 => '14',
   );
   $handler->display->display_options['cache']['type'] = 'none';
@@ -536,7 +537,32 @@ function data_display_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_plugin'] = 'panels_fields';
+  $handler->display->display_options['row_options']['layout'] = 'threecol_25_50_25_stacked';
+  $handler->display->display_options['row_options']['regions'] = array(
+    'field_mh_unit_width' => 'top',
+    'field_mh_unit_length' => 'top',
+    'nid' => 'top',
+    'field_mh_unit_pics_origin' => 'left',
+    'title' => 'middle',
+    'field_mh_listing_price' => 'middle',
+    'field_mh_unit_year' => 'middle',
+    'nothing' => 'middle',
+    'field_mh_unit_beds' => 'middle',
+    'field_mh_unit_baths' => 'middle',
+    'field_mh_unit_appliances' => 'middle',
+    'field_mh_listing_description' => 'bottom',
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Instructions';
+  $handler->display->display_options['header']['area']['content'] = '<ul>
+<li>Prices below include the purchase and installation of the home.</li>
+<li>Click on the picture to view additional pictures.</li>
+</ul>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -545,11 +571,52 @@ function data_display_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'There are no listings available at this time.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_mh_listing_unit_target_id']['id'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['relationships']['field_mh_listing_unit_target_id']['table'] = 'field_data_field_mh_listing_unit';
+  $handler->display->display_options['relationships']['field_mh_listing_unit_target_id']['field'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['relationships']['field_mh_listing_unit_target_id']['label'] = 'MH Unit';
+  /* Field: Content: Width */
+  $handler->display->display_options['fields']['field_mh_unit_width']['id'] = 'field_mh_unit_width';
+  $handler->display->display_options['fields']['field_mh_unit_width']['table'] = 'field_data_field_mh_unit_width';
+  $handler->display->display_options['fields']['field_mh_unit_width']['field'] = 'field_mh_unit_width';
+  $handler->display->display_options['fields']['field_mh_unit_width']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_width']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_mh_unit_width']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Length */
+  $handler->display->display_options['fields']['field_mh_unit_length']['id'] = 'field_mh_unit_length';
+  $handler->display->display_options['fields']['field_mh_unit_length']['table'] = 'field_data_field_mh_unit_length';
+  $handler->display->display_options['fields']['field_mh_unit_length']['field'] = 'field_mh_unit_length';
+  $handler->display->display_options['fields']['field_mh_unit_length']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_length']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_mh_unit_length']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Origin pictures */
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['id'] = 'field_mh_unit_pics_origin';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['table'] = 'field_data_field_mh_unit_pics_origin';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['field'] = 'field_mh_unit_pics_origin';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['label'] = '';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_mh_unit_pics_origin']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -559,18 +626,71 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'span';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Price */
   $handler->display->display_options['fields']['field_mh_listing_price']['id'] = 'field_mh_listing_price';
   $handler->display->display_options['fields']['field_mh_listing_price']['table'] = 'field_data_field_mh_listing_price';
   $handler->display->display_options['fields']['field_mh_listing_price']['field'] = 'field_mh_listing_price';
+  $handler->display->display_options['fields']['field_mh_listing_price']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_mh_listing_price']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_mh_listing_price']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => ',',
     'decimal_separator' => '.',
-    'scale' => '2',
+    'scale' => '0',
     'prefix_suffix' => 1,
   );
+  /* Field: Content: Year */
+  $handler->display->display_options['fields']['field_mh_unit_year']['id'] = 'field_mh_unit_year';
+  $handler->display->display_options['fields']['field_mh_unit_year']['table'] = 'field_data_field_mh_unit_year';
+  $handler->display->display_options['fields']['field_mh_unit_year']['field'] = 'field_mh_unit_year';
+  $handler->display->display_options['fields']['field_mh_unit_year']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_year']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_mh_unit_year']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_mh_unit_year']['settings'] = array(
+    'format_type' => 'year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Size';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_mh_unit_width] x [field_mh_unit_length]';
+  $handler->display->display_options['fields']['nothing']['element_label_type'] = 'strong';
+  /* Field: Content: Bedrooms */
+  $handler->display->display_options['fields']['field_mh_unit_beds']['id'] = 'field_mh_unit_beds';
+  $handler->display->display_options['fields']['field_mh_unit_beds']['table'] = 'field_data_field_mh_unit_beds';
+  $handler->display->display_options['fields']['field_mh_unit_beds']['field'] = 'field_mh_unit_beds';
+  $handler->display->display_options['fields']['field_mh_unit_beds']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_beds']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_mh_unit_beds']['element_label_type'] = 'strong';
+  /* Field: Content: Bathrooms */
+  $handler->display->display_options['fields']['field_mh_unit_baths']['id'] = 'field_mh_unit_baths';
+  $handler->display->display_options['fields']['field_mh_unit_baths']['table'] = 'field_data_field_mh_unit_baths';
+  $handler->display->display_options['fields']['field_mh_unit_baths']['field'] = 'field_mh_unit_baths';
+  $handler->display->display_options['fields']['field_mh_unit_baths']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_baths']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_mh_unit_baths']['element_label_type'] = 'strong';
+  /* Field: Content: Appliances included */
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['id'] = 'field_mh_unit_appliances';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['table'] = 'field_data_field_mh_unit_appliances';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['field'] = 'field_mh_unit_appliances';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['relationship'] = 'field_mh_listing_unit_target_id';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['label'] = 'Appliances ';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_mh_unit_appliances']['delta_offset'] = '0';
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['field_mh_listing_description']['id'] = 'field_mh_listing_description';
+  $handler->display->display_options['fields']['field_mh_listing_description']['table'] = 'field_data_field_mh_listing_description';
+  $handler->display->display_options['fields']['field_mh_listing_description']['field'] = 'field_mh_listing_description';
+  $handler->display->display_options['fields']['field_mh_listing_description']['label'] = 'Notes';
+  $handler->display->display_options['fields']['field_mh_listing_description']['element_label_type'] = 'strong';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -909,7 +1029,7 @@ function data_display_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Title services';
+  $handler->display->display_options['title'] = 'Title Services';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -1156,14 +1276,20 @@ function data_display_views_default_views() {
   $handler->display->display_options['filters']['field_title_service_title_status_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_title_service_title_status_tid']['vocabulary'] = 'title_status';
 
-  /* Display: List */
-  $handler = $view->new_display('page', 'List', 'page_1');
+  /* Display: List-admin */
+  $handler = $view->new_display('page', 'List-admin', 'page_1');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+  );
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
     'field_title_service_invoice' => 'field_title_service_invoice',
     'field_title_service_community' => 'field_title_service_community',
     'field_title_service_lot_num' => 'field_title_service_lot_num',
@@ -1172,12 +1298,23 @@ function data_display_views_default_views() {
     'field_title_service_poa_' => 'field_title_service_poa_',
     'field_title_service_taxes_owed' => 'field_title_service_taxes_owed',
     'field_title_service_bond_cost' => 'field_title_service_bond_cost',
+    'field_title_service_service_fee' => 'field_title_service_service_fee',
     'field_title_service_invoice_amt' => 'field_title_service_invoice_amt',
     'field_title_service_inv_status' => 'field_title_service_inv_status',
     'field_title_service_invoice_date' => 'field_title_service_invoice_date',
+    'edit_node' => 'edit_node',
+    'nothing' => 'edit_node',
+    'contextual_links' => 'contextual_links',
   );
   $handler->display->display_options['style_options']['default'] = 'field_title_service_community';
   $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_title_service_invoice' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
@@ -1232,6 +1369,13 @@ function data_display_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_title_service_service_fee' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'field_title_service_invoice_amt' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -1252,6 +1396,21 @@ function data_display_views_default_views() {
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '<br>',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'contextual_links' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
     ),
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1285,6 +1444,18 @@ function data_display_views_default_views() {
   $handler->display->display_options['relationships']['field_title_service_mh_unit_target_id']['field'] = 'field_title_service_mh_unit_target_id';
   $handler->display->display_options['relationships']['field_title_service_mh_unit_target_id']['label'] = 'mh_unit';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: OG membership: Group ID */
+  $handler->display->display_options['fields']['gid']['id'] = 'gid';
+  $handler->display->display_options['fields']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['gid']['field'] = 'gid';
+  $handler->display->display_options['fields']['gid']['label'] = '';
+  $handler->display->display_options['fields']['gid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['gid']['element_label_colon'] = FALSE;
   /* Field: Content: Invoice */
   $handler->display->display_options['fields']['field_title_service_invoice']['id'] = 'field_title_service_invoice';
   $handler->display->display_options['fields']['field_title_service_invoice']['table'] = 'field_data_field_title_service_invoice';
@@ -1393,6 +1564,398 @@ function data_display_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Add Activity';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/add/activity?field_activity_reference=[nid]&og_group_ref=[gid]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'title_service' => 'title_service',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Title job status (field_title_service_title_status) */
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['id'] = 'field_title_service_title_status_tid';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['table'] = 'field_data_field_title_service_title_status';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['field'] = 'field_title_service_title_status_tid';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['expose']['operator_id'] = 'field_title_service_title_status_tid_op';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['expose']['label'] = 'Job status';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['expose']['operator'] = 'field_title_service_title_status_tid_op';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['expose']['identifier'] = 'field_title_service_title_status_tid';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    14 => 0,
+  );
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_title_service_title_status_tid']['vocabulary'] = 'title_status';
+  /* Filter criterion: Content: Invoice status (field_title_service_inv_status) */
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['id'] = 'field_title_service_inv_status_tid';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['table'] = 'field_data_field_title_service_inv_status';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['field'] = 'field_title_service_inv_status_tid';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['expose']['operator_id'] = 'field_title_service_inv_status_tid_op';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['expose']['label'] = 'Invoice status';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['expose']['operator'] = 'field_title_service_inv_status_tid_op';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['expose']['identifier'] = 'field_title_service_inv_status_tid';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    14 => 0,
+  );
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_title_service_inv_status_tid']['vocabulary'] = 'mh_invoice_status';
+  /* Filter criterion: Content: POA Received? (field_title_service_poa_) */
+  $handler->display->display_options['filters']['field_title_service_poa__value']['id'] = 'field_title_service_poa__value';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['table'] = 'field_data_field_title_service_poa_';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['field'] = 'field_title_service_poa__value';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['group'] = 1;
+  $handler->display->display_options['filters']['field_title_service_poa__value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_title_service_poa__value']['expose']['operator_id'] = 'field_title_service_poa__value_op';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['expose']['label'] = 'POA Received?';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['expose']['operator'] = 'field_title_service_poa__value_op';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['expose']['identifier'] = 'field_title_service_poa__value';
+  $handler->display->display_options['filters']['field_title_service_poa__value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    14 => 0,
+  );
+  $handler->display->display_options['path'] = 'title-service';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Title service';
+  $handler->display->display_options['menu']['weight'] = '10';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: List */
+  $handler = $view->new_display('page', 'List', 'page_3');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+    'field_title_service_invoice' => 'field_title_service_invoice',
+    'field_title_service_community' => 'field_title_service_community',
+    'field_title_service_lot_num' => 'field_title_service_lot_num',
+    'title' => 'title',
+    'field_title_service_title_status' => 'field_title_service_title_status',
+    'field_title_service_poa_' => 'field_title_service_poa_',
+    'field_title_service_taxes_owed' => 'field_title_service_taxes_owed',
+    'field_title_service_bond_cost' => 'field_title_service_bond_cost',
+    'field_title_service_service_fee' => 'field_title_service_service_fee',
+    'field_title_service_invoice_amt' => 'field_title_service_invoice_amt',
+    'field_title_service_inv_status' => 'field_title_service_inv_status',
+    'field_title_service_invoice_date' => 'field_title_service_invoice_date',
+    'edit_node' => 'edit_node',
+    'nothing' => 'edit_node',
+    'contextual_links' => 'contextual_links',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_title_service_community';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_invoice' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_community' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_lot_num' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_title_status' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_poa_' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_taxes_owed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_bond_cost' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_service_fee' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_invoice_amt' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_inv_status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_title_service_invoice_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '<br>',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'contextual_links' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Instructions';
+  $handler->display->display_options['header']['area']['content'] = '<ul>
+  <li>Click on a \'Unit\' name for more information about that unit.</li>
+  <li>Click on an \'Invoice Amount\' to view a copy of the invoice.</li>
+  <li>Click on a column title to sort by that column.</li>
+  <li>Use the filters below to limit the results displayed.</li>
+</ul>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Download instructions';
+  $handler->display->display_options['footer']['area']['content'] = 'Download this table as a Excel or Word file by clicking one of the links below.';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_title_service_mh_unit_target_id']['id'] = 'field_title_service_mh_unit_target_id';
+  $handler->display->display_options['relationships']['field_title_service_mh_unit_target_id']['table'] = 'field_data_field_title_service_mh_unit';
+  $handler->display->display_options['relationships']['field_title_service_mh_unit_target_id']['field'] = 'field_title_service_mh_unit_target_id';
+  $handler->display->display_options['relationships']['field_title_service_mh_unit_target_id']['label'] = 'mh_unit';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: OG membership: Group ID */
+  $handler->display->display_options['fields']['gid']['id'] = 'gid';
+  $handler->display->display_options['fields']['gid']['table'] = 'og_membership';
+  $handler->display->display_options['fields']['gid']['field'] = 'gid';
+  $handler->display->display_options['fields']['gid']['label'] = '';
+  $handler->display->display_options['fields']['gid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['gid']['element_label_colon'] = FALSE;
+  /* Field: Content: Invoice */
+  $handler->display->display_options['fields']['field_title_service_invoice']['id'] = 'field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice']['table'] = 'field_data_field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice']['field'] = 'field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_invoice']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_service_invoice']['type'] = 'file_url_plain';
+  /* Field: Content: Community */
+  $handler->display->display_options['fields']['field_title_service_community']['id'] = 'field_title_service_community';
+  $handler->display->display_options['fields']['field_title_service_community']['table'] = 'field_data_field_title_service_community';
+  $handler->display->display_options['fields']['field_title_service_community']['field'] = 'field_title_service_community';
+  $handler->display->display_options['fields']['field_title_service_community']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_community']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Lot number */
+  $handler->display->display_options['fields']['field_title_service_lot_num']['id'] = 'field_title_service_lot_num';
+  $handler->display->display_options['fields']['field_title_service_lot_num']['table'] = 'field_data_field_title_service_lot_num';
+  $handler->display->display_options['fields']['field_title_service_lot_num']['field'] = 'field_title_service_lot_num';
+  $handler->display->display_options['fields']['field_title_service_lot_num']['label'] = 'Lot';
+  $handler->display->display_options['fields']['field_title_service_lot_num']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_lot_num']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Unit';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Title job status */
+  $handler->display->display_options['fields']['field_title_service_title_status']['id'] = 'field_title_service_title_status';
+  $handler->display->display_options['fields']['field_title_service_title_status']['table'] = 'field_data_field_title_service_title_status';
+  $handler->display->display_options['fields']['field_title_service_title_status']['field'] = 'field_title_service_title_status';
+  $handler->display->display_options['fields']['field_title_service_title_status']['label'] = 'Job status';
+  $handler->display->display_options['fields']['field_title_service_title_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: POA Received? */
+  $handler->display->display_options['fields']['field_title_service_poa_']['id'] = 'field_title_service_poa_';
+  $handler->display->display_options['fields']['field_title_service_poa_']['table'] = 'field_data_field_title_service_poa_';
+  $handler->display->display_options['fields']['field_title_service_poa_']['field'] = 'field_title_service_poa_';
+  $handler->display->display_options['fields']['field_title_service_poa_']['label'] = 'POA';
+  $handler->display->display_options['fields']['field_title_service_poa_']['element_label_colon'] = FALSE;
+  /* Field: Content: Taxes owed */
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['id'] = 'field_title_service_taxes_owed';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['table'] = 'field_data_field_title_service_taxes_owed';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['field'] = 'field_title_service_taxes_owed';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['label'] = 'Taxes';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Bond cost */
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['id'] = 'field_title_service_bond_cost';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['table'] = 'field_data_field_title_service_bond_cost';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['field'] = 'field_title_service_bond_cost';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['label'] = 'Bond';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Service fee */
+  $handler->display->display_options['fields']['field_title_service_service_fee']['id'] = 'field_title_service_service_fee';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['table'] = 'field_data_field_title_service_service_fee';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['field'] = 'field_title_service_service_fee';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Invoice amount */
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['id'] = 'field_title_service_invoice_amt';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['table'] = 'field_data_field_title_service_invoice_amt';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['field'] = 'field_title_service_invoice_amt';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['group_type'] = 'min';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['alter']['path'] = '[field_title_service_invoice]';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['group_column'] = 'entity_id';
+  /* Field: Content: Invoice status */
+  $handler->display->display_options['fields']['field_title_service_inv_status']['id'] = 'field_title_service_inv_status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['table'] = 'field_data_field_title_service_inv_status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['field'] = 'field_title_service_inv_status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Invoice date */
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['id'] = 'field_title_service_invoice_date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['table'] = 'field_data_field_title_service_invoice_date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['field'] = 'field_title_service_invoice_date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['settings'] = array(
+    'format_type' => 'short_date_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Add Activity';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/add/activity?field_activity_reference=[nid]&og_group_ref=[gid]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -1480,7 +2043,11 @@ function data_display_views_default_views() {
   $handler->display->display_options['path'] = 'title-service/export/xls';
   $handler->display->display_options['displays'] = array(
     'page_1' => 'page_1',
+    'page_3' => 'page_3',
     'default' => 0,
+    'panel_pane_2' => 0,
+    'panel_pane_1' => 0,
+    'page_2' => 0,
   );
 
   /* Display: Data export-doc */
@@ -1493,176 +2060,11 @@ function data_display_views_default_views() {
   $handler->display->display_options['path'] = 'title-service/export/doc';
   $handler->display->display_options['displays'] = array(
     'page_1' => 'page_1',
+    'page_3' => 'page_3',
     'default' => 0,
-  );
-
-  /* Display: Sum test */
-  $handler = $view->new_display('page', 'Sum test', 'page_2');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['path'] = 'title-service/sum-test';
-
-  /* Display: Invoice info */
-  $handler = $view->new_display('panel_pane', 'Invoice info', 'panel_pane_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Invoice';
-  $handler->display->display_options['defaults']['access'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['footer'] = FALSE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Invoice */
-  $handler->display->display_options['fields']['field_title_service_invoice']['id'] = 'field_title_service_invoice';
-  $handler->display->display_options['fields']['field_title_service_invoice']['table'] = 'field_data_field_title_service_invoice';
-  $handler->display->display_options['fields']['field_title_service_invoice']['field'] = 'field_title_service_invoice';
-  $handler->display->display_options['fields']['field_title_service_invoice']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_title_service_invoice']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_title_service_invoice']['type'] = 'file_url_plain';
-  /* Field: Content: Invoice status */
-  $handler->display->display_options['fields']['field_title_service_inv_status']['id'] = 'field_title_service_inv_status';
-  $handler->display->display_options['fields']['field_title_service_inv_status']['table'] = 'field_data_field_title_service_inv_status';
-  $handler->display->display_options['fields']['field_title_service_inv_status']['field'] = 'field_title_service_inv_status';
-  $handler->display->display_options['fields']['field_title_service_inv_status']['label'] = 'Status';
-  $handler->display->display_options['fields']['field_title_service_inv_status']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_inv_status']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_inv_status']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Invoice number */
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['id'] = 'field_title_service_invoice_num';
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['table'] = 'field_data_field_title_service_invoice_num';
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['field'] = 'field_title_service_invoice_num';
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['label'] = 'Number';
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_invoice_num']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: Invoice date */
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['id'] = 'field_title_service_invoice_date';
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['table'] = 'field_data_field_title_service_invoice_date';
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['field'] = 'field_title_service_invoice_date';
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['label'] = 'Date';
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_invoice_date']['settings'] = array(
-    'format_type' => 'short_date_only',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Taxes owed */
-  $handler->display->display_options['fields']['field_title_service_taxes_owed']['id'] = 'field_title_service_taxes_owed';
-  $handler->display->display_options['fields']['field_title_service_taxes_owed']['table'] = 'field_data_field_title_service_taxes_owed';
-  $handler->display->display_options['fields']['field_title_service_taxes_owed']['field'] = 'field_title_service_taxes_owed';
-  $handler->display->display_options['fields']['field_title_service_taxes_owed']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_taxes_owed']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_taxes_owed']['settings'] = array(
-    'thousand_separator' => ',',
-    'decimal_separator' => '.',
-    'scale' => '2',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: Bond cost */
-  $handler->display->display_options['fields']['field_title_service_bond_cost']['id'] = 'field_title_service_bond_cost';
-  $handler->display->display_options['fields']['field_title_service_bond_cost']['table'] = 'field_data_field_title_service_bond_cost';
-  $handler->display->display_options['fields']['field_title_service_bond_cost']['field'] = 'field_title_service_bond_cost';
-  $handler->display->display_options['fields']['field_title_service_bond_cost']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_bond_cost']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_bond_cost']['settings'] = array(
-    'thousand_separator' => ',',
-    'decimal_separator' => '.',
-    'scale' => '2',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: Service fee */
-  $handler->display->display_options['fields']['field_title_service_service_fee']['id'] = 'field_title_service_service_fee';
-  $handler->display->display_options['fields']['field_title_service_service_fee']['table'] = 'field_data_field_title_service_service_fee';
-  $handler->display->display_options['fields']['field_title_service_service_fee']['field'] = 'field_title_service_service_fee';
-  $handler->display->display_options['fields']['field_title_service_service_fee']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_service_fee']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_service_fee']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_service_fee']['settings'] = array(
-    'thousand_separator' => ' ',
-    'decimal_separator' => '.',
-    'scale' => '2',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Content: Invoice amount */
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['id'] = 'field_title_service_invoice_amt';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['table'] = 'field_data_field_title_service_invoice_amt';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['field'] = 'field_title_service_invoice_amt';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['group_type'] = 'min';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['label'] = 'Invoice total';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['alter']['path'] = '[field_title_service_invoice]';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['settings'] = array(
-    'thousand_separator' => ' ',
-    'decimal_separator' => '.',
-    'scale' => '2',
-    'prefix_suffix' => 1,
-  );
-  $handler->display->display_options['fields']['field_title_service_invoice_amt']['group_column'] = 'entity_id';
-  /* Field: File: Invoice */
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['id'] = 'field_title_service_invoice_1';
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['table'] = 'field_data_field_title_service_invoice';
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['field'] = 'field_title_service_invoice';
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['ui_name'] = 'File: Invoice';
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['label'] = '';
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_title_service_invoice_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'title_service' => 'title_service',
-  );
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
-  $handler->display->display_options['allow']['offset'] = 0;
-  $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
-  $handler->display->display_options['allow']['path_override'] = 0;
-  $handler->display->display_options['allow']['title_override'] = 'title_override';
-  $handler->display->display_options['allow']['exposed_form'] = 0;
-  $handler->display->display_options['allow']['fields_override'] = 0;
-  $handler->display->display_options['argument_input'] = array(
-    'nid' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Nid',
-    ),
+    'panel_pane_2' => 0,
+    'panel_pane_1' => 0,
+    'page_2' => 0,
   );
 
   /* Display: Unit info */
@@ -1802,6 +2204,175 @@ function data_display_views_default_views() {
       'label' => 'Content: Nid',
     ),
   );
+
+  /* Display: Invoice info */
+  $handler = $view->new_display('panel_pane', 'Invoice info', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Invoice';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Invoice */
+  $handler->display->display_options['fields']['field_title_service_invoice']['id'] = 'field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice']['table'] = 'field_data_field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice']['field'] = 'field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_invoice']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_title_service_invoice']['type'] = 'file_url_plain';
+  /* Field: Content: Invoice status */
+  $handler->display->display_options['fields']['field_title_service_inv_status']['id'] = 'field_title_service_inv_status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['table'] = 'field_data_field_title_service_inv_status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['field'] = 'field_title_service_inv_status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['label'] = 'Status';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_inv_status']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Invoice number */
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['id'] = 'field_title_service_invoice_num';
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['table'] = 'field_data_field_title_service_invoice_num';
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['field'] = 'field_title_service_invoice_num';
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['label'] = 'Number';
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_invoice_num']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Invoice date */
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['id'] = 'field_title_service_invoice_date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['table'] = 'field_data_field_title_service_invoice_date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['field'] = 'field_title_service_invoice_date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['label'] = 'Date';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_invoice_date']['settings'] = array(
+    'format_type' => 'short_date_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Taxes owed */
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['id'] = 'field_title_service_taxes_owed';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['table'] = 'field_data_field_title_service_taxes_owed';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['field'] = 'field_title_service_taxes_owed';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_taxes_owed']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Bond cost */
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['id'] = 'field_title_service_bond_cost';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['table'] = 'field_data_field_title_service_bond_cost';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['field'] = 'field_title_service_bond_cost';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_bond_cost']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Service fee */
+  $handler->display->display_options['fields']['field_title_service_service_fee']['id'] = 'field_title_service_service_fee';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['table'] = 'field_data_field_title_service_service_fee';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['field'] = 'field_title_service_service_fee';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_service_fee']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Invoice amount */
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['id'] = 'field_title_service_invoice_amt';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['table'] = 'field_data_field_title_service_invoice_amt';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['field'] = 'field_title_service_invoice_amt';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['group_type'] = 'min';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['label'] = 'Invoice total';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['alter']['path'] = '[field_title_service_invoice]';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['settings'] = array(
+    'thousand_separator' => ',',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['fields']['field_title_service_invoice_amt']['group_column'] = 'entity_id';
+  /* Field: File: Invoice */
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['id'] = 'field_title_service_invoice_1';
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['table'] = 'field_data_field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['field'] = 'field_title_service_invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['ui_name'] = 'File: Invoice';
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['label'] = '';
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_title_service_invoice_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'title_service' => 'title_service',
+  );
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
+
+  /* Display: Sum test */
+  $handler = $view->new_display('page', 'Sum test', 'page_2');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['path'] = 'title-service/sum-test';
   $export['title_service'] = $view;
 
   $view = new view();

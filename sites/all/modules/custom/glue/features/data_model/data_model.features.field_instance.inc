@@ -742,7 +742,7 @@ function data_model_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'action' => 'none',
+          'action' => 'hide',
           'action_on_edit' => 0,
           'fallback' => 'none',
           'og_context' => 0,
@@ -816,6 +816,7 @@ function data_model_field_default_field_instances() {
   $field_instances['node-activity-og_group_ref'] = array(
     'bundle' => 'activity',
     'default_value' => NULL,
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -842,7 +843,7 @@ function data_model_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
     'label' => 'Groups audience',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'og_widget' => array(
@@ -853,6 +854,14 @@ function data_model_field_default_field_instances() {
             'widget_type' => 'options_select',
           ),
           'status' => TRUE,
+        ),
+        'prepopulate' => array(
+          'action' => 'hide',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'og_context' => 0,
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -870,6 +879,7 @@ function data_model_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
@@ -4650,7 +4660,7 @@ function data_model_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_mh_unit_pics_dest',
-    'label' => 'Destination',
+    'label' => 'Destination pictures',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -4686,7 +4696,7 @@ function data_model_field_default_field_instances() {
         'module' => 'galleryformatter',
         'settings' => array(
           'link_to_full' => 1,
-          'link_to_full_style' => 0,
+          'link_to_full_style' => 'big',
           'linking_method' => 'show_full_link',
           'modal' => 'colorbox',
           'slide_style' => 'galleryformatter_slide',
@@ -4711,7 +4721,7 @@ function data_model_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_mh_unit_pics_origin',
-    'label' => 'Origin',
+    'label' => 'Origin pictures',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -4719,7 +4729,7 @@ function data_model_field_default_field_instances() {
       'file_directory' => 'mh_unit_pics',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '640x480',
+      'max_resolution' => '800x600',
       'min_resolution' => '',
       'title_field' => 1,
       'user_register_form' => FALSE,
@@ -5072,7 +5082,6 @@ function data_model_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
-        'apply_chosen' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -7880,7 +7889,7 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
   t('Date vacant');
   t('Defects');
   t('Description');
-  t('Destination');
+  t('Destination pictures');
   t('Determine if this is an OG group.');
   t('Distance from front');
   t('Distance from the front of the home to the center of the door, in feet, can use decimals.(round to the nearest .5)');
@@ -7934,7 +7943,7 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
   t('Name');
   t('Nickname');
   t('Notes');
-  t('Origin');
+  t('Origin pictures');
   t('POA Received?');
   t('Parcel number');
   t('Phone');
