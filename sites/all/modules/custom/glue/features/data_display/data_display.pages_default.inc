@@ -583,7 +583,7 @@ function data_display_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Default implementation of mh-listing page';
+  $display->title = '';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -605,7 +605,7 @@ function data_display_default_page_manager_handlers() {
         'style' => 'Greenarrows',
         'linking_method' => 'show_full_link',
         'link_to_full' => 1,
-        'link_to_full_style' => '0',
+        'link_to_full_style' => 'big',
         'modal' => 'colorbox',
         'image_style' => '',
         'caption_source' => 'alt',
@@ -1529,7 +1529,15 @@ function data_display_default_page_manager_handlers() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'Add Activity Form',
+        'keyword' => 'add_activity',
+        'name' => 'node_add_form',
+        'type' => 'activity',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'access' => array(
       'plugins' => array(
@@ -1729,6 +1737,8 @@ function data_display_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array();
@@ -2725,6 +2735,8 @@ function data_display_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'normal',
@@ -2978,6 +2990,7 @@ function data_display_default_page_manager_pages() {
         'settings' => array(
           'rids' => array(
             0 => 3,
+            1 => 14,
           ),
         ),
         'context' => 'logged-in-user',
@@ -2985,6 +2998,8 @@ function data_display_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'normal',
@@ -3085,6 +3100,8 @@ function data_display_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'tab',
@@ -3166,6 +3183,8 @@ function data_display_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'tab',
@@ -3330,16 +3349,11 @@ function data_display_default_page_manager_pages() {
     $pane = new stdClass();
     $pane->pid = 'new-23';
     $pane->panel = 'middle';
-    $pane->type = 'page_tabs';
-    $pane->subtype = 'page_tabs';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'vacant_lots-panel_pane_table_list';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'type' => 'both',
-      'id' => 'tabs',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -3350,26 +3364,8 @@ function data_display_default_page_manager_pages() {
     $pane->locks = array();
     $display->content['new-23'] = $pane;
     $display->panels['middle'][0] = 'new-23';
-    $pane = new stdClass();
-    $pane->pid = 'new-24';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'vacant_lots-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-24'] = $pane;
-    $display->panels['middle'][1] = 'new-24';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-24';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $handler = new stdClass();
@@ -3405,7 +3401,7 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-25';
+    $pane->pid = 'new-24';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'vacant_lots-panel_pane_table_list';
@@ -3420,8 +3416,8 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-25'] = $pane;
-    $display->panels['middle'][0] = 'new-25';
+    $display->content['new-24'] = $pane;
+    $display->panels['middle'][0] = 'new-24';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
