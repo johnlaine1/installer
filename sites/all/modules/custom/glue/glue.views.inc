@@ -1,12 +1,5 @@
 <?php
 
-/*
-function glue_views_query_alter(&$view, &$query) {
-  $query->where[1]['conditions'][3]['value'] -= .5;
-  dpm($view, '$view');
-  dpm($query, '$query');
-}
-*/
 
 /*
  * Implements hook_views_query_alter().
