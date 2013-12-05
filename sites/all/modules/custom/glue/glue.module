@@ -96,23 +96,7 @@ function glue_views_default_views() {
   return $views;
 }
 */
-/*
-function glue_views_query_alter(&$view, &$query) {
-  if ($view->name == 'vacant_lots') {
-    $conditions = $query->where[1]['conditions'];
-    foreach ($conditions as $condition) {
-      dsm($condition, 'condition');
-      if ($condition['field'] == 'field_data_field_mhc_lot_width_3.field_mhc_lot_width_3_value') {
-        $condition['value'] -= .5;
-      }
-    }
-    $query->where[1]['conditions'][3]['value'] -= .5;
-    //dsm($view);
-    dsm($query);
-    //dsm($condition, 'condition');
-  }
-}
-*/
+
 
 /**
 * Implementation of hook_ctools_plugin_directory().
