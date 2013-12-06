@@ -9,7 +9,7 @@ function glue_views_query_alter(&$view, &$query) {
   if ($view->name == 'vacant_lots') {
     // This will alter the exposed filter value "Home Width" on the vacant
     // lot view page. It will subtract .5 from the value entered before the
-    // query is run. This will allow for the 6" of overhang that is allowable
+    // query is run. This will allow for the 6" of overhang that is allowed.
     // on a home installation.
     $num_of_conditions = count($query->where[1]['conditions']);
     for ($i = 0; $i < $num_of_conditions; $i++){
