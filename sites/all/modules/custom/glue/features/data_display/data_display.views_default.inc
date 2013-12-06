@@ -560,7 +560,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['header']['area']['label'] = 'Instructions';
   $handler->display->display_options['header']['area']['content'] = '<ul>
 <li>Prices below include the purchase and installation of the home.</li>
-<li>Click on the picture to view additional pictures.</li>
+<li>Click on the photo to view additional photos.</li>
 </ul>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* No results behavior: Global: Text area */
