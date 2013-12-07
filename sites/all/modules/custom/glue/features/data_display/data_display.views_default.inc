@@ -331,6 +331,22 @@ function data_display_views_default_views() {
 
   /* Display: Install list */
   $handler = $view->new_display('panel_pane', 'Install list', 'panel_pane_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Directions';
+  $handler->display->display_options['header']['area']['content'] = '<ul>
+  <li>Click on a unit name to display additional information about that unit.
+</ul>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['label'] = 'Total matching installations';
+  $handler->display->display_options['header']['result']['content'] = '<span class="total-match-values-label"><strong>Total matching installations: </strong></span><span class="total-matching-values-value">@total</span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Community name */
   $handler->display->display_options['fields']['field_mh_install_mhc_name']['id'] = 'field_mh_install_mhc_name';

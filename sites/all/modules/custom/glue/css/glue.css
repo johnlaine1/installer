@@ -1,4 +1,4 @@
-/*-------------------- VIEW - Vacant lots --------------------------*/
+/*---------- VIEW - Vacant lots ----------*/
 .view-vacant-lots td.warning-length {
   background-color: #fd8889;  
 }
@@ -7,6 +7,17 @@
   border: 1px black solid;
   padding: 3px;
   font-size: 1.5em;
+}
+
+/*---------- VIEW - MH Install List ----------*/
+.view-mh-installations table caption {
+  font-size: 1.5em;
+}
+.view-mh-installations .total-matching-values-value {
+  background-color: #e4e4e4;
+  border: 1px black solid;
+  padding: 3px;
+  font-size: 1.5em;  
 }
 
 /*---------- PANEL - MHC lot ----------*/
@@ -25,10 +36,7 @@ h3.views-field.views-field-field-mhc-lot-build-length-2 {
   margin-top: 5px;
 }
 
-/*---------- VIEW - MH Install List ----------*/
-.view-mh-installations table caption {
-  font-size: 1.5em;
-}
+
 
 /*---------- PANE - MHC lot configuration ----------*/
 .pane-mhc-lot-configuration {
