@@ -2777,7 +2777,7 @@ If you would like to start over, click rest.';
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
-  $handler->display->display_options['header']['result']['content'] = '<strong>Total matching lots: </strong>@total';
+  $handler->display->display_options['header']['result']['content'] = '<strong>Total matching lots: </strong><span class="total-match-value">@total</span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Lot needs grading */
   $handler->display->display_options['fields']['field_mhc_lot_need_grading']['id'] = 'field_mhc_lot_need_grading';
@@ -3001,7 +3001,7 @@ If you would like to start over, click rest.';
   );
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['operator_id'] = 'field_mhc_lot_need_grading_value_op';
-  $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['label'] = 'Lot needs grading?';
+  $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['label'] = 'Grading needed?';
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['operator'] = 'field_mhc_lot_need_grading_value_op';
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['identifier'] = 'field_mhc_lot_need_grading_value';
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['remember_roles'] = array(
@@ -3009,6 +3009,7 @@ If you would like to start over, click rest.';
     1 => 0,
     3 => 0,
     14 => 0,
+    15 => 0,
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
 
