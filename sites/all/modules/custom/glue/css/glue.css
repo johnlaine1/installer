@@ -2,7 +2,7 @@
 .view-vacant-lots td.warning-length {
   background-color: #fd8889;  
 }
-.view-vacant-lots .total-match-value {
+.view-vacant-lots .total-matching-values-value {
   background-color: #e4e4e4;
   border: 1px black solid;
   padding: 3px;
@@ -18,6 +18,14 @@
   border: 1px black solid;
   padding: 3px;
   font-size: 1.5em;  
+}
+
+/*---------- VIEW - Title Service ----------*/
+.view-title-service .total-matching-values-value {
+  background-color: #e4e4e4;
+  border: 1px black solid;
+  padding: 3px;
+  font-size: 1.5em;    
 }
 
 /*---------- PANEL - MHC lot ----------*/

@@ -1445,6 +1445,12 @@ function data_display_views_default_views() {
   <li>Use the filters below to limit the results displayed.</li>
 </ul>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  /* Header: Global: Result summary */
+  $handler->display->display_options['header']['result']['id'] = 'result';
+  $handler->display->display_options['header']['result']['table'] = 'views';
+  $handler->display->display_options['header']['result']['field'] = 'result';
+  $handler->display->display_options['header']['result']['label'] = 'Matching values';
+  $handler->display->display_options['header']['result']['content'] = '<span class="total-matching-values-label"><strong>Total matching titles: </strong><span class="total-matching-values-value">@total</span>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -2793,7 +2799,7 @@ If you would like to start over, click rest.';
   $handler->display->display_options['header']['result']['id'] = 'result';
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
-  $handler->display->display_options['header']['result']['content'] = '<strong>Total matching lots: </strong><span class="total-match-value">@total</span>';
+  $handler->display->display_options['header']['result']['content'] = '<span class="total-matching-values-label><strong>Total matching lots: </strong></span><span class="total-matching-values-value">@total</span>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Lot needs grading */
   $handler->display->display_options['fields']['field_mhc_lot_need_grading']['id'] = 'field_mhc_lot_need_grading';
