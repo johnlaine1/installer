@@ -9,6 +9,10 @@
   font-size: 1.5em;
 }
 
+.view-vacant-lots #edit-field-mhc-lot-lot-num-value {
+  width: 75px;
+}
+
 /*---------- VIEW - MH Install List ----------*/
 .view-mh-installations table caption {
   font-size: 1.5em;
@@ -44,19 +48,18 @@ h3.views-field.views-field-field-mhc-lot-build-length-2 {
   margin-top: 5px;
 }
 
-
-
 /*---------- PANE - MHC lot configuration ----------*/
 .pane-mhc-lot-configuration {
   padding-bottom: 10px;
 }
-
 .pane-mhc-lot-configuration .pane-title {
   margin-top: 0px;
   padding-bottom: 5px;
   text-align: center;
 }
 
+
+/*---------- VIEW - MH Listing ----------*/
 .view-mh-listings-list .views-field-field-mh-listing-price {
   font-size: 1.3em;
   margin-bottom: 5px;
@@ -65,5 +68,4 @@ h3.views-field.views-field-field-mhc-lot-build-length-2 {
   font-size: 1.5em;
   margin-top: 0px;
   padding-top: 0px;
-
 }
