@@ -2955,6 +2955,23 @@ If you would like to start over, click rest.';
   $handler->display->display_options['filters']['field_mhc_lot_status_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_mhc_lot_status_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_mhc_lot_status_tid']['vocabulary'] = 'mhc_lot_status';
+  /* Filter criterion: Content: Lot number (field_mhc_lot_lot_num) */
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['id'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['table'] = 'field_data_field_mhc_lot_lot_num';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['field'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['operator_id'] = 'field_mhc_lot_lot_num_value_op';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['label'] = 'Lot number';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['operator'] = 'field_mhc_lot_lot_num_value_op';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['identifier'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    14 => 0,
+    15 => 0,
+  );
   /* Filter criterion: Content: Gas (field_mhc_lot_gas) */
   $handler->display->display_options['filters']['field_mhc_lot_gas_value']['id'] = 'field_mhc_lot_gas_value';
   $handler->display->display_options['filters']['field_mhc_lot_gas_value']['table'] = 'field_data_field_mhc_lot_gas';
@@ -3002,6 +3019,7 @@ If you would like to start over, click rest.';
   $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['table'] = 'field_data_field_mhc_lot_build_length_2';
   $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['field'] = 'field_mhc_lot_build_length_2_value';
   $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['group'] = 1;
   $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['expose']['operator_id'] = 'field_mhc_lot_build_length_2_value_op';
   $handler->display->display_options['filters']['field_mhc_lot_build_length_2_value']['expose']['label'] = 'Home length';
@@ -3021,6 +3039,7 @@ If you would like to start over, click rest.';
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['value'] = array(
     0 => '0',
   );
+  $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['group'] = 1;
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['operator_id'] = 'field_mhc_lot_need_grading_value_op';
   $handler->display->display_options['filters']['field_mhc_lot_need_grading_value']['expose']['label'] = 'Grading needed?';
