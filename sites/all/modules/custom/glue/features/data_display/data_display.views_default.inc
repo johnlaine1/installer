@@ -1450,7 +1450,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['header']['result']['table'] = 'views';
   $handler->display->display_options['header']['result']['field'] = 'result';
   $handler->display->display_options['header']['result']['label'] = 'Matching values';
-  $handler->display->display_options['header']['result']['content'] = '<span class="total-matching-values-label"><strong>Total matching titles: </strong><span class="total-matching-values-value">@total</span>';
+  $handler->display->display_options['header']['result']['content'] = '<span class="total-matching-values-label"><strong>Total matching jobs: </strong><span class="total-matching-values-value">@total</span>';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -2233,6 +2233,9 @@ function data_display_views_default_views() {
   $handler->display->display_options['title'] = 'Invoice';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    15 => '15',
+  );
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
