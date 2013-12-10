@@ -5094,8 +5094,8 @@ function data_model_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mhc_lot-field_mhc_lot_amps'
-  $field_instances['node-mhc_lot-field_mhc_lot_amps'] = array(
+  // Exported field_instance: 'node-mhc_lot-field_mhc_lot_amperage'
+  $field_instances['node-mhc_lot-field_mhc_lot_amperage'] = array(
     'bundle' => 'mhc_lot',
     'default_value' => NULL,
     'deleted' => 0,
@@ -5103,10 +5103,15 @@ function data_model_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 34,
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 37,
       ),
       'short' => array(
         'label' => 'above',
@@ -5122,18 +5127,22 @@ function data_model_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_mhc_lot_amps',
-    'label' => 'Amps',
+    'field_name' => 'field_mhc_lot_amperage',
+    'label' => 'Breaker amperage',
     'required' => 0,
     'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'number',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 31,
+      'type' => 'number',
+      'weight' => 32,
     ),
   );
 
@@ -5855,7 +5864,7 @@ For example: The length of this vacant lot up to the home in the lot behind it i
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 32,
+      'weight' => 33,
     ),
   );
 
@@ -6018,7 +6027,7 @@ For example: The length of this vacant lot up to the home in the lot behind it i
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_miw',
-      'weight' => 33,
+      'weight' => 34,
     ),
   );
 
@@ -7862,7 +7871,6 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
   t('Actual width unfixed');
   t('Address');
   t('Address type');
-  t('Amps');
   t('Appliances included');
   t('As viewed from the front of the home, looking at the home.');
   t('As viewed standing in front of the home, looking at the home.');
@@ -7873,6 +7881,7 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
   t('Bedrooms');
   t('Body');
   t('Bond cost');
+  t('Breaker amperage');
   t('Buildable length');
   t('Buildable length restricted');
   t('Buildable width fixed');

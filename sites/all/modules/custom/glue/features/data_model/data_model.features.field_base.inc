@@ -2583,32 +2583,20 @@ Prof.',
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_mhc_lot_amps'
-  $field_bases['field_mhc_lot_amps'] = array(
+  // Exported field_base: 'field_mhc_lot_amperage'
+  $field_bases['field_mhc_lot_amperage'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_mhc_lot_amps',
+    'field_name' => 'field_mhc_lot_amperage',
     'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        50 => 50,
-        100 => '00',
-        150 => 150,
-        200 => 200,
-      ),
-      'allowed_values_function' => '',
-    ),
+    'module' => 'number',
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'list_integer',
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_mhc_lot_build_length'

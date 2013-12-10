@@ -401,7 +401,7 @@ function data_display_default_page_manager_handlers() {
     $pane->pid = 'new-15';
     $pane->panel = 'right_above';
     $pane->type = 'entity_form_field';
-    $pane->subtype = 'node:field_mhc_lot_amps';
+    $pane->subtype = 'node:field_mhc_lot_amperage';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -409,7 +409,7 @@ function data_display_default_page_manager_handlers() {
       'formatter' => '',
       'context' => 'argument_node_edit_1',
       'override_title' => 0,
-      'override_title_text' => '',
+      'override_title_text' => 'Amperage',
     );
     $pane->cache = array();
     $pane->style = array(
