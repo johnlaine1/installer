@@ -2170,7 +2170,8 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['field_mh_unit_parcel_num']['table'] = 'field_data_field_mh_unit_parcel_num';
   $handler->display->display_options['fields']['field_mh_unit_parcel_num']['field'] = 'field_mh_unit_parcel_num';
   $handler->display->display_options['fields']['field_mh_unit_parcel_num']['relationship'] = 'field_title_service_mh_unit_target_id';
-  $handler->display->display_options['fields']['field_mh_unit_parcel_num']['alter']['path'] = 'treasurer.maricopa.gov/parcels/default.asp?Parcel=[field_mh_unit_parcel_num-value]';
+  $handler->display->display_options['fields']['field_mh_unit_parcel_num']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_mh_unit_parcel_num']['alter']['path'] = 'http://mcassessor.maricopa.gov/?s=[field_mh_unit_parcel_num]&searchtype=mh';
   $handler->display->display_options['fields']['field_mh_unit_parcel_num']['alter']['external'] = TRUE;
   $handler->display->display_options['fields']['field_mh_unit_parcel_num']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_mh_unit_parcel_num']['element_type'] = 'span';
