@@ -1443,6 +1443,7 @@ function data_display_views_default_views() {
   <li>Click on an \'Invoice Amount\' to view a copy of the invoice.</li>
   <li>Click on a column title to sort by that column.</li>
   <li>Use the filters below to limit the results displayed.</li>
+  <li class="add-title-service-link"><a href="node/add/title-service">Add Title Service Job</a></li>
 </ul>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* Header: Global: Result summary */
