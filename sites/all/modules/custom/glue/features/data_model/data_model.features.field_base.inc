@@ -135,25 +135,17 @@ function data_model_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
-            'status' => 0,
+            'status' => 1,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'contact' => 'contact',
-          'mh_community' => 'mh_community',
-          'mh_installation' => 'mh_installation',
-          'mh_listing' => 'mh_listing',
-          'mh_seller' => 'mh_seller',
-          'mh_unit' => 'mh_unit',
-          'mhc_lot' => 'mhc_lot',
-          'title_service' => 'title_service',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'admin_views_node',
         ),
       ),
       'target_type' => 'node',
