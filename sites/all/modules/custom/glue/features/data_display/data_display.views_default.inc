@@ -1306,6 +1306,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
+    'gid' => 'gid',
     'field_title_service_invoice' => 'field_title_service_invoice',
     'field_title_service_community' => 'field_title_service_community',
     'field_title_service_lot_num' => 'field_title_service_lot_num',
@@ -1320,11 +1321,18 @@ function data_display_views_default_views() {
     'field_title_service_invoice_date' => 'field_title_service_invoice_date',
     'edit_node' => 'edit_node',
     'nothing' => 'edit_node',
-    'contextual_links' => 'contextual_links',
+    'nothing_1' => 'edit_node',
   );
   $handler->display->display_options['style_options']['default'] = 'field_title_service_community';
   $handler->display->display_options['style_options']['info'] = array(
     'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'gid' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1423,10 +1431,10 @@ function data_display_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'contextual_links' => array(
+    'nothing_1' => array(
       'align' => '',
       'separator' => '',
-      'empty_column' => 1,
+      'empty_column' => 0,
     ),
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -1602,6 +1610,15 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/add/activity?field_activity_reference=[nid]&og_group_ref=[gid]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Add Task';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'node/add/task?field_task_reference=[nid]&og_group_ref=[gid]';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
