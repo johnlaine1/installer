@@ -7306,6 +7306,7 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
   $field_instances['node-title_service-field_title_service_mh_unit'] = array(
     'bundle' => 'title_service',
     'default_value' => NULL,
+    'default_value_function' => '',
     'deleted' => 0,
     'description' => 'The MH unit that this title service is related to.',
     'display' => array(
@@ -7336,6 +7337,11 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
     'label' => 'MH Unit',
     'required' => 1,
     'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
