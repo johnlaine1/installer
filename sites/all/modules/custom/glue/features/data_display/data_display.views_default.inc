@@ -1437,6 +1437,7 @@ function data_display_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1705,6 +1706,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
+    'gid' => 'gid',
     'field_title_service_invoice' => 'field_title_service_invoice',
     'field_title_service_community' => 'field_title_service_community',
     'field_title_service_lot_num' => 'field_title_service_lot_num',
@@ -1719,11 +1721,17 @@ function data_display_views_default_views() {
     'field_title_service_invoice_date' => 'field_title_service_invoice_date',
     'edit_node' => 'edit_node',
     'nothing' => 'edit_node',
-    'contextual_links' => 'contextual_links',
   );
   $handler->display->display_options['style_options']['default'] = 'field_title_service_community';
   $handler->display->display_options['style_options']['info'] = array(
     'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'gid' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1822,12 +1830,8 @@ function data_display_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'contextual_links' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -2654,7 +2658,10 @@ If you would like to start over, click rest.';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -2987,12 +2994,45 @@ If you would like to start over, click rest.';
   $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['label'] = 'Lot number';
   $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['operator'] = 'field_mhc_lot_lot_num_value_op';
   $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['identifier'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     14 => 0,
     15 => 0,
+  );
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['group_info']['label'] = 'Lot number (field_mhc_lot_lot_num)';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['group_info']['identifier'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['group_info']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_mhc_lot_lot_num_value']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => '1',
+      'operator' => '=',
+      'value' => array(
+        'value' => '1',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => '11',
+      'operator' => '=',
+      'value' => array(
+        'value' => '11',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    3 => array(
+      'title' => '',
+      'operator' => '=',
+      'value' => array(
+        'value' => '',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
   );
   /* Filter criterion: Content: Gas (field_mhc_lot_gas) */
   $handler->display->display_options['filters']['field_mhc_lot_gas_value']['id'] = 'field_mhc_lot_gas_value';
@@ -3027,6 +3067,7 @@ If you would like to start over, click rest.';
     1 => 0,
     3 => 0,
     14 => 0,
+    15 => 0,
   );
   $handler->display->display_options['filters']['field_mhc_lot_width_3_value']['group_info']['label'] = 'Width-3 (field_mhc_lot_width_3)';
   $handler->display->display_options['filters']['field_mhc_lot_width_3_value']['group_info']['identifier'] = 'field_mhc_lot_width_3_value';
@@ -3073,6 +3114,16 @@ If you would like to start over, click rest.';
     3 => 0,
     14 => 0,
     15 => 0,
+  );
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'none',
+      'context' => 'entity:field_collection_item.field--address-address',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
 
