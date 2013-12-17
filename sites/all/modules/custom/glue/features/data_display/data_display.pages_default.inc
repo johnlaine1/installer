@@ -1552,16 +1552,39 @@ function data_display_default_page_manager_handlers() {
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => array(
+      'top' => array(
+        'corner_location' => 'panel',
+      ),
+      'left' => array(
         'corner_location' => 'pane',
       ),
-      'top' => NULL,
-      'left' => NULL,
-      'middle' => NULL,
-      'right' => NULL,
-      'bottom' => NULL,
+      'middle' => array(
+        'corner_location' => 'pane',
+      ),
+      'right' => array(
+        'corner_location' => 'pane',
+      ),
+      'bottom' => array(
+        'corner_location' => 'pane',
+      ),
+      'default' => NULL,
     ),
-    'style' => 'rounded_corners',
+    'style' => 'default',
+    'top' => array(
+      'style' => 'rounded_corners',
+    ),
+    'left' => array(
+      'style' => 'rounded_corners',
+    ),
+    'middle' => array(
+      'style' => 'rounded_corners',
+    ),
+    'right' => array(
+      'style' => 'rounded_corners',
+    ),
+    'bottom' => array(
+      'style' => 'rounded_corners',
+    ),
   );
   $display->cache = array();
   $display->title = '';
