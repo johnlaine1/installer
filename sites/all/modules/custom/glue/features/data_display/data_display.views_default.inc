@@ -2797,15 +2797,6 @@ If you would like to start over, click rest.';
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['id'] = 'field_mhc_lot_lot_num_value';
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['table'] = 'field_data_field_mhc_lot_lot_num';
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['field'] = 'field_mhc_lot_lot_num_value';
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -3101,6 +3092,16 @@ If you would like to start over, click rest.';
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['id'] = 'field_mhc_lot_lot_num_value';
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['table'] = 'field_data_field_mhc_lot_lot_num';
   $handler->display->display_options['sorts']['field_mhc_lot_lot_num_value']['field'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Lot number (field_mhc_lot_lot_num) */
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['id'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['table'] = 'field_data_field_mhc_lot_lot_num';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['field'] = 'field_mhc_lot_lot_num_value';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_mhc_lot_lot_num_value']['break_phrase'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3260,13 +3261,13 @@ If you would like to start over, click rest.';
     15 => 0,
   );
   $handler->display->display_options['argument_input'] = array(
-    'nid' => array(
-      'type' => 'none',
+    'field_mhc_lot_lot_num_value' => array(
+      'type' => 'panel',
       'context' => 'entity:field_collection_item.field--address-address',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
-      'label' => 'Content: Nid',
+      'label' => 'Content: Lot number (field_mhc_lot_lot_num)',
     ),
   );
   $handler->display->display_options['inherit_panels_path'] = '1';
