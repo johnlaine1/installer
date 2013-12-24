@@ -26,3 +26,4 @@ function glue_views_query_alter(&$view, &$query) {
   }  
 }
 
+// A test

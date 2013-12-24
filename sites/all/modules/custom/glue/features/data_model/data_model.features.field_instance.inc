@@ -6417,7 +6417,7 @@ For example: The length of this vacant lot up to the home in the lot behind it i
     'bundle' => 'mhc_lot',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This is the distance from either an existing fence/wall if one exists or existing awning/structure(minus 5\') of the adjacent home on the left side of the lot to the beginning of the concrete slab on the left side of the lot.',
+    'description' => 'This is the distance from either an existing fence/wall if one exists or existing awning/structure of the adjacent home on the left side of the lot to the beginning of the concrete slab on the left side of the lot.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -6625,7 +6625,7 @@ For example: The length of this vacant lot up to the home in the lot behind it i
     'bundle' => 'mhc_lot',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'This is the width of the area between the blacktop/concrete parking area on the right side of the lot and the fence/wall if one exists or awning/structure(minus 5\') of the adjacent home.',
+    'description' => 'This is the width of the area between the blacktop/concrete parking area on the right side of the lot and the fence/wall if one exists or awning/structure of the adjacent home.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -8004,7 +8004,7 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
   t('The right setback as viewed standing in front of the lot, facing the lot.');
   t('These are public documents. Although a username and password are needed to enter this site, the URL to a file of this type will be viewable by all. For example, if you right click on a file of this type and select \'copy link address\' and then you email that link to a friend, they will be able to view it.');
   t('These files are private. They are only viewable by registered users of this site.');
-  t('This is the distance from either an existing fence/wall if one exists or existing awning/structure(minus 5\') of the adjacent home on the left side of the lot to the beginning of the concrete slab on the left side of the lot.');
+  t('This is the distance from either an existing fence/wall if one exists or existing awning/structure of the adjacent home on the left side of the lot to the beginning of the concrete slab on the left side of the lot.');
   t('This is the length of the lot from one non-moveable object such as a home or awning to the other. If the measurement is greater than the plot map, you can just enter the plot map measurement.
 Otherwise, if this measurement is between 1 or more homes, you must subtract the setback for each home.
 Example: The side setbacks for homes in this park is 5\'. There are homes on each side of a lot. The measurement from the awning on the home on one side to the awning on the home on the other side is 60\'. You must subtract the 5\' setback for each home. So the value to enter into this field is 50\'.');
@@ -8012,7 +8012,7 @@ Example: The side setbacks for homes in this park is 5\'. There are homes on eac
 For example: The length of this vacant lot up to the home in the lot behind it is 100\'. The rear setback for the home in the other lot is 5\'. The value to enter in this field is 95\'');
   t('This is the length of the lot up to the first removable object such as a tree or fence. If this value is greater than the plot map length, you can just enter the plot map length.');
   t('This is the text a user may send to the group administrators.');
-  t('This is the width of the area between the blacktop/concrete parking area on the right side of the lot and the fence/wall if one exists or awning/structure(minus 5\') of the adjacent home.');
+  t('This is the width of the area between the blacktop/concrete parking area on the right side of the lot and the fence/wall if one exists or awning/structure of the adjacent home.');
   t('This is the width of the concrete on the left side of the lot, generally used as a patio area.');
   t('This is the width of the lot up to the first removable object such as a tree or fence. If this value is greater than the plot map width, you can just enter the plot map width.');
   t('This is the width of the parking area, usually blacktop or concrete on the right side of the lot.');
