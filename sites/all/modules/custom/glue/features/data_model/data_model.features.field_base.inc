@@ -1741,6 +1741,7 @@ Prof.',
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'not present' => 'Not Present',
         'package' => 'Package',
         'split' => 'Split',
         'window' => 'Window',
@@ -2042,6 +2043,7 @@ Prof.',
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'not present' => 'Not Present',
         'good' => 'Good',
         'bad' => 'Bad',
         'other' => 'Other',
@@ -2069,6 +2071,7 @@ Prof.',
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'no gas' => 'No Gas',
         'water_heater' => 'Water Heater',
         'heater' => 'Heater',
         'stove' => 'Stove',
@@ -2097,6 +2100,8 @@ Prof.',
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
+        'not present' => 'Not Present',
+        'heat pump' => 'Heat Pump',
         'gas' => 'Gas',
         'electric' => 'Electric',
         'other' => 'Other',

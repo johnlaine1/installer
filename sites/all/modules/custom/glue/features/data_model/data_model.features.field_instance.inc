@@ -3562,9 +3562,7 @@ function data_model_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 18,
     ),
@@ -4115,9 +4113,7 @@ function data_model_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 15,
     ),
@@ -4159,9 +4155,7 @@ function data_model_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 17,
     ),
@@ -4203,9 +4197,7 @@ function data_model_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 16,
     ),
