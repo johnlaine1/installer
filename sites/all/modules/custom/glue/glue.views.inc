@@ -23,6 +23,10 @@ function glue_views_query_alter(&$view, &$query) {
         $query->where[1]['conditions'][$i]['value'] = $new_value;
       }
     }
+		
+  //dpm($query);
+  //dpm($view);
+  
   }  
 }
 
