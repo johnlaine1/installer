@@ -2810,11 +2810,107 @@ function data_display_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'page_mh_installations_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'mh_installations';
+  $handler->handler = 'panel_context';
+  $handler->weight = -30;
+  $handler->conf = array(
+    'title' => 'Admin',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'onecol';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'middle' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-19';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'mh_installations-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'fields_override' => array(
+        'field_mh_install_mhc_name' => 0,
+        'nid' => 0,
+        'nid_1' => 0,
+        'gid' => 0,
+        'field_mh_unit_width' => 0,
+        'field_mh_unit_length' => 0,
+        'field_mh_install_lot_num' => 0,
+        'title' => 1,
+        'field_mh_unit_vin' => 1,
+        'field_mh_unit_year' => 1,
+        'nothing' => 1,
+        'field_mh_unit_beds' => 1,
+        'field_mh_unit_baths' => 1,
+        'field_mh_install_status' => 1,
+        'field_mh_install_date' => 1,
+        'field_mh_install_invoice_status' => 1,
+        'field_mh_install_invoice_amount' => 1,
+        'nothing_1' => 1,
+        'edit_node' => 1,
+        'edit_node_1' => 1,
+        'nothing_2' => 1,
+        'nothing_3' => 1,
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-19'] = $pane;
+    $display->panels['middle'][0] = 'new-19';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'page_mh_installations_panel_context';
   $handler->task = 'page';
   $handler->subtask = 'mh_installations';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -29;
   $handler->conf = array(
     'title' => 'Default',
     'no_blocks' => 1,
@@ -2847,13 +2943,40 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-19';
+    $pane->pid = 'new-20';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'mh_installations-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'fields_override' => array(
+        'field_mh_install_mhc_name' => 0,
+        'nid' => 0,
+        'nid_1' => 0,
+        'gid' => 0,
+        'field_mh_unit_width' => 0,
+        'field_mh_unit_length' => 0,
+        'field_mh_install_lot_num' => 0,
+        'title' => 1,
+        'field_mh_unit_vin' => 1,
+        'field_mh_unit_year' => 1,
+        'nothing' => 1,
+        'field_mh_unit_beds' => 1,
+        'field_mh_unit_baths' => 1,
+        'field_mh_install_status' => 1,
+        'field_mh_install_date' => 1,
+        'field_mh_install_invoice_status' => 1,
+        'field_mh_install_invoice_amount' => 1,
+        'nothing_1' => 1,
+        'edit_node' => 0,
+        'edit_node_1' => 0,
+        'nothing_2' => 0,
+        'nothing_3' => 0,
+      ),
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -2862,8 +2985,8 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['middle'][0] = 'new-19';
+    $display->content['new-20'] = $pane;
+    $display->panels['middle'][0] = 'new-20';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -2982,7 +3105,7 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-20';
+    $pane->pid = 'new-21';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_mh_unit_pics_origin';
@@ -3019,8 +3142,8 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['top'][0] = 'new-20';
+    $display->content['new-21'] = $pane;
+    $display->panels['top'][0] = 'new-21';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3107,7 +3230,7 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-21';
+    $pane->pid = 'new-22';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'mh_listings_list-panel_pane_1';
@@ -3122,8 +3245,8 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['middle'][0] = 'new-21';
+    $display->content['new-22'] = $pane;
+    $display->panels['middle'][0] = 'new-22';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3288,7 +3411,7 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-22';
+    $pane->pid = 'new-23';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'vacant_lots-panel_pane_1';
@@ -3303,10 +3426,10 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['middle'][0] = 'new-22';
+    $display->content['new-23'] = $pane;
+    $display->panels['middle'][0] = 'new-23';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-22';
+  $display->title_pane = 'new-23';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['mhc_vacant_lots_edit'] = $page;
@@ -3399,7 +3522,7 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-23';
+    $pane->pid = 'new-24';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'vacant_lots-panel_pane_table_list';
@@ -3414,8 +3537,8 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['middle'][0] = 'new-23';
+    $display->content['new-24'] = $pane;
+    $display->panels['middle'][0] = 'new-24';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -3453,7 +3576,7 @@ function data_display_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-24';
+    $pane->pid = 'new-25';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'vacant_lots-panel_pane_table_list';
@@ -3468,8 +3591,8 @@ function data_display_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-24'] = $pane;
-    $display->panels['middle'][0] = 'new-24';
+    $display->content['new-25'] = $pane;
+    $display->panels['middle'][0] = 'new-25';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
