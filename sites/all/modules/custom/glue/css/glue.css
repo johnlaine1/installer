@@ -75,5 +75,9 @@ h3.views-field.views-field-field-mhc-lot-build-length-2 {
 /* Fixes the bug of views no displaying contextual links cog */
 td.views-field-contextual-links .contextual-links-wrapper{
   width: 34px;
-  position: relative;
+  position: relative;  
+}
+th.views-field-contextual-links,
+td.views-field-contextual-links {
+  background-color: #FFF;
 }
