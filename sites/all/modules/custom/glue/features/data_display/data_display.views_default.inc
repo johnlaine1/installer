@@ -366,6 +366,7 @@ function data_display_views_default_views() {
     'edit_node_1' => 'edit_node',
     'nothing_2' => 'edit_node',
     'nothing_3' => 'edit_node',
+    'contextual_links' => 'contextual_links',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -503,6 +504,11 @@ function data_display_views_default_views() {
       'empty_column' => 0,
     ),
     'nothing_3' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'contextual_links' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -678,6 +684,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['ui_name'] = 'Edit install link';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit  Install';
   /* Field: Edit unit link */
   $handler->display->display_options['fields']['edit_node_1']['id'] = 'edit_node_1';
@@ -686,6 +693,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['edit_node_1']['relationship'] = 'field_mh_install_unit_target_id';
   $handler->display->display_options['fields']['edit_node_1']['ui_name'] = 'Edit unit link';
   $handler->display->display_options['fields']['edit_node_1']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node_1']['text'] = 'Edit Unit';
   /* Field: Add activity link */
@@ -694,6 +702,7 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Add activity link';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Add Activity';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/add/activity?field_activity_reference=[nid]&og_group_ref=[gid]';
@@ -704,10 +713,41 @@ function data_display_views_default_views() {
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Add task link';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
+  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'Add Task';
   $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'node/add/task?field_task_reference=[nid]&og_group_ref=[gid]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
+  /* Field: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'edit_node' => 'edit_node',
+    'edit_node_1' => 'edit_node_1',
+    'nothing_2' => 'nothing_2',
+    'nothing_3' => 'nothing_3',
+    'field_mh_install_mhc_name' => 0,
+    'nid' => 0,
+    'nid_1' => 0,
+    'gid' => 0,
+    'field_mh_unit_width' => 0,
+    'field_mh_unit_length' => 0,
+    'field_mh_install_lot_num' => 0,
+    'title' => 0,
+    'field_mh_unit_vin' => 0,
+    'field_mh_unit_year' => 0,
+    'nothing' => 0,
+    'field_mh_unit_beds' => 0,
+    'field_mh_unit_baths' => 0,
+    'field_mh_install_status' => 0,
+    'field_mh_install_date' => 0,
+    'field_mh_install_invoice_status' => 0,
+    'field_mh_install_invoice_amount' => 0,
+    'nothing_1' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
