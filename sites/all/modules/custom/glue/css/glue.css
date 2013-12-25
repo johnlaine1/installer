@@ -60,7 +60,6 @@ h3.views-field.views-field-field-mhc-lot-build-length-2 {
   text-align: center;
 }
 
-
 /*---------- VIEW - MH Listing ----------*/
 .view-mh-listings-list .views-field-field-mh-listing-price {
   font-size: 1.3em;
@@ -72,11 +71,14 @@ h3.views-field.views-field-field-mhc-lot-build-length-2 {
   padding-top: 0px;
 }
 
-/* Fixes the bug of views no displaying contextual links cog */
+/* Fixes the bug of views not displaying the contextual links cog
+   on the table display. */
 td.views-field-contextual-links .contextual-links-wrapper{
   width: 34px;
   position: relative;  
 }
+/* Remove the appearance of a blank table column when contextual links are
+   used. */
 th.views-field-contextual-links,
 td.views-field-contextual-links {
   background-color: #FFF;
