@@ -53,7 +53,7 @@ function juicebox_libraries_info() {
     'download url' => 'http://www.juicebox.net/download/',
     'version arguments' => array(
       'file' => 'juicebox.js',
-      'pattern' => '/Juicebox.([0-9a-zA-Z\.\ -]+)/',
+      'pattern' => '/Juicebox.([a-zA-Z]+[0-9\.\ -]+)/',
       'lines' => 5,
     ),
     'files' => array(
@@ -62,6 +62,10 @@ function juicebox_libraries_info() {
       // some supporting library CSS files must be at a specific location
       // RELATIVE to to the main js file. Aggregation breaks this.
       'js' => array('juicebox.js' => array('preprocess' => FALSE)),
+    ),
+    'callbacks' => array(
+      'info' => array('_juicebox_library_info'),
+      'post-detect' => array('_juicebox_library_post_detect'),
     ),
   );
   return $libraries;
@@ -109,12 +113,12 @@ function juicebox_page_xml() {
       if (!$view->access($view_display)) {
         return MENU_ACCESS_DENIED;
       }
-      // Render the view. This will calculate our gallery-specific data
-      // during the style plugin's render() method.
+      // Render the view.
       $view->preview($view_display, $view_args);
-      if (!empty($view->juicebox_gallery_data)) {
+      $data = juicebox_build_gallery_data_from_view($view, current_path());
+      if (!empty($data)) {
         // Render the Juicebox XML.
-        $xml = juicebox_render_gallery_xml($view->juicebox_gallery_data);
+        $xml = juicebox_render_gallery_xml($data);
         $got_result = TRUE;
       }
     }
@@ -176,8 +180,8 @@ function juicebox_page_xml() {
 
   // If we did not get any XML result take any special actions needed.
   if (!$got_result) {
-    // Make it clear to Juicebox that we don't have any XML to give it.
-    drupal_add_http_header('Status', '404 Not Found');
+    // Make it clear that we don't have any XML to send.
+    return MENU_NOT_FOUND;
   }
   else {
     drupal_add_http_header('Content-Type', 'text/xml');
@@ -209,8 +213,8 @@ function juicebox_build_gallery_data_from_view($view, $xml_path) {
     // First make sure that we have image field data to work with. This prevents
     // php errors from coming up if the user has not yet configured their
     // view page display or if the view lists items that don't contain an image.
-    $field_image_name = "field_{$settings['image_field']}";
-    $field_thumb_name = "field_{$settings['thumb_field']}";
+    $field_image_name = 'field_' . $settings['image_field'];
+    $field_thumb_name = 'field_' . $settings['thumb_field'];
     if (!empty($row->{$field_image_name}[0]['raw']['uri']) && !empty($row->{$field_thumb_name}[0]['raw']['uri'])) {
       $field_image_uri = $row->{$field_image_name}[0]['raw']['uri'];
       $unstyled_image_src = file_create_url($field_image_uri);
@@ -390,6 +394,98 @@ function juicebox_render_gallery_xml($data) {
 
 
 /**
+ * Libraries API Info Callback
+ * 
+ * Add baseline variables to a Juicebox library array that are not version
+ * specific but should always be defined. These values are generic to all
+ * Juicebox libraries and may be referenced even when the local library info
+ * cannot be loaded or is not used.
+ * 
+ * @see juicebox_libraries_info().
+ */
+function _juicebox_library_info(&$library) {
+  $library['disallowed_conf'] = array();
+  $library['compatible_mimetypes'] = array('image/gif', 'image/jpeg', 'image/png');
+}
+
+
+/**
+ * Libraries API Post-Detect Callback
+ * 
+ * Add detailed variables to a Juicebox library array after the version info can
+ * be detected.
+ * 
+ * @see juicebox_libraries_info().
+ */
+function _juicebox_library_post_detect(&$library) {
+  $pro = FALSE;
+  $disallowed_conf = array();
+  if (!empty($library['version'])) {
+    // Check if this is a Pro version.
+    if (stripos($library['version'], "Pro") !== FALSE) {
+      $pro = TRUE;
+    }
+    // Get numeric part of the version statement.
+    $version_number = 0;
+    $matches = array();
+    preg_match("/[0-9\.]+[^\.]$/u", $library['version'], $matches);
+    if (!empty($matches[0])) {
+      $version_number = $matches[0];
+    }
+    // Some options are not available as LITE options before v1.3.
+    if (!$pro && version_compare($version_number, '1.3', '<')) {
+      $disallowed_conf = array_merge($disallowed_conf, array('jlib_textColor', 'jlib_thumbFrameColor', 'jlib_useFullscreenExpand', 'jlib_useThumbDots'));
+    }
+  }
+  $library['pro'] = $pro;
+  $library['disallowed_conf'] = $disallowed_conf;
+}
+
+
+/**
+ * Get/detect the details of a Juicebox javascript library without loading it.
+ * 
+ * This is essentially a wrapper for libraries_detect(). It allows library info
+ * to be fetched independently from the currently loaded version if needed
+ * (e.g. to accomodate XML requests that don't come from this site). This
+ * function can also utilize extra cache checks for performance.
+ * 
+ * @param boolean $local
+ *   Whether-or-not to detect the LOCALLY installed Juicebox library details. If
+ *   FALSE Libraries API detection is bypased and generic library information
+ *   is loaded.
+ * @return array
+ *   An associative array of the library information. 
+ */
+function _juicebox_library_detect($local = TRUE) {
+  $library = array();
+  // If this is a local check we can just use standard Libraries API methods.
+  if ($local) {
+    $library = libraries_detect('juicebox');
+  }
+  // Otherwise we need to build our own libraries array.
+  else {
+    _juicebox_library_info($library);
+    // See if we have been passed version details in the URL.
+    $query = drupal_get_query_parameters();
+    if (!empty($query['jb-version'])) {
+      $version_number = check_plain($query['jb-version']);
+      if (!empty($query['jb-pro'])) {
+        $library['pro'] = TRUE;
+        $version = 'Pro';
+      }
+      else {
+        $version = 'Lite';
+      }
+      $library['version'] = $version . ' ' . $version_number;
+      _juicebox_library_post_detect($library);
+    }
+  }
+  return $library;
+}
+
+
+/**
  * Check view access for an arbitrary entity that contains a Juicebox gallery.
  *
  * @param string $entity_type
@@ -517,35 +613,6 @@ function _juicebox_init_display_settings($settings) {
 
 
 /**
- * Helper function to parse the Juicebox library version info into chunks.
- *
- * @param string $version_statement
- *   The full Juicebox javascript library version statement.
- * @return array
- *   Associative array containing parsed chunks of the version statement
- *   including a 'pro' boolean indicating the Pro version and 'number' with the
- *   actual numeric version statement. Returns boolean FALSE if the version
- *   number cannot be found.
- */
-function _juicebox_parse_version_details($version_statement) {
-  // Assume "Lite" if "Pro" text not found.
-  $pro = FALSE;
-  if (stripos($version_statement, "Pro") !== FALSE) {
-    $pro = TRUE;
-  }
-  // Get numeric part.
-  $number = 0;
-  $matches = array();
-  preg_match("/[0-9\.]+[^\.]$/u", $version_statement, $matches);
-  if (!empty($matches[0])) {
-    $number = $matches[0];
-    return array('pro' => $pro, 'number' => $number);
-  }
-  return FALSE;
-}
-
-
-/**
  * Helper to add common elements to Juicebox configuration forms.
  *
  * Both the field formatter and view plugin share some common configuration
@@ -557,40 +624,24 @@ function _juicebox_parse_version_details($version_statement) {
  * @param array $settings
  *   An associative array containing all the settings for a Juicebox gallery
  *   (used to set default values).
- * @param array $parents_root
- *   A numerically keyed array representing the tree of form elements that
- *   should be used as "parents" for the SAVED values. This is used to set the
- *   #parents value of form elements that appear in fieldsets. We want our
- *   saved values to be in a flat structure even though the form uses fieldsets
- *   and requires all elements to utilize a default #tree setting of TRUE.
  * @return array
  *   The merged form array.
  */
-function _juicebox_common_form_elements($form, $settings, $parents_root) {
-  // Get Juicebox library details as some of our Juicebox options are
-  // version-specific.
-  $library = libraries_detect('juicebox');
-  // Calculate which v1.x version features we can support. This checking
-  // starts at v1.3. Initially assume v1.3 options are available and don't
-  // disable them unless we are confident they should be.
-  $one_dot_three = TRUE;
-  $notification_top = '';
-  $notification_label = '';
-  if ($library['installed']) {
-    $version_details = _juicebox_parse_version_details($library['version']);
-    if ($version_details) {
-      // Some "Pro" features from 1.2 were enabled in the 1.3 "Lite" version.
-      // Check if they are NOT supported and set messages if needed.
-      if (!$version_details['pro'] && version_compare($version_details['number'], '1.3', '<')) {
-        $one_dot_three = FALSE;
-        $notification_top = t('<strong>Notice:</strong> You are currently using Juicebox library version <strong>@version</strong> which is not compatible with some of the options listed below. These options will appear disabled until you upgrade to the most recent Juicebox library version.', array('@version' => $library['version']));
-        $notification_label = t('&nbsp;(not available in @version)', array('@version' => $library['version']));
-      }
-    }
+function _juicebox_common_form_elements($form, $settings) {
+  // Get locally installed library details.
+  $library = _juicebox_library_detect();
+  $disallowed_conf = array();
+  if (!empty($library)) {
     // If we don't have a known version of the Juicebox library, just show a
     // generic warning.
-    else {
+    if (empty($library['version'])) {
       $notification_top = t('<strong>Notice:</strong> Your Juicebox Library version could not be detected. Some options below may not function correctly.');
+    }
+    // If this version does not support some LITE optins, show a message.
+    elseif (!empty($library['disallowed_conf'])) {
+      $disallowed_conf = $library['disallowed_conf'];
+      $notification_top = t('<strong>Notice:</strong> You are currently using Juicebox library version <strong>@version</strong> which is not compatible with some of the options listed below. These options will appear disabled until you upgrade to the most recent Juicebox library version.', array('@version' => $library['version']));
+      $notification_label = t('&nbsp;(not available in @version)', array('@version' => $library['version']));
     }
   }
   // If the library itself is not installed, display formal error message.
@@ -598,7 +649,6 @@ function _juicebox_common_form_elements($form, $settings, $parents_root) {
     $notification_top = t('The Juicebox Javascript library does not appear to be installed. Please download and install the most recent version of the Juicebox library.');
     drupal_set_message($notification_top, 'error');
   }
-
   $form['juicebox_config'] = array(
     '#type' => 'fieldset',
     '#title' => t('Juicebox Library - Lite Config'),
@@ -607,81 +657,68 @@ function _juicebox_common_form_elements($form, $settings, $parents_root) {
     '#description' => !empty($notification_top) ? '<p>' . $notification_top . '</p>' : '',
     '#weight' => 10,
   );
-  $form['juicebox_config']['jlib_galleryWidth'] = array(
+  $form['jlib_galleryWidth'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'textfield',
     '#title' => t('Gallery Width'),
-    '#default_value' => $settings['jlib_galleryWidth'],
     '#description' => t('Set the gallery width in a standard numeric format (such as 100% or 300px).'),
     '#element_validate' => array('_juicebox_element_validate_dimension'),
-    '#parents' => array_merge($parents_root, array('jlib_galleryWidth')),
   );
-  $form['juicebox_config']['jlib_galleryHeight'] = array(
+  $form['jlib_galleryHeight'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'textfield',
-    '#title' => t('Gallery Heigth'),
-    '#default_value' => $settings['jlib_galleryHeight'],
+    '#title' => t('Gallery Height'),
     '#description' => t('Set the gallery height in a standard numeric format (such as 100% or 300px).'),
     '#element_validate' => array('_juicebox_element_validate_dimension'),
-    '#parents' => array_merge($parents_root, array('jlib_galleryHeight')),
   );
-  $form['juicebox_config']['jlib_backgroundColor'] = array(
+  $form['jlib_backgroundColor'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'textfield',
     '#title' => t('Background Color'),
-    '#default_value' => $settings['jlib_backgroundColor'],
     '#description' => t('Set the gallery background color as a CSS3 color value (such as rgba(10,50,100,0.7) or #FF00FF).'),
-    '#parents' => array_merge($parents_root, array('jlib_backgroundColor')),
   );
-  $form['juicebox_config']['jlib_textColor'] = array(
+  $form['jlib_textColor'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'textfield',
-    '#title' => t('Text Color') . $notification_label,
-    '#default_value' => $settings['jlib_textColor'],
+    '#title' => t('Text Color'),
     '#description' => t('Set the color of all gallery text as a CSS3 color value (such as rgba(255,255,255,1) or #FF00FF).'),
-    '#parents' => array_merge($parents_root, array('jlib_textColor')),
-    '#disabled' => $one_dot_three ? FALSE : TRUE,
   );
-  $form['juicebox_config']['jlib_thumbFrameColor'] = array(
+  $form['jlib_thumbFrameColor'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'textfield',
-    '#title' => t('Thumbnail Frame Color') . $notification_label,
-    '#default_value' => $settings['jlib_thumbFrameColor'],
+    '#title' => t('Thumbnail Frame Color'),
     '#description' => t('Set the color of the thumbnail frame as a CSS3 color value (such as rgba(255,255,255,.5) or #FF00FF).'),
-    '#parents' => array_merge($parents_root, array('jlib_thumbFrameColor')),
-    '#disabled' => $one_dot_three ? FALSE : TRUE,
   );
-  $form['juicebox_config']['jlib_showOpenButton'] = array(
+  $form['jlib_showOpenButton'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'checkbox',
     '#title' => t('Show Open Image Button'),
-    '#default_value' => $settings['jlib_showOpenButton'],
     '#description' => t('Whether to show the "Open Image" button. This will link to the full size version of the image within a new tab to facilitate downloading.'),
-    '#parents' => array_merge($parents_root, array('jlib_showOpenButton')),
   );
-  $form['juicebox_config']['jlib_showExpandButton'] = array(
+  $form['jlib_showExpandButton'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'checkbox',
     '#title' => t('Show Expand Button'),
-    '#default_value' => $settings['jlib_showExpandButton'],
     '#description' => t('Whether to show the "Expand" button. Clicking this button expands the gallery to fill the browser window.'),
-    '#parents' => array_merge($parents_root, array('jlib_showExpandButton')),
   );
-  $form['juicebox_config']['jlib_useFullscreenExpand'] = array(
+  $form['jlib_useFullscreenExpand'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'checkbox',
-    '#title' => t('Use Fullscreen Expand') . $notification_label,
-    '#default_value' => $settings['jlib_useFullscreenExpand'],
+    '#title' => t('Use Fullscreen Expand'),
     '#description' => t('Whether to trigger fullscreen mode when clicking the expand button (for supported browsers).'),
-    '#parents' => array_merge($parents_root, array('jlib_useFullscreenExpand')),
-    '#disabled' => $one_dot_three ? FALSE : TRUE,
   );
-  $form['juicebox_config']['jlib_showThumbsButton'] = array(
+  $form['jlib_showThumbsButton'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'checkbox',
     '#title' => t('Show Thumbs Button'),
-    '#default_value' => $settings['jlib_showThumbsButton'],
     '#description' => t('Whether to show the "Toggle Thumbnails" button.'),
-    '#parents' => array_merge($parents_root, array('jlib_showThumbsButton')),
   );
-  $form['juicebox_config']['jlib_useThumbDots'] = array(
+  $form['jlib_useThumbDots'] = array(
+    '#jb_fieldset' => 'juicebox_config',
     '#type' => 'checkbox',
-    '#title' => t('Show Thumbs Dots') . $notification_label,
-    '#default_value' => $settings['jlib_useThumbDots'],
+    '#title' => t('Show Thumbs Dots'),
     '#description' => t('Whether to replace the thumbnail images with small dots.'),
-    '#parents' => array_merge($parents_root, array('jlib_useThumbDots')),
-    '#disabled' => $one_dot_three ? FALSE : TRUE,
+    '#default_value' => $settings['jlib_useThumbDots'],
   );
   $form['juicebox_manual_config'] = array(
     '#type' => 'fieldset',
@@ -691,52 +728,83 @@ function _juicebox_common_form_elements($form, $settings, $parents_root) {
     '#description' => '<p>' . t('Specify any additional Juicebox library configuration options (such as "Pro" options) here.<br/>Options set here always take precedence over those set in the "Lite" options above if there is a conflict.') . '</p>',
     '#weight' => 20,
   );
-  $form['juicebox_manual_config']['manual_config'] = array(
+  $form['manual_config'] = array(
+    '#jb_fieldset' => 'juicebox_manual_config',
     '#type' => 'textarea',
     '#title' => t('Pro / Manual Configuraton Options'),
-    '#default_value' => $settings['manual_config'],
     '#description' => t('Add one option per line in the format <strong>optionName="optionValue"</strong><br/>See also: http://www.juicebox.net/support/config_options'),
     '#element_validate' => array('_juicebox_element_validate_config'),
-    '#parents' => array_merge($parents_root, array('manual_config')),
   );
   $form['advanced'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Advanced Options'),
+    '#title' => t('Juicebox - Advanced Options'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#weight' => 30,
   );
-  $form['advanced']['apply_markup_filter'] = array(
+  $form['apply_markup_filter'] = array(
+    '#jb_fieldset' => 'advanced',
     '#type' => 'checkbox',
     '#title' => t('Filter title and caption output for compatibility with Juicebox javascript (recommended)'),
-    '#default_value' => $settings['apply_markup_filter'],
     '#description' => t('This option helps ensure title/caption output is syntactically compatible with the Juicebox javascript library by removing block-level tags.'),
-    '#parents' => array_merge($parents_root, array('apply_markup_filter')),
   );
-  $form['advanced']['linkurl_source'] = array(
+  $form['linkurl_source'] = array(
+    '#jb_fieldset' => 'advanced',
     '#type' => 'select',
     '#title' => t("LinkURL Source"),
-    '#default_value' => $settings['linkurl_source'],
     '#description' => t('The linkURL is an image-specific path for accessing each image outside the gallery. This is used by features such as the "Open Image Button".'),
     '#options' => array('image_styled' => 'Main Image - Styled (use this gallery\'s main image style setting)'),
     '#empty_option' => t('Main Image - Unstyled (original image)'),
-    '#parents' => array_merge($parents_root, array('linkurl_source')),
   );
-  $form['advanced']['linkurl_target'] = array(
+  $form['linkurl_target'] = array(
+    '#jb_fieldset' => 'advanced',
     '#type' => 'select',
     '#title' => t('LinkURL Target'),
     '#options' => array('_blank' => '_blank', '_self' => '_self', '_parent' => '_parent', '_top' => '_top'),
-    '#default_value' => $settings['linkurl_target'],
     '#description' => t('Specify a target for any links that make user of the image linkURL.'),
-    '#parents' => array_merge($parents_root, array('linkurl_target')),
   );
-  $form['advanced']['custom_parent_classes'] = array(
+  $form['custom_parent_classes'] = array(
+    '#jb_fieldset' => 'advanced',
     '#type' => 'textfield',
     '#title' => t('Custom Classes for Parent Container'),
-    '#default_value' => $settings['custom_parent_classes'],
     '#description' => t('Define any custom classes that should be added to the parent container within the Juicebox embed markup.<br/>This can be handy if you want to apply more advanced styling or dimensioning rules to this gallery via CSS. Enter as space-separated values.'),
-    '#parents' => array_merge($parents_root, array('custom_parent_classes')),
   );
+  // Set values that are directly related to each key.
+  foreach($form as $conf_key => &$conf_value) {
+    if (!empty($conf_value['#type']) && $conf_value['#type'] != 'fieldset') {
+      $conf_value['#default_value'] = $settings[$conf_key];
+      if (in_array($conf_key, $disallowed_conf)) {
+        $conf_value['#title'] .= $notification_label;
+        $conf_value['#disabled'] = TRUE;
+      }
+    }
+  }
+  $form['#pre_render'] = array('_juicebox_form_pre_render_add_fieldset_markup');
+  return $form;
+}
+
+
+/**
+ * Form pre-render callback: visually render fieldsets without affecting
+ * tree-based variable storage.
+ * 
+ * This technique/code is taken almost directly from the Views module in
+ * views_ui_pre_render_add_fieldset_markup()
+ *
+ * @see _juicebox_common_form_elements()
+ */
+function _juicebox_form_pre_render_add_fieldset_markup($form) {
+  foreach (element_children($form) as $key) {
+    $element = $form[$key];
+    // In our form builder functions, we added an arbitrary #jb_fieldset
+    // property to any element that belongs in a fieldset. If this form element
+    // has that property, move it into its fieldset.
+    if (isset($element['#jb_fieldset']) && isset($form[$element['#jb_fieldset']])) {
+      $form[$element['#jb_fieldset']][$key] = $element;
+      // Remove the original element this duplicates.
+      unset($form[$key]);
+    }
+  }
   return $form;
 }
 
@@ -841,6 +909,13 @@ function juicebox_field_formatter_info() {
  * Implements hook_field_formatter_settings_form().
  */
 function juicebox_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  if (!empty($instance['bundle']) && $instance['bundle'] == 'ctools') {
+    return array('juicebox_formatter_notice' => array(
+      '#prefix' => '<p>',
+      '#markup' => t('<strong>NOTICE: The Juicebox field formatter is not fully supported within individual view rows (and other ctools contexts)</strong>. Using this setting is not recommended. For views support please use the Juicebox display style plugin.'),
+      '#suffix' => '</p>',
+    ));
+  }
   $form = array();
     // Get available image style presets
   $presets = image_style_options(FALSE);
@@ -848,9 +923,7 @@ function juicebox_field_formatter_settings_form($field, $instance, $view_mode, $
   // required for legacy support.
   $settings = _juicebox_init_display_settings($instance['display'][$view_mode]['settings']);
 
-  // Start with the "common" form elements.
-  $parents_root = array('fields', $field['field_name'], 'settings_edit_form', 'settings');
-  $form = _juicebox_common_form_elements($form, $settings, $parents_root);
+  $form = _juicebox_common_form_elements($form, $settings);
   // Add the field-formatter-specific elements.
   $form['image_style'] = array(
     '#type' => 'select',
@@ -904,6 +977,12 @@ function juicebox_field_formatter_view($entity_type, $entity, $field, $instance,
   if (empty($items)) {
     return;
   }
+  // The gallery shown in preview view will only display field data from the
+  // previously saved version (that is the only version the XML generation
+  // methods will have access to). Display a warning because of this.
+  if (!empty($entity->in_preview)) {
+    drupal_set_message(t('Juicebox galleries may not display correctly in preview mode. Any edits made to gallery data will only be visible after all changes are saved.'), 'warning', FALSE);
+  }
   $field_name = $instance['field_name'];
   $entity_type_info = entity_get_info($entity_type);
   $entity_id = $entity->{$entity_type_info['entity keys']['id']};
@@ -941,7 +1020,7 @@ function juicebox_field_formatter_view($entity_type, $entity, $field, $instance,
   // Build the render array for the embed markup.
   $element[0] = array(
     '#theme' => 'juicebox_embed_markup',
-    '#gallery_id' => str_replace('/', '-', $xml_id),
+    '#gallery_id' => str_replace('/', '-', str_replace(' ', '_', $xml_id)),
     '#gallery_xml_path' => url($xml_path, array('query' => $query)),
     '#settings' => $settings,
     '#data' => $gallery_data,

@@ -6,6 +6,26 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/* Make the form elements of  title_service_request form line up horizontally */
 
+/*
+#edit-field-tsr-park-name {
+  width: 30%;
+  float: left;
+}
 
+#edit-field-tsr-year {
+  width: 15%;
+  float: left;
+}
 
+#edit-field-tsr-make {
+  width: 15%;
+  float: left;
+}
+
+#edit-field-tsr-manufacturer {
+  width: 15%;
+  float: left;
+}
+*/

@@ -1,0 +1,26 @@
+[18-Mar-2014 22:53:31 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262143 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/theme.inc on line 2013
+[18-Mar-2014 22:58:50 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 81 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/sites/all/modules/token/token.module on line 990
+[18-Mar-2014 23:23:38 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20361913 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc on line 2168
+[18-Mar-2014 23:23:59 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20361913 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc on line 2168
+[18-Mar-2014 23:31:30 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 262143 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/theme.inc on line 2013
+[18-Mar-2014 23:33:00 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20361913 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc on line 2168
+[18-Mar-2014 23:37:48 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 5505026 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/theme.inc on line 2017
+[21-Mar-2014 10:32:46 America/Phoenix] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2006 MySQL server has gone away' in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc:2168
+Stack trace:
+#0 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc(2168): PDOStatement->execute(Array)
+#1 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc(680): DatabaseStatementBase->execute(Array, Array)
+#2 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc(2347): DatabaseConnection->query('SELECT expire, ...', Array, Array)
+#3 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/lock.inc(167): db_query('SELECT expire, ...', Array)
+#4 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/lock.inc(146): lock_may_be_available('schema:runtime:...')
+#5 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/bootstrap.in in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc on line 2168
+[21-Mar-2014 10:36:27 America/Phoenix] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2006 MySQL server has gone away' in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc:2168
+Stack trace:
+#0 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc(2168): PDOStatement->execute(Array)
+#1 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc(680): DatabaseStatementBase->execute(Array, Array)
+#2 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc(2347): DatabaseConnection->query('SELECT expire, ...', Array, Array)
+#3 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/lock.inc(167): db_query('SELECT expire, ...', Array)
+#4 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/lock.inc(146): lock_may_be_available('schema:runtime:...')
+#5 /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/bootstrap.in in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/database/database.inc on line 2168
+[21-Mar-2014 12:25:07 America/Denver] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 73 bytes) in /home/clearv22/public_html_addon/clearviewhomesales.com/drupal/includes/common.inc on line 3931
+[06-Apr-2014 01:04:18 CST6CDT] PHP Parse error:  syntax error, unexpected T_STRING in /home/clearv22/public_html_addon/clearviewhomesales.com/live/drupal/index.php on line 17
+[06-Apr-2014 01:04:18 CST6CDT] PHP Parse error:  syntax error, unexpected T_STRING in /home/clearv22/public_html_addon/clearviewhomesales.com/live/drupal/index.php on line 17

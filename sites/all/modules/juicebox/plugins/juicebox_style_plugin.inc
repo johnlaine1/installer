@@ -82,8 +82,7 @@ class juicebox_style_plugin extends views_plugin_style {
     $settings = _juicebox_init_display_settings($this->options);
 
     // Start with the "common" form elements.
-    $parents_root = array('style_options');
-    $form = _juicebox_common_form_elements($form, $settings, $parents_root);
+    $form = _juicebox_common_form_elements($form, $settings);
     // Add the view-specific elements.
     $form['image_field'] = array(
       '#type' => 'select',
@@ -142,8 +141,9 @@ class juicebox_style_plugin extends views_plugin_style {
     foreach ($field_options as $field_key => $field_name) {
       $linkurl_field_options[$field_key] = t('Field') . ' - ' . $field_name;
     }
-    $form['advanced']['linkurl_source']['#description'] = $form['advanced']['linkurl_source']['#description'] . '</br><strong>' . t('If using a field for this source the field must render a properly formatted URL and nothing else.') . '</strong>';
-    $form['advanced']['linkurl_source']['#options'] = array_merge($form['advanced']['linkurl_source']['#options'], $linkurl_field_options);
+    // Adjust some advanced settings that are specific to views.
+    $form['linkurl_source']['#description'] = $form['linkurl_source']['#description'] . '</br><strong>' . t('If using a field for this source the field must render a properly formatted URL and nothing else.') . '</strong>';
+    $form['linkurl_source']['#options'] = array_merge($form['linkurl_source']['#options'], $linkurl_field_options);
   }
 
   /**
@@ -151,9 +151,14 @@ class juicebox_style_plugin extends views_plugin_style {
    */
   function validate() {
     $errors = parent::validate();
+    // Make sure block caching is not enabled. With block caching enabled the
+    // Juicebox javascript library may not get included.
+    if (isset($this->display->handler->options['block_caching']) && $this->display->handler->options['block_caching'] != DRUPAL_NO_CACHE) {
+      $errors[] = t('The Juicebox style cannot be used with block caching. Please disable the "Block caching" option for this display');
+    }
     // Make sure the pager is not enabled.
     if ($this->display->handler->use_pager()) {
-      $errors[] = t('The Juicebox style cannot be used with a pager. Disable the "Use pager" option for this display.');
+      $errors[] = t('The Juicebox style cannot be used with a pager. Please disable the "Use pager" option for this display.');
     }
     // We want to somewhat "nag" the user if they have not yet configured the
     // Juicebox-specific plugin settings (because things won't work until they
@@ -161,10 +166,8 @@ class juicebox_style_plugin extends views_plugin_style {
     // this validate method can run on pages where the user can't actaully touch
     // the Juicebox-specific plugin settings (such as
     // admin/structure/views/add).
-    static $nag_message_set = FALSE;
-    if (!$nag_message_set && empty($this->options['image_field'])) {
-      drupal_set_message(t("To ensure a fully functional Juicebox gallery please remember to add at least one image field to your Juicebox view display and configure the Juicebox Gallery format settings."), 'warning');
-      $nag_message_set = TRUE;
+    if (empty($this->options['image_field'])) {
+      drupal_set_message(t("To ensure a fully functional Juicebox gallery please remember to add at least one image field to your Juicebox view display and configure the Juicebox Gallery format settings."), 'warning', FALSE);
     }
     return $errors;
   }
@@ -213,7 +216,7 @@ class juicebox_style_plugin extends views_plugin_style {
     // sure to retain any currently active query parameters.
     $query = array_merge(array('checksum' => $gallery_checksum), drupal_get_query_parameters());
     // Set template variables for embed markup.
-    $variables['gallery_id'] = str_replace('/', '-', $xml_id);
+    $variables['gallery_id'] = str_replace('/', '-', str_replace(' ', '_', $xml_id));
     $variables['gallery_xml_path'] = url($xml_path, array('query' => $query));
     $variables['settings'] = $view->style_plugin->options;
     $variables['data'] = $view->juicebox_gallery_data;

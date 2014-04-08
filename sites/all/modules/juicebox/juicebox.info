@@ -15,9 +15,9 @@ files[] = plugins/juicebox_style_plugin.inc
 ; Theme Files
 files[] = themes/juicebox.theme.inc
 
-; Information added by drupal.org packaging script on 2013-08-06
-version = "7.x-1.1"
+; Information added by  packaging script on 2013-12-02
+version = "7.x-1.2"
 core = "7.x"
 project = "juicebox"
-datestamp = "1375762971"
+datestamp = "1385961505"
 
