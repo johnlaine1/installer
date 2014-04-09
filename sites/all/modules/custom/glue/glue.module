@@ -2,6 +2,21 @@
 
 
 /**
+ * Implements hook_menu().
+ */
+ function glue_menu() {
+   $items['admin/content/title-service-jobs'] = array(
+    'title' => 'Title Service Jobs',
+    'description' => 'Listing of title service jobs.',   
+    'access arguments' => array('access content'),
+    'type' => MENU_LOCAL_TASK | MENU_NORMAL_ITEM, 
+  ); 
+  
+  return $items;
+  }  
+  
+  
+/**
  * Implements hook_menu_alter().
  * Alter the data being saved to the {menu_router} table after hook_menu is invoked.
  */
