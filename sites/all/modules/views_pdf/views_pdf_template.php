@@ -934,7 +934,10 @@ class PdfTemplate extends FPDI {
         }
       }
     }
-
+	// Trying to fix the blank page that gets printed at the end of , see http://drupal.org/node/2194963
+    if ($this->options['last_row'] == FALSE) {
+	  $this->deletePage($this->getNumPages());
+	}
     // call parent:
     parent::Close();
 

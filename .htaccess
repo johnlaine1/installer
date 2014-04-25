@@ -1,9 +1,3 @@
-<IfModule mod_dtimeout.c>
-<Files ~ ".php">
-SetEnvIf Request_URI "index.php" DynamicTimeout=300
-</Files>
-</IfModule>
-
 #
 # Apache/PHP/Drupal settings:
 #
